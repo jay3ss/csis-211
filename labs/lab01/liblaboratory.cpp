@@ -96,7 +96,7 @@ Selection intToSelection(int number)
     return static_cast<Selection>(number);
 } // end intToSelection
 
-/** Checks if the user chose to exit.
+/** Checks if the selection is exit.
  @pre  None
  @param selection: user selection
  @post  None.
