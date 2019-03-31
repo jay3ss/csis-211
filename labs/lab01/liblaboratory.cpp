@@ -105,3 +105,13 @@ Selection intToSelection(int number)
  {
      return selection == Selection::EXIT;
  } // end isExit
+
+ /** Checks if an integer is zero.
+ @pre  None
+ @param selection: user selection
+ @post  None.
+ @return  True if is EXIT, false if not. */
+ bool isZero(int num)
+ {
+     return num == 0;
+ } // end isExit

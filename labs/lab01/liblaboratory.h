@@ -22,5 +22,6 @@ Selection getSelection();
 // Convenience functions
 Selection intToSelection(int);
 bool isExit(Selection);
+bool isZero(int);
 
 #endif // LIB_LABORATORY_H
