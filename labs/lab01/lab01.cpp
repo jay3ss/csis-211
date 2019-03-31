@@ -60,6 +60,7 @@ int main()
                 invalidInputMessage();
                 break;
         }
+    // Keep looping until the user selects EXIT
     } while (!isExit(selection));
 
     return 0;
