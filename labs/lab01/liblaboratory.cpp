@@ -12,7 +12,7 @@ int factorial(int n)
     if (n == 0)
         return 1;
     else
-        // n > 0, so n-1 >= 0. Thus, fact(n-1) returns (n-1)!
+        // n > 0, so n-1 >= 0. Thus, factorial(n-1) returns (n-1)!
         return n * factorial(n - 1); // n * (n-1)! is n!
 }
 
