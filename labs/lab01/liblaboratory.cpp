@@ -114,4 +114,4 @@ Selection intToSelection(int number)
  bool isZero(int num)
  {
      return num == 0;
- } // end isExit
+ } // end isZero
