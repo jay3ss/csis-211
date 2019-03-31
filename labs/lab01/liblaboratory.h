@@ -18,6 +18,11 @@ int hanoi(int, char, char, char);   // solves Towers of Hanoi problem
 // Menu-related functions
 void displayMenu();
 Selection getSelection();
+void factorialSubmenu();
+void hanoiSubmenu();
+void summationSubmenu();
+void exitMessage();
+void invalidInputMessage();
 
 // Convenience functions
 Selection intToSelection(int);
