@@ -51,8 +51,9 @@ int main()
         switch (choice)
         {
             case Choice::FACTORIAL:
-                std::cout << "\nRECURSIVE FACTORIAL\n-------------------\n"
-                          << "Enter a number: ";
+                std::cout << "\nRECURSIVE FACTORIAL"
+                          << "\n-------------------"
+                          << "\nEnter a number: ";
                 std::cin >> number;
                 result = factorial(number);
                 std::cout << "\nThe result of factorial(" << number << ") is "
