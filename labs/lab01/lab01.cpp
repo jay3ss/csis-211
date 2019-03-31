@@ -36,11 +36,6 @@ int main()
     int number;
     int result;
 
-    // The towers for Towers of Hanoi
-    char source = 'A';
-    char destination = 'B';
-    char spare = 'C';
-
     do
     {
         displayMenu();
@@ -50,48 +45,19 @@ int main()
         switch (selection)
         {
             case Selection::FACTORIAL:
-                std::cout << "\nRECURSIVE FACTORIAL"
-                          << "\n-------------------"
-                          << "\nEnter a number: ";
-                std::cin >> number;
-                if (!isZero)
-                {
-                    result = factorial(number);
-                    std::cout << "\nThe result of factorial(" << number << ") is "
-                              << result << "\n\n";
-                }
+                factorialSubmenu();
                 break;
             case Selection::HANOI:
-                std::cout << "\nTOWERS OF HANOI"
-                          << "\n---------------"
-                          << "\nEnter a number: ";
-                std::cin >> number;
-                if (!isZero)
-                {
-                    std::cout << "The solution for Towers of Hanoi with "
-                              << number << " tower(s) is\n\n";
-                    hanoi(number, source, destination, spare);
-                    std::cout << "\n";
-                }
+                hanoiSubmenu();
                 break;
             case Selection::SUMMATION:
-                std::cout << "\nSUMMATION"
-                          << "\n---------"
-                          << "\nEnter a number: ";
-                std::cin >> number;
-                if (!isZero(number))
-                {
-                    result = summation(number);
-                    std::cout << "\nThe result of summation(" << number << ") is "
-                              << result << "\n\n";
-                }
+                summationSubmenu();
                 break;
             case Selection::EXIT:
-                std::cout << "\nYou have chosen EXIT\n"
-                          << "Goodbye!\n";
+                exitMessage();
                 break;
             default:
-                std::cout << "Invalid selection. Please try again.\n\n";
+                invalidInputMessage();
                 break;
         }
     } while (!isExit(selection));
