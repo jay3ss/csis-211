@@ -1,3 +1,7 @@
+// Joshua Saunders
+// CS/IS 211
+// Lab 1
+// Due March 31
 #include <iostream>
 #include <string>
 #include "liblaboratory.h"

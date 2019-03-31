@@ -1,3 +1,7 @@
+// Joshua Saunders
+// CS/IS 211
+// Lab 1
+// Due March 31
 #ifndef LIB_LABORATORY_H
 #define LIB_LABORATORY_H
 
