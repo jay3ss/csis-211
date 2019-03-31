@@ -54,28 +54,37 @@ int main()
                           << "\n-------------------"
                           << "\nEnter a number: ";
                 std::cin >> number;
-                result = factorial(number);
-                std::cout << "\nThe result of factorial(" << number << ") is "
-                          << result << "\n\n";
+                if (!isZero)
+                {
+                    result = factorial(number);
+                    std::cout << "\nThe result of factorial(" << number << ") is "
+                              << result << "\n\n";
+                }
                 break;
             case Selection::HANOI:
                 std::cout << "\nTOWERS OF HANOI"
                           << "\n---------------"
                           << "\nEnter a number: ";
                 std::cin >> number;
-                std::cout << "The solution for Towers of Hanoi with "
-                          << number << " tower(s) is\n\n";
-                hanoi(number, source, destination, spare);
-                std::cout << "\n";
+                if (!isZero)
+                {
+                    std::cout << "The solution for Towers of Hanoi with "
+                              << number << " tower(s) is\n\n";
+                    hanoi(number, source, destination, spare);
+                    std::cout << "\n";
+                }
                 break;
             case Selection::SUMMATION:
                 std::cout << "\nSUMMATION"
                           << "\n---------"
                           << "\nEnter a number: ";
                 std::cin >> number;
-                result = summation(number);
-                std::cout << "\nThe result of summation(" << number << ") is "
-                          << result << "\n\n";
+                if (!isZero(number))
+                {
+                    result = summation(number);
+                    std::cout << "\nThe result of summation(" << number << ") is "
+                              << result << "\n\n";
+                }
                 break;
             case Selection::EXIT:
                 std::cout << "\nYou have chosen EXIT\n"
