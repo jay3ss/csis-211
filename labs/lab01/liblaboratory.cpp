@@ -2,7 +2,7 @@
 #include <string>
 #include "liblaboratory.h"
 
-/** Computes the factorial of the nonnegative integer n.
+/** Computes the factorial of the positive integer n.
  @pre   n: must be greater than or equal to 1.
  @param n: the number to 
  @post  None.
@@ -16,7 +16,9 @@ int factorial(int n)
         return n * factorial(n - 1); // n * (n-1)! is n!
 }
 
-/** Computes the solution to the Towers of Hanoi problem
+/** Computes the solution to the Towers of Hanoi problem. Prints the
+    necessary steps to solve the problem given three towers and a given
+    amount of disks.
  @pre   count: must be greater than or equal to 1.
  @param count: the number of disks
         source: source tower
@@ -33,17 +35,17 @@ int hanoi(int count, char source, char destination, char spare)
     }
     else
     {
-        hanoi(count - 1, source, spare, destination); // X
-        hanoi(1, source, destination, spare);         // Y
-        hanoi(count - 1, spare, destination, source); // Z
+        hanoi(count - 1, source, spare, destination); // A
+        hanoi(1, source, destination, spare);         // B
+        hanoi(count - 1, spare, destination, source); // C
     }
 }
 
-/** Computes the summation of a sequence of nonnegative integers from 0 to n.
+/** Computes the summation of a sequence of positive integers from 1 to n.
  @pre   n: must be greater than or equal to 1.
  @param n: the number to add up to.
  @post  None.
- @return  The summation of a sequence of nonnegative integers from 0 to n;
+ @return  The summation of a sequence of nonnegative integers from 1 to n;
           n is unchanged. */
 int summation(int n)
 {

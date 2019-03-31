@@ -10,9 +10,10 @@ enum class Choice
     EXIT
 };
 
-int factorial(int);
-int summation(int);
-int hanoi(int count, char source, char destination, char spare);
+// Recursive functions
+int factorial(int);                 // calculates factorial
+int summation(int);                 // calculates summation
+int hanoi(int, char, char, char);   // solves Towers of Hanoi problem
 
 // Menu-related functions
 void displayMenu();
