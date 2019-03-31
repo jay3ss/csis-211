@@ -31,7 +31,7 @@
 
 int main()
 {
-    int input;
+    int selection;
     Choice choice;
 
     int number;
@@ -46,8 +46,8 @@ int main()
     {
         displayMenu();
         std::cout << "\n\nEnter a selection: ";
-        std::cin >> input;
-        choice = intToChoice(input);
+        std::cin >> selection;
+        choice = intToChoice(selection);
 
         switch (choice)
         {
