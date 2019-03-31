@@ -95,3 +95,13 @@ Selection intToSelection(int number)
 {
     return static_cast<Selection>(number);
 } // end intToSelection
+
+/** Checks if the user chose to exit.
+ @pre  None
+ @param selection: user selection
+ @post  None.
+ @return  True if is EXIT, false if not. */
+ bool isExit(Selection selection)
+ {
+     return selection == Selection::EXIT;
+ } // end isExit

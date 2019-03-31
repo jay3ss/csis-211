@@ -85,7 +85,7 @@ int main()
                 std::cout << "Invalid selection. Please try again.\n\n";
                 break;
         }
-    } while (selection != Selection::EXIT);
-    
+    } while (!isExit(selection));
+
     return 0;
 } // end main
