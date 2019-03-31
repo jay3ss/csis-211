@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string>
+#include "liblaboratory.h"
+
+/** Computes the factorial of the nonnegative integer n.
+ @pre   n: must be greater than or equal to 1.
+ @param n: the number to 
+ @post  None.
+ @return  The factorial of n; n is unchanged. */
+int factorial(int n)
+{
+    if (n == 0)
+        return 1;
+    else
+        // n > 0, so n-1 >= 0. Thus, fact(n-1) returns (n-1)!
+        return n * factorial(n - 1); // n * (n-1)! is n!
+}
+
+/** Computes the solution to the Towers of Hanoi problem
+ @pre   count: must be greater than or equal to 1.
+ @param count: the number of disks
+        source: source tower
+        destination: destination tower
+        spare: spare tower
+ @post  None.
+ @return The factorial of n; n is unchanged. */
+int hanoi(int count, char source, char destination, char spare)
+{
+    if (count == 1)
+    {
+        std::cout << "Move top disk from pole " << source
+                  << " to pole " << destination << std::endl;
+    }
+    else
+    {
+        hanoi(count - 1, source, spare, destination); // X
+        hanoi(1, source, destination, spare);         // Y
+        hanoi(count - 1, spare, destination, source); // Z
+    }
+}
+
+/** Computes the summation of a sequence of nonnegative integers from 0 to n.
+ @pre   n: must be greater than or equal to 1.
+ @param n: the number to add up to.
+ @post  None.
+ @return  The summation of a sequence of nonnegative integers from 0 to n;
+          n is unchanged. */
+int summation(int n)
+{
+    if (n == 1)
+        return 1;
+    else
+        return n + summation(n - 1);
+}
+
+// Menu-related functions
+/** Displays a menu for the user of the form:
+1. Recursive Factorial
+2. Towers of Hanoi
+3. Recursive summation
+4. Exit
+
+ @pre  None.
+ @param None
+ @post  None.
+ @return  None. */
+void displayMenu()
+{
+    std::string menu = "\
+Please make a choice from the following selection:\n\n\
+1. Recursive Factorial\n\
+2. Towers of Hanoi\n\
+3. Recursive Summation\n\
+4. Exit";
+
+    std::cout << menu;
+}
+
+/** Converts an integer to a Choice type.
+ @pre  number must be an integer between (inclusive of) 1 and 4
+ @param number: the number from the menu
+ @post  None.
+ @return  A Choice type corresponding to the number. */
+Choice intToChoice(int number)
+{
+    return static_cast<Choice>(number);
+}
