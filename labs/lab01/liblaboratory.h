@@ -2,7 +2,7 @@
 #define LIB_LABORATORY_H
 
 // enum for user input the choices available
-enum class Choice
+enum class Selection
 {
     FACTORIAL = 1,
     HANOI,
@@ -17,9 +17,9 @@ int hanoi(int, char, char, char);   // solves Towers of Hanoi problem
 
 // Menu-related functions
 void displayMenu();
-Choice getSelection();
+Selection getSelection();
 
 // 
-Choice intToChoice(int);
+Selection intToSelection(int);
 
 #endif // LIB_LABORATORY_H

@@ -78,20 +78,20 @@ Please make a choice from the following selection:\n\n\
     std::cout << menu;
 } // end displayMenu
 
-Choice getSelection()
+Selection getSelection()
 {
     int selection;
     std::cout << "Enter a selection: ";
     std::cin >> selection;
-    return intToChoice(selection);
+    return intToSelection(selection);
 } // end getSelection
 
-/** Converts an integer to a Choice type.
+/** Converts an integer to a Selection type.
  @pre  number must be an integer between (inclusive of) 1 and 4
  @param number: the number from the menu
  @post  None.
- @return  A Choice type corresponding to the number. */
-Choice intToChoice(int number)
+ @return  A Selection type corresponding to the number. */
+Selection intToSelection(int number)
 {
-    return static_cast<Choice>(number);
-} // end intToChoice
+    return static_cast<Selection>(number);
+} // end intToSelection

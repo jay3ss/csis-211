@@ -31,8 +31,7 @@
 
 int main()
 {
-    int selection;
-    Choice choice;
+    Selection selection;
 
     int number;
     int result;
@@ -46,11 +45,11 @@ int main()
     {
         displayMenu();
         std::cout << "\n\n";
-        choice = getSelection();
+        selection = getSelection();
 
-        switch (choice)
+        switch (selection)
         {
-            case Choice::FACTORIAL:
+            case Selection::FACTORIAL:
                 std::cout << "\nRECURSIVE FACTORIAL"
                           << "\n-------------------"
                           << "\nEnter a number: ";
@@ -59,7 +58,7 @@ int main()
                 std::cout << "\nThe result of factorial(" << number << ") is "
                           << result << "\n\n";
                 break;
-            case Choice::HANOI:
+            case Selection::HANOI:
                 std::cout << "\nTOWERS OF HANOI"
                           << "\n---------------"
                           << "\nEnter a number: ";
@@ -69,7 +68,7 @@ int main()
                 hanoi(number, source, destination, spare);
                 std::cout << "\n";
                 break;
-            case Choice::SUMMATION:
+            case Selection::SUMMATION:
                 std::cout << "\nSUMMATION"
                           << "\n---------"
                           << "\nEnter a number: ";
@@ -78,15 +77,15 @@ int main()
                 std::cout << "\nThe result of summation(" << number << ") is "
                           << result << "\n\n";
                 break;
-            case Choice::EXIT:
+            case Selection::EXIT:
                 std::cout << "\nYou have chosen EXIT\n"
                           << "Goodbye!\n";
                 break;
             default:
-                std::cout << "Invalid choice. Please try again.\n\n";
+                std::cout << "Invalid selection. Please try again.\n\n";
                 break;
         }
-    } while (choice != Choice::EXIT);
+    } while (selection != Selection::EXIT);
     
     return 0;
 } // end main
