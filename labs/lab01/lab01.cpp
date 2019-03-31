@@ -87,4 +87,4 @@ int main()
     } while (choice != Choice::EXIT);
     
     return 0;
-}
+} // end main

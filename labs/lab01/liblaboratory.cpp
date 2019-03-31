@@ -14,7 +14,7 @@ int factorial(int n)
     else
         // n > 0, so n-1 >= 0. Thus, factorial(n-1) returns (n-1)!
         return n * factorial(n - 1); // n * (n-1)! is n!
-}
+} // end factorial
 
 /** Computes the solution to the Towers of Hanoi problem. Prints the
     necessary steps to solve the problem given three towers and a given
@@ -39,7 +39,7 @@ int hanoi(int count, char source, char destination, char spare)
         hanoi(1, source, destination, spare);         // B
         hanoi(count - 1, spare, destination, source); // C
     }
-}
+} // end hanoi
 
 /** Computes the summation of a sequence of positive integers from 1 to n.
  @pre   n: must be greater than or equal to 1.
@@ -53,7 +53,7 @@ int summation(int n)
         return 1;
     else
         return n + summation(n - 1);
-}
+} // end summation
 
 // Menu-related functions
 /** Displays a menu for the user of the form:
@@ -76,7 +76,7 @@ Please make a choice from the following selection:\n\n\
 4. Exit";
 
     std::cout << menu;
-}
+} // end displayMenu
 
 /** Converts an integer to a Choice type.
  @pre  number must be an integer between (inclusive of) 1 and 4
@@ -86,4 +86,4 @@ Please make a choice from the following selection:\n\n\
 Choice intToChoice(int number)
 {
     return static_cast<Choice>(number);
-}
+} // end intToChoice

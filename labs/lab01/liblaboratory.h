@@ -17,6 +17,9 @@ int hanoi(int, char, char, char);   // solves Towers of Hanoi problem
 
 // Menu-related functions
 void displayMenu();
+Choice getSelection();
+
+// 
 Choice intToChoice(int);
 
 #endif // LIB_LABORATORY_H
