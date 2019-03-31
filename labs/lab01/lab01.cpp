@@ -45,9 +45,8 @@ int main()
     do
     {
         displayMenu();
-        std::cout << "\n\nEnter a selection: ";
-        std::cin >> selection;
-        choice = intToChoice(selection);
+        std::cout << "\n\n";
+        choice = getSelection();
 
         switch (choice)
         {

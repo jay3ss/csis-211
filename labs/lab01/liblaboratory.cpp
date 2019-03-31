@@ -78,6 +78,14 @@ Please make a choice from the following selection:\n\n\
     std::cout << menu;
 } // end displayMenu
 
+Choice getSelection()
+{
+    int selection;
+    std::cout << "Enter a selection: ";
+    std::cin >> selection;
+    return intToChoice(selection);
+} // end getSelection
+
 /** Converts an integer to a Choice type.
  @pre  number must be an integer between (inclusive of) 1 and 4
  @param number: the number from the menu
