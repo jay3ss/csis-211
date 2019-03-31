@@ -78,6 +78,16 @@ Please make a choice from the following selection:\n\n\
     std::cout << menu;
 } // end displayMenu
 
+/** Displays a menu for the user of the form:
+1. Recursive Factorial
+2. Towers of Hanoi
+3. Recursive summation
+4. Exit
+
+ @pre  None.
+ @param None
+ @post  None.
+ @return  None. */
 Selection getSelection()
 {
     int selection;
@@ -86,6 +96,111 @@ Selection getSelection()
     return intToSelection(selection);
 } // end getSelection
 
+/** Displays asub menu for the factorial function and then runs
+    the factorial function
+
+ @pre  None.
+ @param None
+ @post  None.
+ @return  None. */
+void factorialSubmenu()
+{
+    int number;
+    int result;
+    std::cout << "\nRECURSIVE FACTORIAL"
+              << "\n-------------------"
+              << "\nEnter a number: ";
+    std::cin >> number;
+    // If number isn't zero, then find the factorial of number.
+    // Otherwise, do nothing.
+    if (!isZero(number))
+    {
+        result = factorial(number);
+        std::cout << "\nThe result of factorial(" << number << ") is "
+                  << result << "\n\n";
+    }
+
+} // end factorialSubmenu
+
+/** Displays a submenu for the hanoi function and then runs
+    the hanoi function
+
+ @pre  None.
+ @param None
+ @post  None.
+ @return  None. */
+void hanoiSubmenu()
+{
+    int number;
+    int result;
+    // The towers for Towers of Hanoi
+    char source = 'A';
+    char destination = 'B';
+    char spare = 'C';
+    std::cout << "\nTOWERS OF HANOI"
+              << "\n---------------"
+              << "\nEnter a number: ";
+    std::cin >> number;
+    if (!isZero(number))
+    {
+        std::cout << "The solution for Towers of Hanoi with "
+                  << number << " tower(s) is\n\n";
+        hanoi(number, source, destination, spare);
+        std::cout << "\n";
+    }
+
+} // end hanoiSubmenu
+
+/** Displays a submenu for the summation function and then runs
+    the summation function
+
+ @pre  None.
+ @param None
+ @post  None.
+ @return  None. */
+void summationSubmenu()
+{
+    int number;
+    int result;
+    std::cout << "\nSUMMATION"
+              << "\n---------"
+              << "\nEnter a number: ";
+    std::cin >> number;
+    if (!isZero(number))
+    {
+        result = summation(number);
+        std::cout << "\nThe result of summation(" << number << ") is "
+                  << result << "\n\n";
+    }
+
+} // end summationSubmenu
+
+/** Displays an exit message:
+
+ @pre  None.
+ @param None
+ @post  None.
+ @return  None. */
+void exitMessage()
+{
+    std::cout << "\nYou have chosen EXIT\n"
+              << "Goodbye!\n";
+
+} // end exitMessage
+
+/** Displays a message indicating an invalid input
+
+ @pre  None.
+ @param None
+ @post  None.
+ @return  None. */
+void invalidInputMessage()
+{
+    std::cout << "Invalid selection. Please try again.\n\n";
+
+} // end invalidInputMessage
+
+// Convenience functions
 /** Converts an integer to a Selection type.
  @pre  number must be an integer between (inclusive of) 1 and 4
  @param number: the number from the menu
