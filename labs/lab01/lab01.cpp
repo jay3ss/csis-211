@@ -60,8 +60,9 @@ int main()
                           << result << "\n\n";
                 break;
             case Choice::HANOI:
-                std::cout << "\nTOWERS OF HANOI\n---------------\n"
-                          << "Enter a number: ";
+                std::cout << "\nTOWERS OF HANOI"
+                          << "\n---------------"
+                          << "\nEnter a number: ";
                 std::cin >> number;
                 std::cout << "The solution for Towers of Hanoi with "
                           << number << " tower(s) is\n\n";
@@ -69,8 +70,9 @@ int main()
                 std::cout << "\n";
                 break;
             case Choice::SUMMATION:
-                std::cout << "\nSUMMATION\n---------\n"
-                          << "Enter a number: ";
+                std::cout << "\nSUMMATION"
+                          << "\n---------"
+                          << "\nEnter a number: ";
                 std::cin >> number;
                 result = summation(number);
                 std::cout << "\nThe result of summation(" << number << ") is "
