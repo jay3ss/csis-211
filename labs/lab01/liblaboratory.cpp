@@ -9,7 +9,7 @@
  @return  The factorial of n; n is unchanged. */
 int factorial(int n)
 {
-    if (n == 0)
+    if (n == 1)
         return 1;
     else
         // n > 0, so n-1 >= 0. Thus, factorial(n-1) returns (n-1)!
