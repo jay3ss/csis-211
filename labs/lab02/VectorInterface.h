@@ -18,17 +18,27 @@ public:
         { numElements = num;
           elements = new T[numElements]; }
 
+    // Copy constructor
+    VectorInterface(const VectorInterface<T>&);
+
     // Destructor
-    ~VectorInterface()
-        { delete [] elements;
-          elements = nullptr; }
+    ~VectorInterface();
+
+    // Operations
+    double norm();
+    VectorInterface normalize();
 
     // Overloaded operators
+    // const VectorInterface<T> operator=(const VectorInterface &);
     void operator=(const VectorInterface &);
     VectorInterface operator+(const VectorInterface &);
+    VectorInterface operator-(const VectorInterface &);
+    VectorInterface operator*(const VectorInterface &);
     T &operator[](const int &);
 
-    friend std::ostream &operator<<(std::ostream &, const VectorInterface&);
+    // For printing
+    template <class friendT>
+    friend std::ostream &operator<<(std::ostream &, const VectorInterface<friendT> &);
 
   private:
     const int DEFAULT_NUM_ELEMS = 3;

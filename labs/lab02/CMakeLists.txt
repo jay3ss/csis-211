@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 3.5.1)
-set(CMAKE_CXX_STANDARD 11)
-project(lab01)
+cmake_minimum_required(VERSION 3.13.1)
+set(CMAKE_CXX_STANDARD 17)
+project(lab02)
 
-set(SET_SOURCES
-    lab02set.cpp
-    Set.h
-)
-add_executable(lab02set ${SET_SOURCES})
+# set(SET_SOURCES
+#     lab02set.cpp
+#     Set.h
+# )
+# add_executable(lab02set ${SET_SOURCES})
 
 # set(MATRIX_SOURCES
 #     lab02matrix.cpp
@@ -15,14 +15,15 @@ add_executable(lab02set ${SET_SOURCES})
 # )
 # add_executable(lab02matrix ${MATRIX_SOURCES})
 
-# set(SET_SOURCES
-#     Set.h
-# )
-# add_executable(lab02set ${SET_SOURCES})
-# target_include_directories(lab02set
-#     PRIVATE 
-#         ${PROJECT_SOURCE_DIR}
-# )
+set(SET_SOURCES
+    lab02set.cpp
+    Set.h
+)
+add_executable(lab02set ${SET_SOURCES})
+target_include_directories(lab02set
+    PRIVATE 
+        ${PROJECT_SOURCE_DIR}
+)
 
 set(VECTOR_SOURCES
     lab02vector.cpp
