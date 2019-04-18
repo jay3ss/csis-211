@@ -48,7 +48,23 @@ public:
     /** Checks if an object is an element to the set
      @param elem the object to be checked if it is an element of the set
      @return true if elem is an element of this set, false if not */
-    bool isElement(const T &elem) { return true; }
+    bool isElement(const T &elem)
+    {
+        // Compare elem to every element in the elements array
+        // and immediately return true if elem matches one of
+        // the elements of the elements array
+        for (int i = 0; i < maxElements; i++)
+        {
+            if (elements[i] == elem)
+            {
+                return true;
+            }
+        }
+
+        // elem didn't match an element in the elements array and therefore
+        // it isn't an element
+        return false;
+    }
 
     /** Returns the the intersection of this set and aSet
      @param aSet the set to check if it is a subset of this set
