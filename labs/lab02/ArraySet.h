@@ -53,7 +53,7 @@ public:
         // Compare elem to every element in the elements array
         // and immediately return true if elem matches one of
         // the elements of the elements array
-        for (int i = 0; i < maxElements; i++)
+        for (int i = 0; i < numElements; i++)
         {
             if (elements[i] == elem)
             {
