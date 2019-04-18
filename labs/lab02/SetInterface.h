@@ -6,33 +6,42 @@ class SetInterface
 {
 public:
     /** Adds an element to the set, if possible
-     @return The integer number of elements in the set */
-    virtual bool add(const T& t) const = 0;
+     @post the element is added to the set and the number of elements is
+        increased by one (if successful)
+     @param elem the object to be added as a new element of the set
+     @return true if the element was added, false if it wasn't */
+    virtual bool add(const T& elem) const = 0;
 
     /** Returns the the intersection of this set and aSet
+     @param aSet the set to form an intersection with this set
      @return The integer number of elements in the set */
-    virtual SetInterface<T> intersection(const SetInterface<T> &aSet) const = 0;
+    virtual SetInterface intersection(const SetInterface &aSet) const = 0;
 
     /** Checks if an object is an element to the set
-     @return The integer number of elements in the set */
-    virtual bool isElement(const T &t) const = 0;
+     @param elem the object to be checked if it is an element of the set
+     @return true if elem is an element of this set, false if not */
+    virtual bool isElement(const T &elem) const = 0;
 
     /** Returns the the intersection of this set and aSet
-     @return The integer number of elements in the set */
-    virtual bool isSubset(const SetInterface<T> &aSet) const = 0;
+     @param aSet the set to check if it is a subset of this set
+     @return true if aSet is a subset of this set, false if not */
+    virtual bool isSubset(const SetInterface &aSet) const = 0;
 
     /** Removes the object from the set, if it is present
-     @return The integer number of elements in the set
-     */
-    virtual bool remove(const T &t) const = 0;
+     @post the element is removed from the set and the number of elements is
+        decreased by one (if successful)
+     @param elem the object to be removed as a new element of the set
+     true if the element was removed, false if it wasn't */
+    virtual bool remove(const T &elem) const = 0;
 
     /** Returns the integer number of elements in the set
      @return The integer number of elements in the set */
     virtual int size() const = 0;
 
     /** Returns the the union of this set and aSet
+     @param aSet the set to form a union with this set
      @return The integer number of elements in the set */
-    virtual SetInterface<T> union(const SetInterface<T>& aSet) const = 0;
+    virtual SetInterface union(const SetInterface& aSet) const = 0;
 };
 
 #endif // _SET_INTERFACE_H
