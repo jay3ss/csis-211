@@ -76,7 +76,28 @@ public:
         decreased by one (if successful)
      @param elem the object to be removed as a new element of the set
      true if the element was removed, false if it wasn't */
-    bool remove(const T &elem) { return false; }
+    bool remove(const T &elem)
+    {
+        // compare each element in the elements array to
+        // elem. If a match is found, set the element at
+        // the matching index to the last element in the
+        // elements array and decrease numElements, and
+        // immediately return true
+        for (int i = 0; i < numElements; i++)
+        {
+            if (elements[i] == elem)
+            {
+                elements[i] = elements[numElements];
+                numElements--;
+
+                return true;
+            }
+        }
+
+        // elem could not be found in the elements array, therefore
+        // return false
+        return false;
+    }
 
     /** Returns the integer number of elements in the set
      @return The integer number of elements in the set */
