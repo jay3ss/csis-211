@@ -2,6 +2,7 @@
 #ifndef _ARRAY_SET_H
 #define _ARRAY_SET_H
 
+#include <iostream>
 #include "SetInterface.h"
 
 template<class T>
@@ -101,8 +102,8 @@ public:
         {
             if (elements[i] == elem)
             {
-                elements[i] = elements[numElements];
                 numElements--;
+                elements[i] = elements[numElements];
 
                 return true;
             }
@@ -140,12 +141,28 @@ public:
         return setVect;
     }
 
+    /** Overloaded << operator to allow printing of ArraySet objects */
+    template <class friendT>
+    friend std::ostream &operator<<(std::ostream &strm, const ArraySet<friendT> &obj);
 private:
     const int DEFAULT_MAX_ELEMENTS = 3;
     T *elements;
     int numElements;
     int maxElements;
 };
+
+template<class friendT>
+std::ostream &operator<<(std::ostream &strm, const ArraySet<friendT> &obj)
+{
+    strm << "{";
+    for (int i = 0; i < obj.numElements - 1; i++)
+    {
+        strm << obj.elements[i] << ", ";
+    }
+
+    strm << obj.elements[obj.numElements - 1] << "}";
+	return strm;
+}
 
 // #include "ArraySet.cpp"
 #endif // _ARRAY_SET_H
