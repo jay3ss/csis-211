@@ -123,7 +123,17 @@ public:
      @return The integer number of elements in the set */
     void unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSet)
     {
-        // NOT IMPLEMENTED
+        // std::vector<T> thisVect = vector();
+        std::vector<T> aVector = aSet.vector();
+        for (auto const &aElem : aVector)
+        {
+            unionSet.add(aElem);
+        }
+
+        for (int i = 0; i < numElements; i++)
+        {
+            unionSet.add(elements[i]);
+        }
     }
 
     /** Returns all of the elements in the set as a vector
