@@ -110,6 +110,22 @@ public:
     {
         // NOT IMPLEMENTED
     }
+
+    /** Returns all of the elements in the set as a vector
+     @return a vector containing the elements of the set
+    */
+    std::vector<T> vector() const
+    {
+        std::vector<T> setVect;
+
+        for (int i = 0; i < numElements; i++)
+        {
+            setVect.push_back(elements[i]);
+        }
+
+        return setVect;
+    }
+
 private:
     const int DEFAULT_MAX_ELEMENTS = 3;
     T *elements;

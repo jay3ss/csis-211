@@ -1,6 +1,9 @@
 /** @file SetInterface.h */
 #ifndef _SET_INTERFACE_H
 #define _SET_INTERFACE_H
+
+#include <vector>
+
 template<class T>
 class SetInterface
 {
@@ -44,6 +47,11 @@ public:
      @param aSet the set to form a union with this set
      @return The integer number of elements in the set */
     virtual void unionSet(const SetInterface &aSet, SetInterface &unionSet) = 0;
+
+    /** Returns all of the elements in the set as a vector
+     @return a vector containing the elements of the set
+    */
+    virtual std::vector<T> vector() const = 0;
 };
 
 #endif // _SET_INTERFACE_H
