@@ -69,7 +69,21 @@ public:
     /** Returns the the intersection of this set and aSet
      @param aSet the set to check if it is a subset of this set
      @return true if aSet is a subset of this set, false if not */
-    bool isSubset(const SetInterface<T> &aSet) { return false; }
+    bool isSubset(const SetInterface<T> &aSet)
+    {
+        std::vector<T> aVector = aSet.vector();
+        // std::vector<T> thisVector = vector();
+
+        for (auto const &aElem : aVector)
+        {
+            if (!isElement(aElem))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     /** Removes the object from the set, if it is present
      @post the element is removed from the set and the number of elements is
