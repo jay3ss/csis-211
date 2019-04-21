@@ -73,6 +73,10 @@ public:
     {
         std::vector<T> aVector = aSet.vector();
 
+        // Cycle through each element in aVector and check if each one is in
+        // this set. If it is, then aSet is a subset. If any element of aSet is
+        // not in this set, then aSet is not a subset of this set and return
+        // false immediately.
         for (auto const &aElem : aVector)
         {
             if (!isElement(aElem))
@@ -117,10 +121,10 @@ public:
 
     /** Returns the the union of this set and aSet
      @param aSet the set to form a union with this set
-     @return The integer number of elements in the set */
+     @return The ArraySet (unionSet) containing the union of this set and
+        aSet */
     void unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSet)
     {
-        // std::vector<T> thisVect = vector();
         std::vector<T> aVector = aSet.vector();
         for (auto const &aElem : aVector)
         {
@@ -134,7 +138,7 @@ public:
     }
 
     /** Returns all of the elements in the set as a vector
-     @return a vector containing the elements of the set */
+     @return A vector containing the elements of the set */
     std::vector<T> vector() const
     {
         std::vector<T> setVect;
@@ -147,7 +151,10 @@ public:
         return setVect;
     }
 
-    /** Overloaded << operator to allow printing of ArraySet objects */
+    /** Overloaded << operator to allow easy printing of ArraySet objects
+     @param strm Reference to the ostream object
+            obj Reference to the ArraySet object that's being printed
+     @return The  ostream object (strm) */
     template <class friendT>
     friend std::ostream &operator<<(std::ostream &strm, const ArraySet<friendT> &obj);
 private:
