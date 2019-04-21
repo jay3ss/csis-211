@@ -49,8 +49,7 @@ public:
     virtual void unionSet(const SetInterface &aSet, SetInterface &unionSet) = 0;
 
     /** Returns all of the elements in the set as a vector
-     @return a vector containing the elements of the set
-    */
+     @return A vector containing the elements of the set */
     virtual std::vector<T> vector() const = 0;
 };
 
