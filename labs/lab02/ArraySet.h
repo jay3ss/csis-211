@@ -36,25 +36,7 @@ public:
         set and aSet.
      @return The ArraySet (interSet) containing the intersection of this set
         and aSet */
-    void intersection(const SetInterface<T> &aSet, SetInterface<T> &interSet)
-    {
-        // Get the vector from aSet (aVector) and iterate through each element
-        // in the vector. Compare each element in aVect and compare it to every
-        // element in the elements array to find duplicates. Add all of the
-        // duplicates to the intersection set (interSet) and this is the
-        // intersection between this set and aSet.
-        std::vector<T> aVector = aSet.vector();
-        for (auto const &aElem : aVector)
-        {
-            for (int i = 0; i < numElements; i++)
-            {
-                if (aElem == elements[i])
-                {
-                    interSet.add(aElem);
-                }
-            }
-        }
-    }
+    void intersection(const SetInterface<T> &aSet, SetInterface<T> &interSet);
 
     /** Checks if an object is an element to the set
      @param elem The object to be checked if it is an element of the set
@@ -185,6 +167,7 @@ private:
     int maxElements;
 };
 
+// Adds an element to the set, if possible
 template<class T>
 bool ArraySet<T>::add(const T &elem)
 {
@@ -196,6 +179,27 @@ bool ArraySet<T>::add(const T &elem)
     }
 
     return canAdd;
+}
+
+template <class T>
+void ArraySet<T>::intersection(const SetInterface<T> &aSet, SetInterface<T> &interSet)
+{
+    // Get the vector from aSet (aVector) and iterate through each element
+    // in the vector. Compare each element in aVect and compare it to every
+    // element in the elements array to find duplicates. Add all of the
+    // duplicates to the intersection set (interSet) and this is the
+    // intersection between this set and aSet.
+    std::vector<T> aVector = aSet.vector();
+    for (auto const &aElem : aVector)
+    {
+        for (int i = 0; i < numElements; i++)
+        {
+            if (aElem == elements[i])
+            {
+                interSet.add(aElem);
+            }
+        }
+    }
 }
 
 template<class friendT>
