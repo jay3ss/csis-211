@@ -10,34 +10,21 @@ class ArraySet : public SetInterface<T>
 {
 public:
     ArraySet() : numElements(0), maxElements(DEFAULT_MAX_ELEMENTS)
-    {
-        elements = new T[maxElements];
-    }
+    { elements = new T[maxElements]; }
+
     ArraySet(const int setSize) : numElements(0), maxElements(setSize)
-    {
-        elements = new T[maxElements];
-    }
+    { elements = new T[maxElements]; }
+
     ~ArraySet()
-    {
-        delete [] elements;
-        elements = nullptr;
-    }
+    { delete [] elements;
+      elements = nullptr; }
+
     /** Adds an element to the set, if possible
      @post The element is added to the set and the number of elements is
         increased by one (if successful)
      @param elem The object to be added as a new element of the set
      @return true if the element was added, false if it wasn't */
-    bool add(const T &elem)
-    {
-        bool canAdd = (numElements < maxElements) && !isElement(elem);
-        if (canAdd)
-        {
-            elements[numElements] = elem;
-            numElements++;
-        }
-
-        return canAdd;
-    }
+    bool add(const T &elem);
 
     /** Returns the intersection of this set and aSet
      @pre The parameter interSet's size must be large enough to accommodate
@@ -197,6 +184,19 @@ private:
     int numElements;
     int maxElements;
 };
+
+template<class T>
+bool ArraySet<T>::add(const T &elem)
+{
+    bool canAdd = (numElements < maxElements) && !isElement(elem);
+    if (canAdd)
+    {
+        elements[numElements] = elem;
+        numElements++;
+    }
+
+    return canAdd;
+}
 
 template<class friendT>
 std::ostream &operator<<(std::ostream &strm, const ArraySet<friendT> &obj)
