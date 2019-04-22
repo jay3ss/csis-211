@@ -181,6 +181,7 @@ bool ArraySet<T>::add(const T &elem)
     return canAdd;
 }
 
+// Returns the intersection of this set and aSet
 template <class T>
 void ArraySet<T>::intersection(const SetInterface<T> &aSet, SetInterface<T> &interSet)
 {
