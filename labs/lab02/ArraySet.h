@@ -73,17 +73,7 @@ public:
 
     /** Returns all of the elements in the set as a vector
      @return A vector containing the elements of the set */
-    std::vector<T> vector() const
-    {
-        std::vector<T> setVect;
-
-        for (int i = 0; i < numElements; i++)
-        {
-            setVect.push_back(elements[i]);
-        }
-
-        return setVect;
-    }
+    std::vector<T> vector() const;
 
     /** Overloaded << operator to allow easy printing of ArraySet objects
      @param strm Reference to the ostream object
@@ -217,6 +207,20 @@ void ArraySet<T>::unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSe
     {
         unionSet.add(elements[i]);
     }
+}
+
+// Returns all of the elements in the set as a vector
+template <class T>
+std::vector<T> ArraySet<T>::vector() const
+{
+    std::vector<T> setVect;
+
+    for (int i = 0; i < numElements; i++)
+    {
+        setVect.push_back(elements[i]);
+    }
+
+    return setVect;
 }
 
 template<class friendT>
