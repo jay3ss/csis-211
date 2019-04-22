@@ -46,53 +46,14 @@ public:
     /** Returns the the intersection of this set and aSet
      @param aSet the set to check if it is a subset of this set
      @return true if aSet is a subset of this set, false if not */
-    bool isSubset(const SetInterface<T> &aSet)
-    {
-        std::vector<T> aVector = aSet.vector();
-
-        // Cycle through each element in aVector and check if each one is in
-        // this set. If it is, then aSet is a subset. If any element of aSet is
-        // not in this set, then aSet is not a subset of this set and return
-        // false immediately.
-        for (auto const &aElem : aVector)
-        {
-            if (!isElement(aElem))
-            {
-                return false;
-            }
-        }
-
-        // Every element of aSet is in this set, therefore, aSet is a subset of
-        // this set. So, return true
-        return true;
-    }
+    bool isSubset(const SetInterface<T> &aSet);
 
     /** Removes the object from the set, if it is present
      @post The element is removed from the set and the number of elements is
         decreased by one (if successful)
      @param elem The object to be removed from the set
      @return true if the element was removed, false if it wasn't */
-    bool remove(const T &elem)
-    {
-        // Compare each element in the elements array to elem. If a match is
-        // found, set the element at the matching index to the last element in
-        // the elements array and decrease numElements, and immediately return
-        // true
-        for (int i = 0; i < numElements; i++)
-        {
-            if (elements[i] == elem)
-            {
-                numElements--;
-                elements[i] = elements[numElements];
-
-                return true;
-            }
-        }
-
-        // elem could not be found in the elements array, therefore return
-        // false
-        return false;
-    }
+    bool remove(const T &elem);
 
     /** Returns the integer number of elements in the set
      @return The integer number of elements in the set */
@@ -204,6 +165,53 @@ bool ArraySet<T>::isElement(const T &elem)
 
     // elem didn't match an element in the elements array and therefore
     // it isn't an element and return false
+    return false;
+}
+
+// Returns the the intersection of this set and aSet
+template <class T>
+bool ArraySet<T>::isSubset(const SetInterface<T> &aSet)
+{
+    std::vector<T> aVector = aSet.vector();
+
+    // Cycle through each element in aVector and check if each one is in
+    // this set. If it is, then aSet is a subset. If any element of aSet is
+    // not in this set, then aSet is not a subset of this set and return
+    // false immediately.
+    for (auto const &aElem : aVector)
+    {
+        if (!isElement(aElem))
+        {
+            return false;
+        }
+    }
+
+    // Every element of aSet is in this set, therefore, aSet is a subset of
+    // this set. So, return true
+    return true;
+}
+
+// Removes the object from the set, if it is present
+template <class T>
+bool ArraySet<T>::remove(const T &elem)
+{
+    // Compare each element in the elements array to elem. If a match is
+    // found, set the element at the matching index to the last element in
+    // the elements array and decrease numElements, and immediately return
+    // true
+    for (int i = 0; i < numElements; i++)
+    {
+        if (elements[i] == elem)
+        {
+            numElements--;
+            elements[i] = elements[numElements];
+
+            return true;
+        }
+    }
+
+    // elem could not be found in the elements array, therefore return
+    // false
     return false;
 }
 
