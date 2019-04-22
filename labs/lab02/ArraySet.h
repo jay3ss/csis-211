@@ -69,21 +69,7 @@ public:
         and aSet.
      @return The ArraySet (unionSet) containing the union of this set and
         aSet */
-    void unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSet)
-    {
-        // Go through each this set and aSet and each the elements from each to
-        // unionSet (the union of both this set and aSet)
-        std::vector<T> aVector = aSet.vector();
-        for (auto const &aElem : aVector)
-        {
-            unionSet.add(aElem);
-        }
-
-        for (int i = 0; i < numElements; i++)
-        {
-            unionSet.add(elements[i]);
-        }
-    }
+    void unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSet);
 
     /** Returns all of the elements in the set as a vector
      @return A vector containing the elements of the set */
@@ -213,6 +199,24 @@ bool ArraySet<T>::remove(const T &elem)
     // elem could not be found in the elements array, therefore return
     // false
     return false;
+}
+
+// Returns the union of this set and aSet
+template <class T>
+void ArraySet<T>::unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSet)
+{
+    // Go through each this set and aSet and each the elements from each to
+    // unionSet (the union of both this set and aSet)
+    std::vector<T> aVector = aSet.vector();
+    for (auto const &aElem : aVector)
+    {
+        unionSet.add(aElem);
+    }
+
+    for (int i = 0; i < numElements; i++)
+    {
+        unionSet.add(elements[i]);
+    }
 }
 
 template<class friendT>
