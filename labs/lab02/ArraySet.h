@@ -157,7 +157,8 @@ public:
         aSet */
     void unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSet)
     {
-        // Go through
+        // Go through each this set and aSet and each the elements from each to
+        // unionSet (the union of both this set and aSet)
         std::vector<T> aVector = aSet.vector();
         for (auto const &aElem : aVector)
         {
