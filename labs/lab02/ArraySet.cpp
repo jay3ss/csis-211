@@ -4,9 +4,14 @@
 template <class T>
 bool ArraySet<T>::add(const T &elem)
 {
+    // Can the element be added? If there are less elements than the maximum
+    // allowed AND the element isn't already in the set, then the element can
+    // be added to the set. If either of those aren't true, then the element
+    // can't be added
     bool canAdd = (numElements < maxElements) && !isElement(elem);
     if (canAdd)
     {
+        // Add the element and increase the number of elements in the set
         elements[numElements] = elem;
         numElements++;
     }
@@ -107,7 +112,7 @@ bool ArraySet<T>::remove(const T &elem)
 template <class T>
 void ArraySet<T>::unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSet)
 {
-    // Go through each this set and aSet and each the elements from each to
+    // Go through this set and aSet and add the elements from each to
     // unionSet (the union of both this set and aSet)
     std::vector<T> aVector = aSet.vector();
     for (auto const &aElem : aVector)
@@ -125,6 +130,8 @@ void ArraySet<T>::unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSe
 template <class T>
 std::vector<T> ArraySet<T>::vector() const
 {
+    // Create a vector, push each element in the elements array to the vector,
+    // and then return the vector
     std::vector<T> setVect;
 
     for (int i = 0; i < numElements; i++)
@@ -138,6 +145,10 @@ std::vector<T> ArraySet<T>::vector() const
 template <class friendT>
 std::ostream &operator<<(std::ostream &strm, const ArraySet<friendT> &obj)
 {
+    // Enter the elements to the osftream object (strm) so that the set will be
+    // printed in the following format:
+    // { elem1, elem2, ..., elemN}
+    // where each elemI is an element in the elements array
     strm << "{";
     for (int i = 0; i < obj.numElements - 1; i++)
     {
