@@ -16,11 +16,20 @@ project(lab02)
 # add_executable(lab02matrix ${MATRIX_SOURCES})
 
 set(ARRAY_SET_SOURCES
-    lab02arrayset.cpp
     SetInterface.h
     ArraySet.h
 )
-add_executable(lab02arrayset ${ARRAY_SET_SOURCES})
+add_executable(lab02arrayset
+    lab02arrayset.cpp
+    ${ARRAY_SET_SOURCES})
+target_include_directories(lab02arrayset
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}
+)
+
+add_executable(arraysettest
+    arraySetTest.cpp
+    ${ARRAY_SET_SOURCES})
 target_include_directories(lab02arrayset
     PRIVATE
         ${PROJECT_SOURCE_DIR}
