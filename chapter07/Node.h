@@ -12,7 +12,7 @@ public:
     Node(const T& item);
     Node(const T& item, Node<T>* nextNodePtr);
     void setItem(const T& anItem);
-    void setNext(const Node<T>* nextNodePtr);
+    void setNext(Node<T>* nextNodePtr);
     T getItem() const;
     Node<T>* getNext() const;
 };
