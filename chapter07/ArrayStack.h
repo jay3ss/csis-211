@@ -19,4 +19,5 @@ public:
     T peek();
 };
 
+#include "ArrayStack.cpp"
 #endif // _ARRAY_STACK_H
