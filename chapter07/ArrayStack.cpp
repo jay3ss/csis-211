@@ -34,3 +34,11 @@ bool ArrayStack<T>::pop()
 
     return canPop;
 }
+
+template<class T>
+T ArrayStack<T>::peek() const
+{
+    // Enforce precondition that the stack not be empty to peek
+    assert(!isEmpty());
+    return items[top];
+}
