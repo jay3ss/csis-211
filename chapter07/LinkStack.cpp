@@ -49,3 +49,13 @@ LinkStack<T>::~LinkStack()
         pop();
     }
 }
+
+template<class T>
+bool LinkStack<T>::push(const T& newItem)
+{
+    Node<T>* newNodePtr = new Node<T>(newItem, topPtr);
+    topPtr = newNodePtr;
+    newNodePtr = nullptr;
+
+    return true;
+}
