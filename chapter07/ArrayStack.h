@@ -8,7 +8,15 @@ const int MAX_STACK = 1000; // maximum size of the
 template<class T>
 class ArrayStack : public StackInterface
 {
-
+private:
+    T   items[MAX_STACK];
+    int top;
+public:
+    ArrayStack();
+    bool isEmpty();
+    bool push(const T& newItem);
+    bool pop();
+    T peek();
 };
 
 #endif // _ARRAY_STACK_H
