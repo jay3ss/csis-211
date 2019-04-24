@@ -13,10 +13,10 @@ private:
     int top;
 public:
     ArrayStack();
-    bool isEmpty();
+    bool isEmpty() const;
     bool push(const T& newItem);
     bool pop();
-    T peek();
+    T peek() const;
 };
 
 #include "ArrayStack.cpp"
