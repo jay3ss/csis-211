@@ -6,7 +6,7 @@
 const int MAX_STACK = 1000; // maximum size of the
 
 template<class T>
-class ArrayStack : public StackInterface
+class ArrayStack : public StackInterface<T>
 {
 private:
     T   items[MAX_STACK];
