@@ -18,7 +18,7 @@ public:
 
 // Stack operations
     bool isEmpty() const;
-    bool push(const T newItem);
+    bool push(const T& newItem);
     bool pop();
     T peek() const;
 };
