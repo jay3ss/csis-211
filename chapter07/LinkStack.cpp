@@ -59,3 +59,21 @@ bool LinkStack<T>::push(const T& newItem)
 
     return true;
 }
+template<class T>
+bool LinkStack<T>::pop()
+{
+    bool canPop = !isEmpty();
+    if (canPop)
+    {
+        // Delete the top of the stack
+        Node<T> *nodeToDelete = topPtr;
+        topPtr = topPtr->getNext();
+
+        // Return deleted node to the system
+        nodeToDelete->setNext(nullptr);
+        delete nodeToDelete;
+        nodeToDelete = nullptr;
+    }
+
+    return canPop;
+}
