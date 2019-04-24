@@ -55,6 +55,7 @@ bool LinkStack<T>::push(const T& newItem)
 {
     Node<T>* newNodePtr = new Node<T>(newItem, topPtr);
     topPtr = newNodePtr;
+    delete newNodePtr;
     newNodePtr = nullptr;
 
     return true;
