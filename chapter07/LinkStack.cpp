@@ -78,3 +78,12 @@ bool LinkStack<T>::pop()
 
     return canPop;
 }
+
+template<class T>
+T LinkStack<T>::peek() const
+{
+    // Enfore precondition that the stack isn't empty
+    assert(!isEmpty());
+
+    return topPtr->getNext();
+}
