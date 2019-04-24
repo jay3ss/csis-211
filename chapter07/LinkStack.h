@@ -4,9 +4,22 @@
 #include "StackInterface.h"
 
 template<class T>
-class LinkStack : public StackInterface
+class LinkStack : public StackInterface<T>
 {
+private:
+    T* topPtr;
 
+public:
+// Constructors and destructor
+    LinkStack();
+    LinkStack(const LinkStack<T>& aStack);
+    virtual ~LinkStack();
+
+// Stack operations
+    bool isEmpty() const;
+    bool push(const T newItem);
+    bool pop();
+    T peek() const;
 };
 
 #include "LinkStack.cpp"
