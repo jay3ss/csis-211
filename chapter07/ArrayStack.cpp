@@ -22,3 +22,15 @@ bool ArrayStack<T>::push(const T& newItem)
 
     return canPush;
 }
+
+template<class T>
+bool ArrayStack<T>::pop()
+{
+    bool canPop = !isEmpty():
+    if (canPop)
+    {
+        top--;
+    }
+
+    return canPop;
+}
