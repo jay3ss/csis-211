@@ -1,13 +1,14 @@
 #ifndef _LINK_STACK_H
 #define _LINK_STACK_H
 
+#include "Node.h"
 #include "StackInterface.h"
 
 template<class T>
 class LinkStack : public StackInterface<T>
 {
 private:
-    T* topPtr;
+    Node<T>* topPtr;
 
 public:
 // Constructors and destructor
