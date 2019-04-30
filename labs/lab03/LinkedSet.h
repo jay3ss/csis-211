@@ -10,7 +10,7 @@ class LinkedSet: public SetInterface<T>
 {
 public:
     /** Default Constructor */
-    LinkedSet(Node<T> *h = nullptr, const int numEl = 0) :
+    LinkedSet(const Node<T> *h = nullptr, const int numEl = 0) :
         head(h), numElements(numEl) {}
 
     /** Destructor */
