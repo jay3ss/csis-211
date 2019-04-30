@@ -81,6 +81,28 @@ std::vector<T> LinkedSet<T>::vector() const
     return std::vector<T>();
 }
 
+template<class T>
+Node<T>* LinkedSet<T>::getPointerTo(const T &elem) const
+{
+    Node<T>* currNodePtr = head;
+    int count = 0;
+
+    while (currNodePtr != nullptr && count < numElements)
+    {
+        if (currNodePtr->getItem() == elem)
+        {
+            return currNodePtr;
+        }
+        else
+        {
+            currNodePtr = currNodePtr->getNext();
+        }
+        count++;
+    }
+
+    return currNodePtr;
+}
+
 template <class friendT>
 std::ostream &operator<<(std::ostream &strm, const LinkedSet<friendT> &obj)
 {
