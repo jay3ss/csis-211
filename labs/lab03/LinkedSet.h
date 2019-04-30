@@ -1,6 +1,7 @@
 #ifndef _LINKED_SET_H
 #define _LINKED_SET_H
 
+#include <iostream>
 #include "Node.h"
 #include "SetInterface.h"
 
@@ -53,6 +54,13 @@ public:
     /** Returns all of the elements in the set as a vector
     @return A vector containing the elements of the set */
     std::vector<T> vector() const {}
+
+    /** Overloaded << operator to allow easy printing of LinkedSet objects
+     @param strm Reference to the ostream object
+            obj Reference to the LinkedSet object that's being printed
+     @return The  ostream object (strm) */
+    template <class friendT>
+    friend std::ostream &operator<<(std::ostream &strm, const LinkedSet<friendT> &obj);
 };
 
 #include "LinkedSet.cpp"
