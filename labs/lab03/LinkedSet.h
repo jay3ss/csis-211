@@ -9,8 +9,9 @@ template<class T>
 class LinkedSet: public SetInterface<T>
 {
 public:
-    /** Constructor */
-    LinkedSet() {}
+    /** Default Constructor */
+    LinkedSet(Node<T> *h = nullptr, const int numEl = 0) :
+        head(h), numElements(numEl) {}
 
     /** Destructor */
     ~LinkedSet(){}
