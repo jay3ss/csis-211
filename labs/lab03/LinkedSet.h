@@ -47,7 +47,7 @@ public:
 
     /** Returns the integer number of elements in the set
     @return The integer number of elements in the set */
-    int size() const {}
+    int size() const { return numElements; }
 
     /** Returns the the union of this set and aSet
     @param aSet the set to form a union with this set
