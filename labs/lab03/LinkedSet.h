@@ -60,9 +60,9 @@ public:
     std::vector<T> vector() const { return std::vector<T>(); }
 
     /** Overloaded << operator to allow easy printing of LinkedSet objects
-     @param strm Reference to the ostream object
-            obj Reference to the LinkedSet object that's being printed
-     @return The  ostream object (strm) */
+    @param strm Reference to the ostream object
+        obj Reference to the LinkedSet object that's being printed
+    @return The  ostream object (strm) */
     template <class friendT>
     friend std::ostream &operator<<(std::ostream &strm, const LinkedSet<friendT> &obj);
 private:
