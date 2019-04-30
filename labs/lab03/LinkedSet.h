@@ -2,6 +2,7 @@
 #define _LINKED_SET_H
 
 #include <iostream>
+#include <vector>
 #include "Node.h"
 #include "SetInterface.h"
 
@@ -10,7 +11,7 @@ class LinkedSet: public SetInterface<T>
 {
 public:
     /** Default Constructor */
-    LinkedSet(const Node<T> *h = nullptr, const int numEl = 0) :
+    LinkedSet(Node<T> *h = nullptr, const int numEl = 0) :
         head(h), numElements(numEl) {}
 
     /** Destructor */
@@ -21,7 +22,7 @@ public:
       increased by one (if successful)
    @param elem the object to be added as a new element of the set
    @return true if the element was added, false if it wasn't */
-    bool add(const T &elem) {}
+    bool add(const T &elem) { return false; }
 
     /** Returns the the intersection of this set and aSet
     @param aSet the set to form an intersection with this set
@@ -31,19 +32,19 @@ public:
     /** Checks if an object is an element to the set
     @param elem the object to be checked if it is an element of the set
    @return true if elem is an element of this set, false if not */
-    bool isElement(const T &elem) {}
+    bool isElement(const T &elem) { return false; }
 
     /** Returns the the intersection of this set and aSet
     @param aSet the set to check if it is a subset of this set
    @return true if aSet is a subset of this set, false if not */
-    bool isSubset(const SetInterface<T> &aSet) {}
+    bool isSubset(const SetInterface<T> &aSet) { return false; }
 
     /** Removes the object from the set, if it is present
     @post the element is removed from the set and the number of elements is
       decreased by one (if successful)
    @param elem the object to be removed as a new element of the set
    true if the element was removed, false if it wasn't */
-    bool remove(const T &elem) {}
+    bool remove(const T &elem) { return false; }
 
     /** Returns the integer number of elements in the set
     @return The integer number of elements in the set */
@@ -56,7 +57,7 @@ public:
 
     /** Returns all of the elements in the set as a vector
     @return A vector containing the elements of the set */
-    std::vector<T> vector() const {}
+    std::vector<T> vector() const { return std::vector<T>(); }
 
     /** Overloaded << operator to allow easy printing of LinkedSet objects
      @param strm Reference to the ostream object
