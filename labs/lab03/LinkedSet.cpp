@@ -10,7 +10,15 @@ LinkedSet<T>::~LinkedSet()
 template <class T>
 bool LinkedSet<T>::add(const T &elem)
 {
-    return false;
+    // Create a new node of type T and instantiate it
+    // with the element to be added and the head pointer.
+    // Don't forget to increase the count of the number of
+    // elements in the set
+    Node<T>* toAdd = new Node<T>(elem, head);
+    head = toAdd;
+    numElements++;
+
+    return true;
 }
 
 // Returns the intersection of this set and aSet
