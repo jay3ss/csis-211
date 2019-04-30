@@ -63,6 +63,11 @@ public:
      @return The  ostream object (strm) */
     template <class friendT>
     friend std::ostream &operator<<(std::ostream &strm, const LinkedSet<friendT> &obj);
+private:
+    Node<T>* head;      // Pointer to the first node
+    int numElements;    // Current number of elements in the set
+
+    Node<T>* getPointerTo(const T &elem) const;
 };
 
 #include "LinkedSet.cpp"
