@@ -9,10 +9,12 @@ template<class T>
 class LinkedSet: public SetInterface<T>
 {
 public:
+    /** Constructor */
     LinkedSet() {}
 
     /** Destructor */
     ~LinkedSet(){}
+
     /** Adds an element to the set, if possible
     @post the element is added to the set and the number of elements is
       increased by one (if successful)
