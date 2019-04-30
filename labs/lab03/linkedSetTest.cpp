@@ -9,21 +9,21 @@ int main()
 {
      LinkedSet<int> intLS;
 
-         cout << "Testing the Linked-based Set:\n"
-              << "---------------------------\n\n"
-              << "The initial set is empty.\n";
+     cout << "Testing the Linked-based Set:\n"
+          << "---------------------------\n\n"
+          << "The initial set is empty.\n";
 
-         cout << "size(): returns " << intLS.size()
-              << "; should be 0\n\n";
+     cout << "size(): returns " << intLS.size()
+          << "; should be 0\n\n";
 
-         cout << "Add 5 elements to the set:\n";
+     cout << "Add 5 elements to the set:\n";
 
-         for (int i = 0; i < 5; i++)
-         {
-             intLS.add(i);
-         }
-         cout << "size(): returns " << intLS.size()
-              << "; should be 5\n\n";
+     for (int i = 0; i < 5; i++)
+     {
+          intLS.add(i);
+     }
+     cout << "size(): returns " << intLS.size()
+          << "; should be 5\n\n";
 
      //     cout << "isElement(\"This\"): returns " << intLS.isElement(3)
      //          << "; should be 1 (true)\n\n";
