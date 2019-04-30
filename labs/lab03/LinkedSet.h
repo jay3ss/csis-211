@@ -32,7 +32,7 @@ public:
     /** Checks if an object is an element to the set
     @param elem the object to be checked if it is an element of the set
     @return true if elem is an element of this set, false if not */
-    bool isElement(const T &elem);
+    bool isElement(const T &elem) const;
 
     /** Returns the the intersection of this set and aSet
     @param aSet the set to check if it is a subset of this set

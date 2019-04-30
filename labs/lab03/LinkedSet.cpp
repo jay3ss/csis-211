@@ -29,7 +29,7 @@ void LinkedSet<T>::intersection(const SetInterface<T> &aSet, SetInterface<T> &in
 
 // Checks if an object is an element to the set
 template <class T>
-bool LinkedSet<T>::isElement(const T &elem)
+bool LinkedSet<T>::isElement(const T &elem) const
 {
     return false;
 }
