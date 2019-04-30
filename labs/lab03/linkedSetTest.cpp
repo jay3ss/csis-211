@@ -25,11 +25,11 @@ int main()
      cout << "size(): returns " << intLS.size()
           << "; should be 5\n\n";
 
-     //     cout << "isElement(\"This\"): returns " << intLS.isElement(3)
-     //          << "; should be 1 (true)\n\n";
+     cout << "isElement(\"This\"): returns " << intLS.isElement(3)
+          << "; should be 1 (true)\n\n";
 
-     //     cout << "isElement(\"C++\"): returns " << intLS.isElement(10)
-     //          << "; should be 0 (false)\n\n";
+     cout << "isElement(\"C++\"): returns " << intLS.isElement(10)
+          << "; should be 0 (false)\n\n";
 
      //     cout << "Create a new set that is a subset:\n";
 
