@@ -31,7 +31,17 @@ int main()
      cout << "isElement(10): returns " << intLS.isElement(10)
           << "; should be 0 (false)\n\n";
 
-     cout << "intLS = " << intLS << endl;
+     cout << "intLS = " << intLS << "\n\n";
+
+     cout << "Remove an element from the set:\n";
+
+     cout << "remove(2): returns " << intLS.remove(2)
+          << "; should return 1 (true)\n\n";
+
+     cout << "isElement(2): returns " << intLS.isElement(2)
+          << "; should return 0 (false)\n\n";
+
+     cout << "intLS = " << intLS << "\n\n";
 
      //     cout << "Create a new set that is a subset:\n";
 
