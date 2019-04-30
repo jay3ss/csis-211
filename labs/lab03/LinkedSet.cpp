@@ -86,7 +86,19 @@ std::ostream &operator<<(std::ostream &strm, const LinkedSet<friendT> &obj)
 {
     // Enter the elements to the osftream object (strm) so that the set will be
     // printed in the following format:
-    // { elem1, elem2, ..., elemN}
+    // {elem1, elem2, ..., elemN}
     // where each elemI is an element in the elements array
+    strm << "{";
+    Node<friendT>* currNodePtr = obj.head;
+    int count = 0;
+
+    while (currNodePtr != nullptr && count < (obj.numElements - 1))
+    {
+        strm << currNodePtr->getItem() << ", ";
+        currNodePtr = currNodePtr->getNext();
+        count++;
+    }
+
+    strm << currNodePtr->getItem() << "}";
     return strm;
 }
