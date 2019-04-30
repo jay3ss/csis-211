@@ -8,14 +8,13 @@ using namespace std;
 int main()
 {
      LinkedSet<int> intLS;
-     //     ArraySet<string> set1(7);
 
-     //     cout << "Testing the Array-based Set:\n"
-     //          << "---------------------------\n\n"
-     //          << "The initial set is empty.\n";
+         cout << "Testing the Linked-based Set:\n"
+              << "---------------------------\n\n"
+              << "The initial set is empty.\n";
 
-     //     cout << "size(): returns " << set1.size()
-     //          << "; should be 0\n\n";
+         cout << "size(): returns " << intLS.size()
+              << "; should be 0\n\n";
 
      //     cout << "Add 5 elements to the set:\n";
 
