@@ -4,6 +4,23 @@
 template<class T>
 LinkedSet<T>::~LinkedSet()
 {
+    // Create a temporary Node pointer to hold the head pointer.
+    Node<T>* tempHeadPtr = nullptr;
+    while (head != nullptr)
+    {
+        // Update the current head pointer to point to the next
+        // node and release the memory pointed to by the temporary
+        // head pointer
+        tempHeadPtr = head;
+        head = head->getNext();
+
+        tempHeadPtr->setNext(nullptr);
+        delete tempHeadPtr;
+    }
+    // Don't forget to set the temporary head pointer to NULL and
+    // to set the number of elements to zero
+    tempHeadPtr = nullptr;
+    numElements = 0;
 }
 
 // Adds an element to the set, if possible
