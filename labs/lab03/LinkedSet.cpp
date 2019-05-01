@@ -65,7 +65,35 @@ bool LinkedSet<T>::isSubset(const SetInterface<T> &aSet)
 template <class T>
 bool LinkedSet<T>::remove(const T &elem)
 {
-    return false;
+    // Find the node that holds the element that we're trying to remove
+    Node<T> *nodePtr = getPointerTo(elem);
+
+    // Did we find it?
+    bool canRemove = (nodePtr != nullptr);
+
+    // If we found it, replace it with the first node and then delete the
+    // first node
+    if (canRemove)
+    {
+        // Copy the object at the first node to the node that's going
+        // to be deleted
+        nodePtr->setItem(head->getItem());
+
+        // Create a temporary node to hold the first node and advance the head
+        // to the next node
+        Node<T>* deleteThisNodePtr = head;
+        head = head->getNext();
+
+        // Release the memory pointed to by the head back to the system
+        deleteThisNodePtr->setNext(nullptr);
+        delete deleteThisNodePtr;
+        deleteThisNodePtr = nullptr;
+
+        // Don't forget to decrease the number of elements in the set
+        numElements--;
+    }
+
+    return canRemove;
 }
 
 // Returns the union of this set and aSet
