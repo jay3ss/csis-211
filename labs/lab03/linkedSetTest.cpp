@@ -33,6 +33,11 @@ int main()
 
      cout << "intLS = " << intLS << "\n\n";
 
+     cout << "Try to add an element to the set that is an element already:\n";
+
+     cout << "add(3): returns " << intLS.add(3)
+          << "; should be 0 (false)\n\n";
+
      cout << "Remove an element from the set:\n";
 
      cout << "remove(2): returns " << intLS.remove(2)
