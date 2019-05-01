@@ -55,25 +55,9 @@ void LinkedSet<T>::intersection(const SetInterface<T> &aSet, SetInterface<T> &in
 template <class T>
 bool LinkedSet<T>::isElement(const T &elem) const
 {
-    // Copy the head pointer so that we can step through each node
-    // in the set without modifying anything
-    Node<T>* currNodePtr = head;
-
-    // Go through each node in the set and compare it with the passed in
-    // element. If a node contains the element that we're checking, then
-    // immediately return true. If we check every node and don't find
-    // any matches, then return false
-    while (currNodePtr != nullptr)
-    {
-        if (currNodePtr->getItem() == elem)
-        {
-            return true;
-        }
-        currNodePtr = currNodePtr->getNext();
-    }
-
-    // Nothing was found
-    return false;
+    // If we can get a pointer to the element, then it is an
+    // element of the set. If not, then we get the nullptr back
+    return nullptr != getPointerTo(elem);
 }
 
 // Returns the the intersection of this set and aSet
