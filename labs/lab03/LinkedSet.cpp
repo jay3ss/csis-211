@@ -113,9 +113,8 @@ template<class T>
 Node<T>* LinkedSet<T>::getPointerTo(const T &elem) const
 {
     Node<T>* currNodePtr = head;
-    int count = 0;
 
-    while (currNodePtr != nullptr && count < numElements)
+    while (currNodePtr != nullptr)
     {
         if (currNodePtr->getItem() == elem)
         {
@@ -125,7 +124,6 @@ Node<T>* LinkedSet<T>::getPointerTo(const T &elem) const
         {
             currNodePtr = currNodePtr->getNext();
         }
-        count++;
     }
 
     return currNodePtr;
