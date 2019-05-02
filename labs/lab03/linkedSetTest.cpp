@@ -48,6 +48,12 @@ int main()
 
      cout << "intLS = " << intLS << "\n\n";
 
+     cout << "Create a vector from intLS:\n";
+     vector<int> vect1 = intLS.vector();
+
+     cout << "size() == vect1.size(): returns " << (intLS.size() == vect1.size())
+          << "; should return 1 (true)\n\n";
+
      //     cout << "Create a new set that is a subset:\n";
 
      //     ArraySet<string> set2;
@@ -86,12 +92,6 @@ int main()
 
      //     cout << "intersection(set2, interSet): results in interSet containing "
      //          << interSet << "; should contain {This, a}\n\n";
-
-     //     cout << "Create a vector from intLS:\n";
-     //     vector<string> vect1 = intLS.vector();
-
-     //     cout << "size() == vect1.size(): returns " << (intLS.size() == vect1.size())
-     //          << "; should return 1 (true)\n\n";
 
      //     cout << "The intersection of two sets is a subset of both sets:\n"
      //          << "isSubset(interSet): returns " << intLS.isSubset(interSet)
