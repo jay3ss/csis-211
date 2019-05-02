@@ -54,24 +54,26 @@ int main()
      cout << "size() == vect1.size(): returns " << (intLS.size() == vect1.size())
           << "; should return 1 (true)\n\n";
 
-     //     cout << "Create a new set that is a subset:\n";
+     cout << "Create a new set that is a subset and add 2 back to intLS:\n";
+     intLS.add(2);  // add 2 back to the set
 
-     //     ArraySet<string> set2;
-     //     for (int i = 0; i < 3; i++)
-     //     {
-     //         set2.add(elements[i]);
-     //     }
+     LinkedSet<int> set2;
+     for (int i = 0; i < 3; i++)
+     {
+          set2.add(i);
+     }
 
-     //     cout << "isSubset(set2): returns " << intLS.isSubset(set2)
-     //          << "; should return 1 (true)\n\n";
+     cout << "isSubset(set2): returns " << intLS.isSubset(set2)
+          << "; should return 1 (true)\n\n";
 
-     //     cout << "Create a new set that is not a subset:\n";
-     //     ArraySet<string> set3(2);
-     //     set3.add("Not");
-     //     set3.add("subset");
+     cout << "Create a new set that is not a subset:\n";
+     LinkedSet<int> set3;
+     set3.add(54);
+     set3.add(14);
+     set3.add(0);
 
-     //     cout << "isSubset(set3): returns " << intLS.isSubset(set3)
-     //          << "; should return 0 (false)\n\n";
+     cout << "isSubset(set3): returns " << intLS.isSubset(set3)
+          << "; should return 0 (false)\n\n";
 
      //     cout << "remove(\"is\"): returns " << intLS.remove("is")
      //          << "; should return 1 (true)\n\n";
@@ -80,14 +82,14 @@ int main()
      //          << "; should return 0 (false)\n\n";
 
      //     cout << "Create a union between two sets:\n";
-     //     ArraySet<string> unionSet(10);  // more than enough room for the union
+     //     LinkedSet<int> unionSet(10);  // more than enough room for the union
      //     intLS.unionSet(set2, unionSet);
 
      //     cout << "unionSet(set2, unionSet): results in unionSet containing "
      //          << unionSet << "; should contain {This, is, a, set, test}\n\n";
 
      //     cout << "Create an intersection between two sets:\n";
-     //     ArraySet<string> interSet(10); // more than enough room for the union
+     //     LinkedSet<int> interSet(10); // more than enough room for the union
      //     intLS.intersection(set2, interSet);
 
      //     cout << "intersection(set2, interSet): results in interSet containing "
