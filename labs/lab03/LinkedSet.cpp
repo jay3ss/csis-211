@@ -146,13 +146,16 @@ std::ostream &operator<<(std::ostream &strm, const LinkedSet<friendT> &obj)
     Node<friendT>* currNodePtr = obj.head;
     int count = 0;
 
-    while (currNodePtr != nullptr && count < (obj.numElements - 1))
+    // Traverse each node until the second to last node is reached so that
+    // there isn't a trailing comma before the closing '}'
+    while (count < (obj.numElements - 1))
     {
         strm << currNodePtr->getItem() << ", ";
         currNodePtr = currNodePtr->getNext();
         count++;
     }
 
+    // Add the closing '}'
     strm << currNodePtr->getItem() << "}";
     return strm;
 }
