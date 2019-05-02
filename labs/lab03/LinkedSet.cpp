@@ -64,7 +64,20 @@ bool LinkedSet<T>::isElement(const T &elem) const
 template <class T>
 bool LinkedSet<T>::isSubset(const SetInterface<T> &aSet)
 {
-    return false;
+    // Get a vector from aSet and check if each element of the vector
+    // is also an element of the set. If every element of the vector
+    // from aSet is an element of this set, then aSet is a subset of
+    // this set. Otherwise, aSet is not a subset of this set
+    std::vector<T> aVector = aSet.vector();
+
+    for (auto elem : aVector)
+    {
+        if (!isElement(elem))
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 // Removes the object from the set, if it is present
