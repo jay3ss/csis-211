@@ -112,7 +112,19 @@ void LinkedSet<T>::unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionS
 template <class T>
 std::vector<T> LinkedSet<T>::vector() const
 {
-    return std::vector<T>();
+    // Create a vector and a pointer to the head pointer, traverse nodes
+    // in the set and push each element to the vector, and then return
+    // the vector
+    std::vector<T> aVector;
+    Node<T>* tempNodePtr = head;
+
+    while (tempNodePtr != nullptr)
+    {
+        aVector.push_back(tempNodePtr->getItem());
+        tempNodePtr = tempNodePtr->getNext();
+    }
+
+    return aVector;
 }
 
 template<class T>
