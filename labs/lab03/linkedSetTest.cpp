@@ -88,16 +88,19 @@ int main()
      //     cout << "unionSet(set2, unionSet): results in unionSet containing "
      //          << unionSet << "; should contain {This, is, a, set, test}\n\n";
 
-     //     cout << "Create an intersection between two sets:\n";
-     //     LinkedSet<int> interSet(10); // more than enough room for the union
-     //     intLS.intersection(set2, interSet);
+     cout << "Create an intersection between two sets:\n";
+     LinkedSet<int> interSet;
+     intLS.intersection(set2, interSet);
 
-     //     cout << "intersection(set2, interSet): results in interSet containing "
-     //          << interSet << "; should contain {This, a}\n\n";
+     cout << "intersection(set2, interSet): results in interSet containing "
+          << interSet << "; should contain {0, 1, 2}\n\n";
 
-     //     cout << "The intersection of two sets is a subset of both sets:\n"
-     //          << "isSubset(interSet): returns " << intLS.isSubset(interSet)
-     //          << "; should be 1 (true)\n\n";
+     cout << "The intersection of two sets is a subset of both sets:\n"
+          << "isSubset(interSet): returns " << intLS.isSubset(interSet)
+          << "; should be 1 (true)\n";
+
+     cout << "set2.isSubset(intLS): returns " << set2.isSubset(interSet)
+          << "; should be 1 (true)\n\n";
 
      //     cout << "A union of two sets is the superset of those two sets:\n"
      //          << "unionSet.isSubset(set2): returns " << unionSet.isSubset(set2)
