@@ -84,12 +84,12 @@ int main()
      //     cout << "remove(\"C++\"): returns " << intLS.remove("C++")
      //          << "; should return 0 (false)\n\n";
 
-     //     cout << "Create a union between two sets:\n";
-     //     LinkedSet<int> unionSet(10);  // more than enough room for the union
-     //     intLS.unionSet(set2, unionSet);
+     cout << "Create a union between two sets:\n";
+     LinkedSet<int> unionSet;
+     intLS.unionSet(set2, unionSet);
 
-     //     cout << "unionSet(set2, unionSet): results in unionSet containing "
-     //          << unionSet << "; should contain {This, is, a, set, test}\n\n";
+     cout << "unionSet(set2, unionSet): results in unionSet containing "
+          << unionSet << "; should contain {0, 1, 2, 3, 4, 14, 54}\n\n";
 
      cout << "Create an intersection between two sets:\n";
      LinkedSet<int> interSet;
