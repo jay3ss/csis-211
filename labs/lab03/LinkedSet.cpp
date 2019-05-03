@@ -132,6 +132,22 @@ bool LinkedSet<T>::remove(const T &elem)
 template <class T>
 void LinkedSet<T>::unionSet(const SetInterface<T> &aSet, SetInterface<T> &unionSet)
 {
+    // Get a vector of all the elements from aSet and add them to the union set
+    std::vector<T> aVect = aSet.vector();
+
+    for (auto elem: aVect)
+    {
+        unionSet.add(elem);
+    }
+
+    // Traverse through each node in this set and add them to the union set
+    Node<T>* tempNodePtr = head;
+
+    while (tempNodePtr != nullptr)
+    {
+        unionSet.add(tempNodePtr->getItem());
+        tempNodePtr = tempNodePtr->getNext();
+    }
 }
 
 // Returns all of the elements in the set as a vector
