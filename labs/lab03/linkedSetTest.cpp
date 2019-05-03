@@ -16,7 +16,7 @@ int main()
      cout << "size(): returns " << intLS.size()
           << "; should be 0\n\n";
 
-     cout << "cout << intLs:"
+     cout << "cout << intLs: "
           << intLS << "; should be {}\n\n";
 
      cout << "Add 5 elements to the set:\n";
