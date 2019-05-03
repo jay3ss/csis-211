@@ -75,6 +75,8 @@ int main()
      set3.add(14);
      set3.add(0);
 
+     cout << "set3 = " << set3 << "\n\n";
+
      cout << "isSubset(set3): returns " << intLS.isSubset(set3)
           << "; should return 0 (false)\n\n";
 
@@ -86,17 +88,26 @@ int main()
 
      cout << "Create a union between two sets:\n";
      LinkedSet<int> unionSet;
-     intLS.unionSet(set2, unionSet);
+     intLS.unionSet(set3, unionSet);
 
-     cout << "unionSet(set2, unionSet): results in unionSet containing "
-          << unionSet << "; should contain {0, 1, 2, 3, 4, 14, 54}\n\n";
+     cout << "unionSet(set3, unionSet): results in"
+          << "\nunionSet containing " << unionSet
+          << "; should contain {0, 1, 2, 3, 4, 14, 54}\n"
+          << "(not necessarily in the same order)\n\n";
+
+     cout << "A union of two sets is the superset of those two sets:\n"
+          << "unionSet.isSubset(set3): returns " << unionSet.isSubset(set3)
+          << "; should be 1 (true)\n"
+          << "unionSet.isSubset(intLS): returns " << unionSet.isSubset(intLS)
+          << "; should be 1 (true)\n\n";
 
      cout << "Create an intersection between two sets:\n";
      LinkedSet<int> interSet;
      intLS.intersection(set2, interSet);
 
-     cout << "intersection(set2, interSet): results in interSet containing "
-          << interSet << "; should contain {0, 1, 2}\n\n";
+     cout << "intersection(set2, interSet): results in\n"
+          << "interSet containing " << interSet
+          << "; should contain {0, 1, 2}\n\n";
 
      cout << "The intersection of two sets is a subset of both sets:\n"
           << "isSubset(interSet): returns " << intLS.isSubset(interSet)
@@ -104,10 +115,6 @@ int main()
 
      cout << "set2.isSubset(intLS): returns " << set2.isSubset(interSet)
           << "; should be 1 (true)\n\n";
-
-     //     cout << "A union of two sets is the superset of those two sets:\n"
-     //          << "unionSet.isSubset(set2): returns " << unionSet.isSubset(set2)
-     //          << "; should be 1 (true)";
 
      return 0;
 }
