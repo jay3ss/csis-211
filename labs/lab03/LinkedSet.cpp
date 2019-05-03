@@ -49,6 +49,19 @@ bool LinkedSet<T>::add(const T &elem)
 template <class T>
 void LinkedSet<T>::intersection(const SetInterface<T> &aSet, SetInterface<T> &interSet)
 {
+    Node<T>* tempNodePtr = head;
+
+    // The intersection of two sets is a set that only has elements that are common
+    // between the two sets. Therefore, only add an element if it is an element of
+    // both sets
+    while (tempNodePtr != nullptr)
+    {
+        if (aSet.isElement(tempNodePtr->getItem()))
+        {
+            interSet.add(tempNodePtr->getItem());
+        }
+        tempNodePtr = tempNodePtr->getNext();
+    }
 }
 
 // Checks if an object is an element to the set
