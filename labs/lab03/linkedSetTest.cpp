@@ -10,7 +10,7 @@ int main()
      LinkedSet<int> intLS;
 
      cout << "Testing the Linked-based Set:\n"
-          << "---------------------------\n\n"
+          << "=============================\n\n"
           << "The initial set is empty.\n";
 
      cout << "size(): returns " << intLS.size()
@@ -19,7 +19,8 @@ int main()
      cout << "cout << intLs: "
           << intLS << "; should be {}\n\n";
 
-     cout << "Add 5 elements to the set:\n";
+     cout << "Add 5 elements to the set:\n"
+          << "--------------------------\n";
 
      for (int i = 0; i < 5; i++)
      {
@@ -36,12 +37,14 @@ int main()
 
      cout << "intLS = " << intLS << "\n\n";
 
-     cout << "Try to add an element to the set that is an element already:\n";
+     cout << "Try to add an element to the set that is an element already:\n"
+          << "------------------------------------------------------------\n";
 
      cout << "add(3): returns " << intLS.add(3)
           << "; should be 0 (false)\n\n";
 
-     cout << "Remove an element from the set:\n";
+     cout << "Remove an element from the set:\n"
+          << "-------------------------------\n";
 
      cout << "remove(2): returns " << intLS.remove(2)
           << "; should return 1 (true)\n\n";
@@ -51,13 +54,15 @@ int main()
 
      cout << "intLS = " << intLS << "\n\n";
 
-     cout << "Create a vector from intLS:\n";
+     cout << "Create a vector from intLS:\n"
+          << "---------------------------\n";
      vector<int> vect1 = intLS.vector();
 
      cout << "size() == vect1.size(): returns " << (intLS.size() == vect1.size())
           << "; should return 1 (true)\n\n";
 
-     cout << "Create a new set that is a subset and add 2 back to intLS:\n";
+     cout << "Create a new set that is a subset and add 2 back to intLS:\n"
+          << "----------------------------------------------------------\n";
      intLS.add(2);  // add 2 back to the set
 
      LinkedSet<int> set2;
@@ -69,7 +74,9 @@ int main()
      cout << "isSubset(set2): returns " << intLS.isSubset(set2)
           << "; should return 1 (true)\n\n";
 
-     cout << "Create a new set that is not a subset:\n";
+     cout << "Create a new set that is not a subset:\n"
+          << "--------------------------------------\n";
+
      LinkedSet<int> set3;
      set3.add(54);
      set3.add(14);
@@ -80,13 +87,14 @@ int main()
      cout << "isSubset(set3): returns " << intLS.isSubset(set3)
           << "; should return 0 (false)\n\n";
 
-     //     cout << "remove(\"is\"): returns " << intLS.remove("is")
-     //          << "; should return 1 (true)\n\n";
+     cout << "remove(0): returns " << intLS.remove(0)
+          << "; should return 1 (true)\n\n";
 
-     //     cout << "remove(\"C++\"): returns " << intLS.remove("C++")
-     //          << "; should return 0 (false)\n\n";
+     cout << "remove(15): returns " << intLS.remove(15)
+          << "; should return 0 (false)\n\n";
 
-     cout << "Create a union between two sets:\n";
+     cout << "Create a union between two sets:\n"
+          << "--------------------------------\n";
      LinkedSet<int> unionSet;
      intLS.unionSet(set3, unionSet);
 
@@ -101,7 +109,8 @@ int main()
           << "unionSet.isSubset(intLS): returns " << unionSet.isSubset(intLS)
           << "; should be 1 (true)\n\n";
 
-     cout << "Create an intersection between two sets:\n";
+     cout << "Create an intersection between two sets:\n"
+          << "----------------------------------------\n";
      LinkedSet<int> interSet;
      intLS.intersection(set2, interSet);
 
