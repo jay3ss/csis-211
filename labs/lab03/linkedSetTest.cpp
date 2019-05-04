@@ -116,7 +116,7 @@ int main()
 
      cout << "intersection(set2, interSet): results in\n"
           << "interSet containing " << interSet
-          << "; should contain {0, 1, 2}\n\n";
+          << "; should contain {1, 2}\n\n";
 
      cout << "The intersection of two sets is a subset of both sets:\n"
           << "isSubset(interSet): returns " << intLS.isSubset(interSet)
