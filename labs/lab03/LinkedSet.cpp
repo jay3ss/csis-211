@@ -23,6 +23,7 @@ LinkedSet<T>::~LinkedSet()
     numElements = 0;
 }
 
+// Copy constructor
 template<class T>
 LinkedSet<T>::LinkedSet(const LinkedSet<T> &aSet)
 {
@@ -37,6 +38,7 @@ LinkedSet<T>::LinkedSet(const LinkedSet<T> &aSet)
         // Copy the first node
         head = new Node<T>();
         head->setItem(origChainPtr->getItem());
+        numElements++;
 
         // Point to the first node in the new chain
         Node<T> *newChainPtr = head;
@@ -52,6 +54,7 @@ LinkedSet<T>::LinkedSet(const LinkedSet<T> &aSet)
 
             // Create a new node containing the next item
             Node<T> *newNodePtr = new Node<T>(nextItem);
+            numElements++;
 
             // Link new node to end of the new chain
             newChainPtr->setNext(newNodePtr);
@@ -86,6 +89,29 @@ bool LinkedSet<T>::add(const T &elem)
     }
 
     return canAdd;
+}
+
+// Creates the difference between this set and another
+template<class T>
+void LinkedSet<T>::difference(const SetInterface<T>& aSet, SetInterface<T>& diffSet)
+{
+    // Copy the head node
+    Node<T>* origHeadPtr = head;
+
+    while (origHeadPtr != nullptr)
+    {
+        // Get the element
+        T elem = origHeadPtr->getItem();
+
+        // We need only the elements that are in this set and NOT in aSet
+        if (!aSet.isElement(elem))
+        {
+            diffSet.add(elem);
+        }
+
+        // Advance the head pointer
+        origHeadPtr = origHeadPtr->getNext();
+    }
 }
 
 // Returns the intersection of this set and aSet
@@ -237,6 +263,93 @@ Node<T>* LinkedSet<T>::getPointerTo(const T &elem) const
     }
 
     return currNodePtr;
+}
+
+// OVERLOADED OPERATORS
+// Overloads the '=' operator
+template<class T>
+void LinkedSet<T>::operator=(const LinkedSet<T>& right)
+{
+    Node<T> *origChainPtr = right.head;
+
+    if (origChainPtr == nullptr)
+    {
+        head = nullptr;
+    }
+    else
+    {
+        // Copy the first node
+        head = new Node<T>();
+        head->setItem(origChainPtr->getItem());
+
+        // Point to the first node in the new chain
+        Node<T> *newChainPtr = head;
+
+        // Advance the original chain pointer
+        origChainPtr = origChainPtr->getNext();
+        numElements++;
+
+        // Copy the remaining nodes
+        while (origChainPtr != nullptr)
+        {
+            // Get the next item from the original chain
+            T nextItem = origChainPtr->getItem();
+
+            // Create a new node containing the next item
+            Node<T> *newNodePtr = new Node<T>(nextItem);
+
+            // Link new node to end of the new chain
+            newChainPtr->setNext(newNodePtr);
+            numElements++;
+
+            // Advance the pointer to the new last node
+            newChainPtr = newChainPtr->getNext();
+
+            // Advance the original chain pointer
+            origChainPtr = origChainPtr->getNext();
+        }
+        newChainPtr->setNext(nullptr); // Flag the end of the chain
+    }
+}
+
+// Overloaded '+' operator
+template<class T>
+LinkedSet<T> LinkedSet<T>::operator+(const LinkedSet<T>& right)
+{
+    // Create a temporary LinkedSet with a copy of the elements of the right
+    // parameter
+    LinkedSet<T> temp(right);
+
+    Node<T>* origHeadPtr = head;
+
+    // Traverse the set and add each element to the temp set
+    while (origHeadPtr != nullptr)
+    {
+        T elem = origHeadPtr->getItem();
+        temp.add(elem);
+        origHeadPtr = origHeadPtr->getNext();
+    }
+
+    return temp;
+}
+
+// Overloaded '-' operator
+template <class T>
+LinkedSet<T> LinkedSet<T>::operator-(const LinkedSet<T> &right)
+{
+    // Create a temporary LinkedSet with a copy of the elements of this set
+    // parameter
+    LinkedSet<T> temp;
+    temp = *this;
+
+    std::vector<T> rightVect = right.vector();
+
+    for (auto elem: rightVect)
+    {
+        temp.remove(elem);
+    }
+
+    return temp;
 }
 
 template <class friendT>

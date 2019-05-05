@@ -19,7 +19,7 @@ public:
 
     /** Creates the difference of this set and aSet. The difference of two sets
         A and B is defined as
-        A - B = {x: x is an element of A and not an element of B}
+        A difference B = {x: x is an element of A and not an element of B}
     @param aSet the set to take the difference from this set
     @param diffSet the set to form a difference with this set */
     virtual void difference(const SetInterface &aSet, SetInterface &diffSet) = 0;
