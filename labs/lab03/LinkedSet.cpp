@@ -333,6 +333,25 @@ LinkedSet<T> LinkedSet<T>::operator+(const LinkedSet<T>& right)
     return temp;
 }
 
+// Overloaded '-' operator
+template <class T>
+LinkedSet<T> LinkedSet<T>::operator-(const LinkedSet<T> &right)
+{
+    // Create a temporary LinkedSet with a copy of the elements of this set
+    // parameter
+    LinkedSet<T> temp;
+    temp = *this;
+
+    std::vector<T> rightVect = right.vector();
+
+    for (auto elem: rightVect)
+    {
+        temp.remove(elem);
+    }
+
+    return temp;
+}
+
 template <class friendT>
 std::ostream &operator<<(std::ostream &strm, const LinkedSet<friendT> &obj)
 {
