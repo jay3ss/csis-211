@@ -176,5 +176,17 @@ int main()
          << "uSet.isSubset(set3): returns " << uSet.isSubset(set3)
          << "; should be 1 (true)\n\n";
 
+    cout << "Perform a difference using the '-' operator:\n\n"
+         << "dSet = set2 - set3\n";
+
+    LinkedSet<int> dSet;
+    dSet = set2 - set3;
+
+    cout << "A union of two sets is the superset of those two sets:\n"
+         << "uSet.isSubset(set2): returns " << dSet.isSubset(set2)
+         << "; should be 1 (true)\n"
+         << "uSet.isSubset(set3): returns " << dSet.isSubset(set3)
+         << "; should be 1 (true)\n\n";
+
     return 0;
 }
