@@ -186,7 +186,7 @@ int main()
          << "uSet.isSubset(set2): returns " << dSet.isSubset(set2)
          << "; should be 1 (true)\n"
          << "uSet.isSubset(set3): returns " << dSet.isSubset(set3)
-         << "; should be 1 (true)\n\n";
+         << "; should be 0 (false)\n\n";
 
     return 0;
 }
