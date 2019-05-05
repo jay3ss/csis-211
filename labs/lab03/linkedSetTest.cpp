@@ -125,6 +125,20 @@ int main()
      cout << "set2.isSubset(intLS): returns " << set2.isSubset(interSet)
           << "; should be 1 (true)\n\n";
 
+     LinkedSet<int> diffSet;
+     intLS.difference(set2, diffSet);
+
+     cout << "intersection(set2, diffSet): results in\n"
+          << "diffSet containing " << diffSet
+          << "; should contain {3, 4}\n\n";
+
+     cout << "The difference of two sets is a subset of only the first set:\n"
+          << "isSubset(diffSet): returns " << intLS.isSubset(diffSet)
+          << "; should be 1 (true)\n";
+
+     cout << "set2.isSubset(intLS): returns " << set2.isSubset(diffSet)
+          << "; should be 0 (false)\n\n";
+
      cout << "Create a copy of intLS:\n"
           << "-----------------------\n\n";
      LinkedSet<int> copySet(intLS);
