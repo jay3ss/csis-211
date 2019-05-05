@@ -13,5 +13,5 @@ project(csis211lab03)
 #     PROPERTIES LINKER_LANGUAGE CXX
 # )
 
-add_executable(linkedSetTest linkedsettest.cpp)
+add_executable(linkedsettest linkedSetTest.cpp)
 # target_link_libraries(linkedsettest linkedset)
