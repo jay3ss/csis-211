@@ -182,10 +182,10 @@ int main()
     LinkedSet<int> dSet;
     dSet = set2 - set3;
 
-    cout << "A union of two sets is the superset of those two sets:\n"
-         << "uSet.isSubset(set2): returns " << dSet.isSubset(set2)
+    cout << "A difference of two sets is the subset of the first, but not the second:\n"
+         << "set2.isSubset(dSet): returns " << set2.isSubset(dSet)
          << "; should be 1 (true)\n"
-         << "uSet.isSubset(set3): returns " << dSet.isSubset(set3)
+         << "set3.isSubset(dSet): returns " << set3.isSubset(dSet)
          << "; should be 0 (false)\n\n";
 
     return 0;
