@@ -74,7 +74,15 @@ public:
     std::vector<T> vector() const;
 
     // OVERLOADED OPERATORS
+
+    /** Overloaded = operator to allow assignment of sets
+    @param right Reference to the right hand side of the = operator */
     void operator=(const LinkedSet<T>& right);
+
+    /** Overloaded + operator to allow union of sets
+    @param right Reference to the right hand side of the = operator
+    @return The union of this set and the right set */
+    LinkedSet<T> operator+(const LinkedSet<T> &right);
 
     /** Overloaded << operator to allow easy printing of LinkedSet objects
     @param strm Reference to the ostream object
