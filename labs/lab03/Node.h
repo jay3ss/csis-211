@@ -8,7 +8,7 @@ private:
     T        item;
     Node<T>* next;
 public:
-    Node();
+    Node() {}
     Node(const T& item);
     Node(const T& item, Node<T>* nextNodePtr);
     void setItem(const T& anItem);
