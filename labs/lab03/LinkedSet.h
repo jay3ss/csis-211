@@ -32,7 +32,7 @@ public:
         A difference B = {x: x is an element of A and not an element of B}
     @param aSet the set to take the difference from this set
     @param diffSet the set to form a difference with this set */
-    void difference(const SetInterface &aSet, SetInterface &diffSet);
+    void difference(const SetInterface<T> &aSet, SetInterface<T> &diffSet);
 
     /** Returns the the intersection of this set and aSet
     @param aSet the set to form an intersection with this set
