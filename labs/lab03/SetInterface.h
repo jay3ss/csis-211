@@ -18,16 +18,18 @@ public:
     virtual bool add(const T& elem) = 0;
 
     /** Creates the difference of this set and aSet. The difference of two sets
-        is defined as
+        A and B is defined as
         A - B = {x: x is an element of A and not an element of B}
     @param aSet the set to take the difference from this set
     @param diffSet the set to form a difference with this set */
     virtual void difference(const SetInterface &aSet, SetInterface &diffSet) = 0;
 
-    /** Creates the intersection of this set and aSet
+    /** Creates the intersection of this set and aSet. The intersection of two
+        sets A and B is defined as
+        A intersection B = {x: x is an element of A and B}
     @param aSet the set to form an intersection with this set
-    @return The integer number of elements in the set */
-    virtual void intersection(const SetInterface &aSet, SetInterface &unionSet) = 0;
+    @param interSet the set to form the intersection with this set */
+    virtual void intersection(const SetInterface &aSet, SetInterface &interSet) = 0;
 
     /** Checks if an object is an element to the set
     @param elem the object to be checked if it is an element of the set
@@ -54,9 +56,11 @@ public:
     @return The integer number of elements in the set */
     virtual int size() const = 0;
 
-    /** Cretaes the the union of this set and aSet
+    /** Cretaes the the union of this set and aSet. The union of two sets
+        A and B is defined as
+        A union B = {x: x is an element of A or B}
     @param aSet the set to form a union with this set
-    @return The integer number of elements in the set */
+    @param unionSet the set to form the union with this set */
     virtual void unionSet(const SetInterface &aSet, SetInterface &unionSet) = 0;
 
     /** Returns all of the elements in the set as a vector
