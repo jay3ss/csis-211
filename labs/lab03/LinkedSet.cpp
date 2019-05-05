@@ -23,6 +23,7 @@ LinkedSet<T>::~LinkedSet()
     numElements = 0;
 }
 
+// Copy constructor
 template<class T>
 LinkedSet<T>::LinkedSet(const LinkedSet<T> &aSet)
 {
@@ -37,6 +38,7 @@ LinkedSet<T>::LinkedSet(const LinkedSet<T> &aSet)
         // Copy the first node
         head = new Node<T>();
         head->setItem(origChainPtr->getItem());
+        numElements++;
 
         // Point to the first node in the new chain
         Node<T> *newChainPtr = head;
@@ -52,6 +54,7 @@ LinkedSet<T>::LinkedSet(const LinkedSet<T> &aSet)
 
             // Create a new node containing the next item
             Node<T> *newNodePtr = new Node<T>(nextItem);
+            numElements++;
 
             // Link new node to end of the new chain
             newChainPtr->setNext(newNodePtr);
