@@ -171,10 +171,10 @@ int main()
     uSet = set2 + set3;
 
     cout << "A union of two sets is the superset of those two sets:\n"
-        << "unionSet.isSubset(set2): returns " << uSet.isSubset(set2)
-        << "; should be 1 (true)\n"
-        << "unionSet.isSubset(set3): returns " << uSet.isSubset(set3)
-        << "; should be 1 (true)\n\n";
+         << "uSet.isSubset(set2): returns " << uSet.isSubset(set2)
+         << "; should be 1 (true)\n"
+         << "uSet.isSubset(set3): returns " << uSet.isSubset(set3)
+         << "; should be 1 (true)\n\n";
 
     return 0;
 }
