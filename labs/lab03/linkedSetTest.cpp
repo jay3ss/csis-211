@@ -150,5 +150,23 @@ int main()
      cout << "copy.isSubset(intLS): returns " << copySet.isSubset(intLS)
           << "; should return 1 (true)\n\n";
 
+     cout << "Test the overloaded operators:\n"
+          << "==============================\n\n";
+
+     cout << "Instantiate a set and assign another set's contents to it:\n\n"
+          << "eqSet = intLS. The two sets should be equivalent (subsets of each other)\n";
+
+     LinkedSet<int> eqSet;
+     eqSet = intLS;
+
+     cout << "isSubset(eqSet): returns " << intLS.isSubset(eqSet)
+          << "; should return 1 (true)\n";
+     cout << "eqSet.isSubset(intLS): returns " << eqSet.isSubset(intLS)
+          << "; should return 1 (true)\n\n";
+
+     cout << "eqSet = " << eqSet << endl
+          << "intLS = " << intLS << endl;
+
+     cout<<  "eqSet.size() = " << eqSet.size();
      return 0;
 }
