@@ -92,7 +92,23 @@ bool LinkedSet<T>::add(const T &elem)
 template<class T>
 void LinkedSet<T>::difference(const SetInterface<T>& aSet, SetInterface<T>& diffSet)
 {
+    // Copy the head node
+    Node<T>* origHeadPtr = head;
 
+    while (origHeadPtr != nullptr)
+    {
+        // Get the element
+        T elem = origHeadPtr->getItem();
+
+        // We need only the elements that are in this set and NOT in aSet
+        if (!aSet.isElement(elem))
+        {
+            diffSet.add(elem);
+        }
+
+        // Advance the head pointer
+        origHeadPtr = origHeadPtr->getNext();
+    }
 }
 
 // Returns the intersection of this set and aSet
