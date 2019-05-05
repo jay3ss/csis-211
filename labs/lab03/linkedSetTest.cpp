@@ -13,8 +13,8 @@ int main()
           << "=============================\n\n"
           << "The initial set is empty.\n";
 
-     cout << "size(): returns " << intLS.size()
-          << "; should be 0\n\n";
+     cout << "isEmpty(): returns " << intLS.isEmpty()
+          << "; should be 1 (true)\n\n";
 
      cout << "cout << intLs: "
           << intLS << "; should be {}\n\n";
