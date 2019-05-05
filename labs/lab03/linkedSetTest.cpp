@@ -164,9 +164,5 @@ int main()
      cout << "eqSet.isSubset(intLS): returns " << eqSet.isSubset(intLS)
           << "; should return 1 (true)\n\n";
 
-     cout << "eqSet = " << eqSet << endl
-          << "intLS = " << intLS << endl;
-
-     cout<<  "eqSet.size() = " << eqSet.size();
      return 0;
 }
