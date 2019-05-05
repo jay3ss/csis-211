@@ -88,6 +88,13 @@ bool LinkedSet<T>::add(const T &elem)
     return canAdd;
 }
 
+// Creates the difference between this set and another
+template<class T>
+void LinkedSet<T>::difference(const SetInterface<T>& aSet, SetInterface<T>& diffSet)
+{
+
+}
+
 // Returns the intersection of this set and aSet
 template <class T>
 void LinkedSet<T>::intersection(const SetInterface<T> &aSet, SetInterface<T> &interSet)
