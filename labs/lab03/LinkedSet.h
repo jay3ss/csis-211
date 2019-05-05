@@ -84,6 +84,11 @@ public:
     @return The union of this set and the right set */
     LinkedSet<T> operator+(const LinkedSet<T> &right);
 
+    /** Overloaded - operator to allow difference of sets
+    @param right Reference to the right hand side of the = operator
+    @return The difference of this set and the right set */
+    LinkedSet<T> operator-(const LinkedSet<T> &right);
+
     /** Overloaded << operator to allow easy printing of LinkedSet objects
     @param strm Reference to the ostream object
         obj Reference to the LinkedSet object that's being printed
