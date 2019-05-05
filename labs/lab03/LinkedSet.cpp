@@ -262,6 +262,53 @@ Node<T>* LinkedSet<T>::getPointerTo(const T &elem) const
     return currNodePtr;
 }
 
+// OVERLOADED OPERATORS
+// Overloads the '=' operator
+template<class T>
+void LinkedSet<T>::operator=(const LinkedSet<T>& right)
+{
+    Node<T> *origChainPtr = right.head;
+
+    if (origChainPtr == nullptr)
+    {
+        head = nullptr;
+    }
+    else
+    {
+        // Copy the first node
+        head = new Node<T>();
+        head->setItem(origChainPtr->getItem());
+
+        // Point to the first node in the new chain
+        Node<T> *newChainPtr = head;
+
+        // Advance the original chain pointer
+        origChainPtr = origChainPtr->getNext();
+        numElements++;
+
+        // Copy the remaining nodes
+        while (origChainPtr != nullptr)
+        {
+            // Get the next item from the original chain
+            T nextItem = origChainPtr->getItem();
+
+            // Create a new node containing the next item
+            Node<T> *newNodePtr = new Node<T>(nextItem);
+
+            // Link new node to end of the new chain
+            newChainPtr->setNext(newNodePtr);
+            numElements++;
+
+            // Advance the pointer to the new last node
+            newChainPtr = newChainPtr->getNext();
+
+            // Advance the original chain pointer
+            origChainPtr = origChainPtr->getNext();
+        }
+        newChainPtr->setNext(nullptr); // Flag the end of the chain
+    }
+}
+
 template <class friendT>
 std::ostream &operator<<(std::ostream &strm, const LinkedSet<friendT> &obj)
 {
