@@ -312,6 +312,27 @@ void LinkedSet<T>::operator=(const LinkedSet<T>& right)
     }
 }
 
+// Overloaded '+' operator
+template<class T>
+LinkedSet<T> LinkedSet<T>::operator+(const LinkedSet<T>& right)
+{
+    // Create a temporary LinkedSet with a copy of the elements of the right
+    // parameter
+    LinkedSet<T> temp(right);
+
+    Node<T>* origHeadPtr = head;
+
+    // Traverse the set and add each element to the temp set
+    while (origHeadPtr != nullptr)
+    {
+        T elem = origHeadPtr->getItem();
+        temp.add(elem);
+        origHeadPtr = origHeadPtr->getNext();
+    }
+
+    return temp;
+}
+
 template <class friendT>
 std::ostream &operator<<(std::ostream &strm, const LinkedSet<friendT> &obj)
 {
