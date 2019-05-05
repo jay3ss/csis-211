@@ -17,6 +17,13 @@ public:
     @return true if the element was added, false if it wasn't */
     virtual bool add(const T& elem) = 0;
 
+    /** Creates the difference of this set and aSet. The difference of two sets
+        is defined as
+        A - B = {x: x is an element of A and not an element of B}
+    @param aSet the set to take the difference from this set
+    @param diffSet the set to form a difference with this set */
+    virtual void difference(const SetInterface &aSet, SetInterface &diffSet) = 0;
+
     /** Creates the intersection of this set and aSet
     @param aSet the set to form an intersection with this set
     @return The integer number of elements in the set */
