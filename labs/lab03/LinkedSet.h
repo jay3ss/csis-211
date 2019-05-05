@@ -14,6 +14,9 @@ public:
     LinkedSet(Node<T> *h = nullptr, const int numEl = 0) :
         head(h), numElements(numEl) {}
 
+    /** Copy Constructor */
+    LinkedSet(const LinkedSet<T> &aSet);
+
     /** Destructor */
     ~LinkedSet();
 

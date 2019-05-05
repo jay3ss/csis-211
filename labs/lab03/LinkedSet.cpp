@@ -23,6 +23,49 @@ LinkedSet<T>::~LinkedSet()
     numElements = 0;
 }
 
+template<class T>
+LinkedSet<T>::LinkedSet(const LinkedSet<T> &aSet)
+{
+    Node<T> *origChainPtr = aSet.head;
+
+    if (origChainPtr == nullptr)
+    {
+        head = nullptr;
+    }
+    else
+    {
+        // Copy the first node
+        head = new Node<T>();
+        head->setItem(origChainPtr->getItem());
+
+        // Point to the first node in the new chain
+        Node<T> *newChainPtr = head;
+
+        // Advance the original chain pointer
+        origChainPtr = origChainPtr->getNext();
+
+        // Copy the remaining nodes
+        while (origChainPtr != nullptr)
+        {
+            // Get the next item from the original chain
+            T nextItem = origChainPtr->getItem();
+
+            // Create a new node containing the next item
+            Node<T> *newNodePtr = new Node<T>(nextItem);
+
+            // Link new node to end of the new chain
+            newChainPtr->setNext(newNodePtr);
+
+            // Advance the pointer to the new last node
+            newChainPtr = newChainPtr->getNext();
+
+            // Advance the original chain pointer
+            origChainPtr = origChainPtr->getNext();
+        }
+        newChainPtr->setNext(nullptr); // Flag the end of the chain
+    }
+}
+
 // Adds an element to the set, if possible
 template <class T>
 bool LinkedSet<T>::add(const T &elem)

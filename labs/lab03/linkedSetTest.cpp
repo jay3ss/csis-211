@@ -125,5 +125,16 @@ int main()
      cout << "set2.isSubset(intLS): returns " << set2.isSubset(interSet)
           << "; should be 1 (true)\n\n";
 
+     cout << "Create a copy of intLS:\n"
+          << "-----------------------\n\n";
+     LinkedSet<int> copySet(intLS);
+
+     cout << "Two sets are equivalent if and only if they are subsets of each other:\n";
+
+     cout << "isSubset(copySet): returns " << intLS.isSubset(copySet)
+          << "; should return 1 (true)\n";
+     cout << "copy.isSubset(intLS): returns " << copySet.isSubset(intLS)
+          << "; should return 1 (true)\n\n";
+
      return 0;
 }
