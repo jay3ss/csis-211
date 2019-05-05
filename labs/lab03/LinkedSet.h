@@ -73,6 +73,9 @@ public:
     @return A vector containing the elements of the set */
     std::vector<T> vector() const;
 
+    // OVERLOADED OPERATORS
+    void operator=(const LinkedSet<T>& right);
+
     /** Overloaded << operator to allow easy printing of LinkedSet objects
     @param strm Reference to the ostream object
         obj Reference to the LinkedSet object that's being printed
