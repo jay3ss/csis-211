@@ -164,5 +164,17 @@ int main()
      cout << "eqSet.isSubset(intLS): returns " << eqSet.isSubset(intLS)
           << "; should return 1 (true)\n\n";
 
+     cout << "Perform a union using the '+' operator:\n\n"
+          << "uSet = set2 + set3\n";
+
+     LinkedSet<int> uSet;
+     uSet = set2 + set3;
+
+     cout << "A union of two sets is the superset of those two sets:\n"
+          << "unionSet.isSubset(set2): returns " << uSet.isSubset(set2)
+          << "; should be 1 (true)\n"
+          << "unionSet.isSubset(set3): returns " << uSet.isSubset(set3)
+          << "; should be 1 (true)\n\n";
+
      return 0;
 }
