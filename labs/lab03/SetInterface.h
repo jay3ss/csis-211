@@ -17,6 +17,11 @@ public:
    @return true if the element was added, false if it wasn't */
    virtual bool add(const T& elem) = 0;
 
+   /** Returns the difference of this set and aSet
+    @param aSet the set to form an intersection with this set
+   @return The integer number of elements in the set */
+   virtual void difference(const SetInterface& aSet, SetInterface &diff) = 0;
+
    /** Returns the the intersection of this set and aSet
     @param aSet the set to form an intersection with this set
    @return The integer number of elements in the set */
