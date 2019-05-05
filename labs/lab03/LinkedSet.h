@@ -37,6 +37,10 @@ public:
     @return true if elem is an element of this set, false if not */
     bool isElement(const T &elem) const;
 
+    /** Checks if the set is empty
+    @return true if numElements is zero, false if not */
+    virtual bool isEmpty() const;
+
     /** Returns the the intersection of this set and aSet
     @param aSet the set to check if it is a subset of this set
     @return true if aSet is a subset of this set, false if not */

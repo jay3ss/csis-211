@@ -116,6 +116,13 @@ bool LinkedSet<T>::isElement(const T &elem) const
     return nullptr != getPointerTo(elem);
 }
 
+// Checks if the set is empty
+template <class T>
+bool LinkedSet<T>::isEmpty() const
+{
+    return 0 == size();
+}
+
 // Returns the the intersection of this set and aSet
 template <class T>
 bool LinkedSet<T>::isSubset(const SetInterface<T> &aSet)
