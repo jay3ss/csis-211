@@ -9,8 +9,8 @@ private:
     Node<T>* next;
 public:
     Node() {}
-    Node(const T& item);
-    Node(const T& item, Node<T>* nextNodePtr);
+    Node(const T& anItem);
+    Node(const T &anItem, Node<T> *nextNodePtr);
     void setItem(const T& anItem);
     void setNext(Node<T>* nextNodePtr);
     T getItem() const;
