@@ -31,13 +31,13 @@ uses stacks.
 #### Stack Class
 
 - Responsibilities
-    - ?
+    - Push objects to stack
+    - Pop objects from stack
+    - Peek at the object at top of stack
 
 - Collaborators
-    - ?
+    - The class of objects that the stack can contain
 
-
-#### Maze
 
 ## The Algorithm
 A maze generation algorithm that utilizes stacks is the
