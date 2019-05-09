@@ -13,8 +13,8 @@ uses stacks.
 
 - Responsibilities
     - Knows state of cell (e.g., visited, unvisited)
-    - Knows state of edges of cell (e.g., wall, open)
     - Knows neighbors
+    - Knows position
 
 - Collaborators
     - ???
@@ -24,6 +24,7 @@ uses stacks.
 - Responsibilities
     - Know position of starting cell
     - Know position of ending cell
+    - Know current position within maze
 
 - Collaborators
     - Cell
