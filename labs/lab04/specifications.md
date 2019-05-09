@@ -22,7 +22,8 @@ uses stacks.
 #### Maze Class
 
 - Responsibilities
-    - ?
+    - Know position of starting cell
+    - Know position of ending cell
 
 - Collaborators
     - Cell
@@ -39,12 +40,12 @@ uses stacks.
     - The class of objects that the stack can contain
 
 
-## The Algorithm
+### The Algorithm
 A maze generation algorithm that utilizes stacks is the
 [randomized depth-first search](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Depth-First_Search)
 algorithm. 
 
-### Pseudocode
+#### Pseudocode
 
 The following is taken from the Wikipedia page linked to above:
 
