@@ -5,6 +5,40 @@
 This purpose of this lab (# 4) is to generate a maze using an algorithm that
 uses stacks.
 
+## Design
+
+### Class-Responsibility-Collaboration (CRC) Cards
+
+#### Cell Class
+
+- Responsibilities
+    - Knows state of cell (e.g., visited, unvisited)
+    - Knows state of edges of cell (e.g., wall, open)
+    - Knows neighbors
+
+- Collaborators
+    - ???
+
+#### Maze Class
+
+- Responsibilities
+    - ?
+
+- Collaborators
+    - Cell
+    - Stack
+
+#### Stack Class
+
+- Responsibilities
+    - ?
+
+- Collaborators
+    - ?
+
+
+#### Maze
+
 ## The Algorithm
 A maze generation algorithm that utilizes stacks is the
 [randomized depth-first search](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Depth-First_Search)
