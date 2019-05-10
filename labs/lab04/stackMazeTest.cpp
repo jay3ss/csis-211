@@ -3,5 +3,5 @@
 
 int main()
 {
-    Maze maze;
+    Maze maze(3, 3);
 }
