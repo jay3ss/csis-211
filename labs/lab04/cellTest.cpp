@@ -37,8 +37,8 @@ int main()
     cout << "getYPosition(): returns " << cell.getYPosition()
          << "; should return 0\n\n";
 
-    cout << "Set the neigboring cells:\n"
-         << "-------------------------\n\n";
+    cout << "Set the neighboring cells:\n"
+         << "-------------------------\n";
 
     array<cell::State, 4> nCells = {
         cell::UNVISITED,
