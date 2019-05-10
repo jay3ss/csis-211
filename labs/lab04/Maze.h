@@ -9,14 +9,12 @@ class Maze
 {
 public:
     // Constructor
-    Maze(int, int);
+    Maze(int c = 1, int r = 1)
+        { grid = Grid(c, r); }
 
     // Destructor
     ~Maze();
 private:
-    int numCols;
-    int numRows;
-
     Grid grid;
 };
 
