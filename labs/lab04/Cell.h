@@ -6,14 +6,14 @@
 
 namespace cell
 {
-    enum State { UNVISITED, OCCUPIED, UNOCCUPIED, NONE };
+    enum class State { UNVISITED, OCCUPIED, UNOCCUPIED, NONE };
 }
 
 class Cell
 {
 public:
     // Constructor
-    Cell(cell::State s = cell::UNVISITED, int x = 0, int y = 0) :
+    Cell(cell::State s = cell::State::UNVISITED, int x = 0, int y = 0) :
         state(s), xPosition(0), yPosition(0)
         { initializeNeighbors(); }
 

@@ -18,7 +18,7 @@ int main()
          << "---------------------------------------------\n";
 
     cout << "getState(): returns " << cell << "; should return "
-         << cellStateToString(cell::UNVISITED) << "\n\n";
+         << cellStateToString(cell::State::UNVISITED) << "\n\n";
 
     cout << "The cell's neighbors should all have a state of UNVISITED:\n"
          << "----------------------------------------------------------\n";
@@ -41,10 +41,10 @@ int main()
          << "--------------------------\n";
 
     array<cell::State, 4> nCells = {
-        cell::UNVISITED,
-        cell::UNOCCUPIED,
-        cell::OCCUPIED,
-        cell::NONE
+        cell::State::UNVISITED,
+        cell::State::UNOCCUPIED,
+        cell::State::OCCUPIED,
+        cell::State::NONE
     };
 
     cell.setNeighbors(nCells);
@@ -72,7 +72,7 @@ bool allUnoccupied(array<cell::State, 4> &nStates)
 {
     for (auto &n : nStates)
     {
-        if (n != cell::UNVISITED)
+        if (n != cell::State::UNVISITED)
         {
             return false;
         }
@@ -86,13 +86,13 @@ string cellStateToString(cell::State s)
     string str;
     switch (s)
     {
-    case cell::OCCUPIED:
+    case cell::State::OCCUPIED:
         str = "OCCUPIED";
         break;
-    case cell::UNOCCUPIED:
+    case cell::State::UNOCCUPIED:
         str = "UNOCCUPIED";
         break;
-    case cell::UNVISITED:
+    case cell::State::UNVISITED:
         str = "UNVISITED";
         break;
     default:
