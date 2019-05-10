@@ -21,16 +21,16 @@ std::ostream &operator<<(std::ostream &strm, const Cell &obj)
     switch (obj.state)
     {
     case cell::OCCUPIED:
-        strm << "OCCUPIED";
+        strm << "#";
         break;
     case cell::UNOCCUPIED:
-        strm << "UNOCCUPIED";
+        strm << " ";
         break;
     case cell::UNVISITED:
-        strm << "UNVISITED";
+        strm << "?";
         break;
     default:
-        strm << "NONE";
+        strm << "";
         break;
     }
 
