@@ -19,6 +19,15 @@ uses stacks.
 - Collaborators
     - ???
 
+#### Grid Class
+
+- Responsibilities
+    - Update a cell's state
+    - Change the number of rows and columns
+
+- Collaborators
+    - Cell
+
 #### Maze Class
 
 - Responsibilities
@@ -28,6 +37,7 @@ uses stacks.
 
 - Collaborators
     - Cell
+    - Grid
     - Stack
 
 #### Stack Class
@@ -44,7 +54,7 @@ uses stacks.
 ### The Algorithm
 A maze generation algorithm that utilizes stacks is the
 [randomized depth-first search](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Depth-First_Search)
-algorithm. 
+algorithm.
 
 #### Pseudocode
 
