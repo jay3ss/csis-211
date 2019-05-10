@@ -9,6 +9,8 @@ void Grid::resize(int c, int r)
 {
     numCols = c;
     numRows = r;
+
+    std::vector<std::vector<Cell>> newCellsVect;
     for (int i = 0; i < numCols; i++)
     {
         std::vector<Cell> row;
@@ -18,17 +20,18 @@ void Grid::resize(int c, int r)
             cell.setPosition(i, j);
             row.push_back(cell);
         }
-        cells.push_back(row);
+        newCellsVect.push_back(row);
     }
+    cells = newCellsVect;
 }
 
 std::ostream &operator<<(std::ostream &strm, const Grid &obj)
 {
-    for (auto &row : obj.vector())
+    for (int i = 0; i < obj.numRows; i++)
     {
-        for (auto &cell : row)
+        for (int j = 0; j < obj.numCols; j++)
         {
-            strm << cell;
+            strm << obj.cells[j][i];
         }
         strm << std::endl;
     }
