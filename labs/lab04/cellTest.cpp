@@ -44,7 +44,8 @@ int main()
         cell::UNVISITED,
         cell::UNOCCUPIED,
         cell::OCCUPIED,
-        cell::NONE};
+        cell::NONE
+    };
 
     cell.setNeighbors(nCells);
 
