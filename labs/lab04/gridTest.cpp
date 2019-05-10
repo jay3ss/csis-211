@@ -21,12 +21,9 @@ int main()
 
     std::vector<std::vector<Cell>> cells = grid.vector();
 
-    for (auto &r: cells)
-    {
-        for (auto &c: r)
-        {
-            cout << c << " ";
-        }
-        cout << endl;
-    }
+    cout << grid;
+
+    grid.resize(5, 5);
+
+    cout << grid;
 }
