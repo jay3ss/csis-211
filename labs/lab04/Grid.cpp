@@ -28,8 +28,10 @@ std::ostream &operator<<(std::ostream &strm, const Grid &obj)
     {
         for (auto &cell : row)
         {
-            std::cout << cell;
+            strm << cell;
         }
-        std::cout << std::endl;
+        strm << std::endl;
     }
+
+    return strm;
 }
