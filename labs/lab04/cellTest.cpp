@@ -38,7 +38,7 @@ int main()
          << "; should return 0\n\n";
 
     cout << "Set the neighboring cells:\n"
-         << "-------------------------\n";
+         << "--------------------------\n";
 
     array<cell::State, 4> nCells = {
         cell::UNVISITED,
