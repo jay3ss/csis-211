@@ -10,63 +10,60 @@ string cellStateToString(cell::State s);
 
 int main()
 {
-    Cell cell;
+    Cell c;
 
     cout << "Testing the Cell class\n\n";
 
     cout << "The cell's default state should be UNVISITED:\n"
          << "---------------------------------------------\n";
 
-    cout << "getState(): returns " << cellStateToString(cell.getState())
+    cout << "getState(): returns " << cellStateToString(c.getState())
          << "; should return "
          << cellStateToString(cell::State::UNVISITED) << "\n\n";
 
-    // cout << "The cell's neighbors should all have a state of UNVISITED:\n"
-    //      << "----------------------------------------------------------\n";
-
-    // array<cell::State, 4> nStates = cell.getNeighbors();
-
-    // cout << "allUnoccupied(nStates): returns " << allUnoccupied(nStates)
-    //      << "; should return 1 (true)\n\n";
-
     cout << "The cell's default position should be (0, 0):\n"
-         << "-------------------------------------\n";
+         << "---------------------------------------------\n";
 
-    cout << "getXPosition(): returns " << cell.getXPosition()
+    cout << "getXPosition(): returns " << c.getXPosition()
          << "; should return 0\n";
 
-    cout << "getYPosition(): returns " << cell.getYPosition()
+    cout << "getYPosition(): returns " << c.getYPosition()
          << "; should return 0\n\n";
 
-    // cout << "Set the neighboring cells:\n"
-    //      << "--------------------------\n";
+    cout << "Set the state of the cell:\n"
+         << "--------------------------\n";
 
-    // array<cell::State, 4> nCells = {
-    //     cell::State::UNVISITED,
-    //     cell::State::UNOCCUPIED,
-    //     cell::State::OCCUPIED,
-    //     cell::State::NONE
-    // };
+    cout << "Set the state of the cell to OCCUPIED\n";
+    c = cell::State::OCCUPIED;
 
-    // cell.setNeighbors(nCells);
+    cout << "c.getState() == cell::State::OCCUPIED returns " << (c.getState() == cell::State::OCCUPIED)
+         << "; should return 1 (true)\n";
 
-    // array<cell::State, 4> neighbors = cell.getNeighbors();
+    cout << "c = " << c << endl << endl;
 
-    // cout << "The neighboring cells are:\n";
+    cout << "Set the state of the cell to UNOCCUPIED\n";
+    c = cell::State::UNOCCUPIED;
 
-    // for (auto &n: neighbors)
-    // {
-    //     cout << "- " << cellStateToString(n) << endl;
-    // }
+    cout << "c.getState() == cell::State::UNOCCUPIED returns " << (c.getState() == cell::State::UNOCCUPIED)
+         << "; should return 1 (true)\n";
 
-    // cout << endl;
+    cout << "c = " << c << "// space" << endl << endl;
 
-    // cout << "The neighboring cells should be:\n";
+    cout << "Set the state of the cell to NONE\n";
+    c = cell::State::NONE;
 
-    // for (auto &n : nCells)
-    // {
-    //     cout << "- " << cellStateToString(n) << endl;
-    // }
+    cout << "c.getState() == cell::State::NONE returns " << (c.getState() == cell::State::NONE)
+         << "; should return 1 (true)\n";
+
+    cout << "c = " << c << "// empty string" << endl << endl;
+
+    cout << "Set the state of the cell to UNVISITED\n";
+    c = cell::State::UNVISITED;
+
+    cout << "c.getState() == cell::State::UNVISITED returns " << (c.getState() == cell::State::UNVISITED)
+         << "; should return 1 (true)\n";
+
+    cout << "c = " << c << endl << endl;
 }
 
 bool allUnoccupied(array<cell::State, 4> &nStates)
