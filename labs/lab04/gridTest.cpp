@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    Grid grid;
+    Grid grid(3, 3);
 
     cout << "Testing the Grid class\n\n";
 
@@ -23,7 +23,7 @@ int main()
 
     cout << grid;
 
-    grid.resize(5, 5);
+    grid.resize(15, 15);
 
     cout << grid;
 }
