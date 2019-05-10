@@ -28,6 +28,8 @@ public:
     void setState(const cell::State s) { state = s; }
     // void setNeighbors(const std::array<cell::State, 4> n);
 
+    // Overloaded operators
+    void operator=(const Cell &right);
     friend std::ostream &operator<<(std::ostream &strm, const Cell &obj);
 
 private:

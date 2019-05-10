@@ -36,3 +36,9 @@ std::ostream &operator<<(std::ostream &strm, const Cell &obj)
 
     return strm;
 }
+
+// Overloaded '=' operator
+void Cell::operator=(const Cell &right)
+{
+    state = right.state;
+}
