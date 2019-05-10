@@ -14,10 +14,22 @@ void Grid::resize(int c, int r)
         std::vector<Cell> row;
         for (int j = 0; j < numRows; j++)
         {
-            // Cell cell;
-            // row.push_back(cell);
-            row.push_back(Cell());
+            Cell cell;
+            cell.setPosition(i, j);
+            row.push_back(cell);
         }
         cells.push_back(row);
+    }
+}
+
+std::ostream &operator<<(std::ostream &strm, const Grid &obj)
+{
+    for (auto &row : obj.vector())
+    {
+        for (auto &cell : row)
+        {
+            std::cout << cell;
+        }
+        std::cout << std::endl;
     }
 }

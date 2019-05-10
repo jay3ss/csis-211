@@ -1,6 +1,7 @@
 #ifndef _GRID_H
 #define _GRID_H
 
+#include <iostream>
 #include <vector>
 #include "Cell.h"
 
@@ -17,11 +18,15 @@ public:
     // Accessors
     int getNumCols() const { return numCols; }
     int getNumRows() const { return numRows; }
+    Cell getCellAt(int x, int y) { return cells[x][y]; }
 
     std::vector<std::vector<Cell>> vector() const { return cells; }
 
     // Mutators
     void resize(int, int);
+
+    // Overloaded operators
+    friend std::ostream &operator<<(std::ostream &strm, const Grid &obj);
 private:
     int numCols;
     int numRows;
