@@ -17,16 +17,18 @@ uses stacks.
     - Knows position
 
 - Collaborators
-    - ???
+    - State
 
 #### Grid Class
 
 - Responsibilities
     - Update a cell's state
     - Change the number of rows and columns
+    - Change the state of the cells
 
 - Collaborators
     - Cell
+    - State
 
 #### Maze Class
 
@@ -34,11 +36,13 @@ uses stacks.
     - Know position of starting cell
     - Know position of ending cell
     - Know current position within maze
+    - Change the state of the cells
 
 - Collaborators
     - Cell
     - Grid
     - Stack
+    - State
 
 #### Stack Class
 
