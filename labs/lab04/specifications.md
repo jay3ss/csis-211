@@ -13,7 +13,6 @@ uses stacks.
 
 - Responsibilities
     - Knows state of cell (e.g., visited, unvisited)
-    - Knows neighbors
     - Knows position
 
 - Collaborators
@@ -25,6 +24,9 @@ uses stacks.
     - Update a cell's state
     - Change the number of rows and columns
     - Change the state of the cells
+    - Get the number of columns
+    - Get the number of rows
+    - Get the cell at an arbitrary position within the grid
 
 - Collaborators
     - Cell
@@ -37,6 +39,7 @@ uses stacks.
     - Know position of ending cell
     - Know current position within maze
     - Change the state of the cells
+    - Get the grid
 
 - Collaborators
     - Cell
