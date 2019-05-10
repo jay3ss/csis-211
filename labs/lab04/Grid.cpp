@@ -25,6 +25,11 @@ void Grid::resize(int c, int r)
     cells = newCellsVect;
 }
 
+void Grid::setCell(Cell c)
+{
+    cells[c.getXPosition()][c.getYPosition()] = c.getState();
+}
+
 std::ostream &operator<<(std::ostream &strm, const Grid &obj)
 {
     for (int i = 0; i < obj.numRows; i++)

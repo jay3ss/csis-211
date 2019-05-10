@@ -24,6 +24,7 @@ public:
 
     // Mutators
     void resize(int, int);
+    void setCell(Cell c);
 
     // Overloaded operators
     friend std::ostream &operator<<(std::ostream &strm, const Grid &obj);
