@@ -34,7 +34,7 @@ public:
 
     // Mutators
     void setStart(const int x, const int y);
-    void setEnd(const int x, const int y) { end [0] = x; end[1]; }
+    void setEnd(const int x, const int y);
     void setCell(Cell cell);
 
     // Overloaded operators
