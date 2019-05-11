@@ -58,18 +58,39 @@ bool Maze::isWestWall(int x)
 void Maze::initGrid()
 {
     std::vector<std::vector<Cell>> gVector = grid.vector();
+    int numCols = grid.getNumCols();
+    int numRows = grid.getNumRows();
 
-    for (int i = 0; i < grid.getNumRows(); i++)
+    // Make the north wall occupied
+    for (int i = 0; i < numCols; i++)
     {
-        for (int j = 0; j < grid.getNumCols(); j++)
-        {
-            if (isOuterWall(j, i))
-            {
-                Cell c = gVector[j][i];
-                c = cell::State::OCCUPIED;
-                grid.setCell(c);
-            }
-        }
+        Cell c = gVector[i][0];
+        c.setState(cell::State::OCCUPIED);
+        grid.setCell(c);
+    }
+
+    // Make the south wall occupied
+    for (int i = 0; i < grid.getNumCols(); i++)
+    {
+        Cell c = gVector[i][numRows - 1];
+        c.setState(cell::State::OCCUPIED);
+        grid.setCell(c);
+    }
+
+    // Make the east wall occupied
+    for (int i = 0; i < numRows; i++)
+    {
+        Cell c = gVector[numCols - 1][i];
+        c.setState(cell::State::OCCUPIED);
+        grid.setCell(c);
+    }
+
+    // Make the west wall occupied
+    for (int i = 0; i < numRows; i++)
+    {
+        Cell c = gVector[0][i];
+        c.setState(cell::State::OCCUPIED);
+        grid.setCell(c);
     }
 }
 
