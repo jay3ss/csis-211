@@ -19,6 +19,7 @@ public:
 
     const int *getStart() const { return start; }
     const int *getEnd() const { return end; }
+    Cell getCellAt(int x, int y) { return grid.getCellAt(x, y); }
 
     bool isWall(Cell c);
     bool isOuterWall(int x, int y);
@@ -33,6 +34,7 @@ public:
     // Mutators
     void setStart(const int x, const int y);
     void setEnd(const int x, const int y) { end [0] = x; end[1]; }
+    void setCell(Cell cell);
 
     // Overloaded operators
     friend std::ostream &operator<<(std::ostream &strm, const Maze &obj);
