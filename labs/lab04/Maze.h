@@ -15,6 +15,7 @@ public:
     ~Maze();
 
     // Accessors
+    Grid getGrid() { return grid; }
 
     // Mutators
 
