@@ -20,6 +20,7 @@ public:
     const int *getStart() const { return start; }
     const int *getEnd() const { return end; }
     Cell getCellAt(int x, int y) { return grid.getCellAt(x, y); }
+    void getCellNeighbors(Cell c, Cell cells[]);
 
     bool isWall(Cell c);
     bool isOuterWall(int x, int y);

@@ -17,6 +17,19 @@ Maze::~Maze()
 
 }
 
+// Fill the contents of the passed in array with the neighbors of cell in the
+// following order: [north, east, south, west]
+void Maze::getCellNeighbors(Cell c, Cell cells[])
+{
+    int x = c.getXPosition();
+    int y = c.getXPosition();
+    // Get neighbors to the north, east, south, and west of cell (c)
+    cells[0] = grid.getCellAt(x + 1, y);    // North neighbor
+    cells[1] = grid.getCellAt(x, y + 1);    // East neighbor
+    cells[2] = grid.getCellAt(x - 1, y);    // South neighbor
+    cells[3] = grid.getCellAt(x, y - 1);    // West neighbor
+}
+
 void Maze::setStart(const int x, const int y)
 {
     start[0] = x;
