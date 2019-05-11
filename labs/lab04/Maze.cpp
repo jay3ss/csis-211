@@ -17,6 +17,16 @@ Maze::~Maze()
 
 }
 
+void Maze::setStart(const int x, const int y)
+{
+    start[0] = x;
+    start[1] = y;
+
+    Cell c = grid.getCellAt(x, y);
+    c.setState(cell::State::START);
+    grid.setCell(c);
+}
+
 bool Maze::isWall(Cell c)
 {
     return c.getState() == cell::State::OCCUPIED;
