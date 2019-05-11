@@ -57,6 +57,48 @@ int main()
     cout << "gridCell.getYPosition(): returns " << gridCell.getYPosition()
          << "; should return 3\n\n";
 
+    cout << "Getting an out of bounds cell should have a state of NONE:\n"
+         << "----------------------------------------------------------\n";
+    Cell outOfBounds = grid.getCellAt(16, 2);
+
+    cout << "outOfBounds = getCellAt(16, 2):\n"
+         << "outOfBounds.getState() == cell::State::NONE: "
+         << (outOfBounds.getState() == cell::State::NONE)
+         << "; should return 1 (true)\n\n";
+
+
+    cout << "outOfBounds = getCellAt(-1, -1):\n"
+         << "outOfBounds.getState() == cell::State::NONE: "
+         << (outOfBounds.getState() == cell::State::NONE)
+         << "; should return 1 (true)\n\n";
+
+    cout << "Test isOutOfBounds():\n"
+         << "---------------------\n";
+
+    cout << "isOutOfBounds(0, 0): returns " << grid.isOutOfBounds(0, 0)
+         << "; should return 0 (false)\n\n";
+
+    cout << "isOutOfBounds(2, 3): returns " << grid.isOutOfBounds(0, 0)
+         << "; should return 0 (false)\n\n";
+
+    cout << "isOutOfBounds(0, -1): returns " << grid.isOutOfBounds(0, -1)
+         << "; should return 1 (true)\n\n";
+
+    cout << "isOutOfBounds(-1, 0): returns " << grid.isOutOfBounds(-1, 0)
+         << "; should return 1 (true)\n\n";
+
+    cout << "isOutOfBounds(-1, -1): returns " << grid.isOutOfBounds(-1, -1)
+         << "; should return 1 (true)\n\n";
+
+    cout << "isOutOfBounds(159, 0): returns " << grid.isOutOfBounds(150, 0)
+         << "; should return 1 (true)\n\n";
+
+    cout << "isOutOfBounds(0, 150): returns " << grid.isOutOfBounds(0, 150)
+         << "; should return 1 (true)\n\n";
+
+    cout << "isOutOfBounds(150, 150): returns " << grid.isOutOfBounds(150, 150)
+         << "; should return 1 (true)\n\n";
+
     cout << "Change the state of some of the grid cells:\n"
          << "-------------------------------------------\n";
 
@@ -65,7 +107,7 @@ int main()
 
     cout << "The grid should now have an occupied cell at (2, 3)\n\n";
 
-    gridCell = cell::State::OCCUPIED;
+    gridCell.setState(cell::State::OCCUPIED);
     grid.setCell(gridCell);
 
     cout << "Set cell at (2, 3) to UNOCCUPIED\n"
@@ -73,7 +115,7 @@ int main()
 
     cout << "The grid should now have an unoccupied cell at (10, 0)\n\n";
     gridCell.setPosition(10, 0);
-    gridCell = cell::State::UNOCCUPIED;
+    gridCell.setState(cell::State::UNOCCUPIED);
     grid.setCell(gridCell);
 
     cout << grid << "\n";
