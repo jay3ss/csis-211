@@ -1,20 +1,5 @@
 #include "Cell.h"
 
-// Initializes every cell with the UNVISITED state
-// void Cell::initializeNeighbors()
-// {
-//     for (auto &n: neighbors)
-//     {
-//         n = cell::State::UNVISITED;
-//     }
-// }
-
-// Set the neighboring cells
-// void Cell::setNeighbors(std::array<cell::State, 4> n)
-// {
-//     neighbors = n;
-// }
-
 // Overloaded ostream operator
 std::ostream &operator<<(std::ostream &strm, const Cell &obj)
 {
