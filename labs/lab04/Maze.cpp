@@ -24,14 +24,6 @@ bool Maze::isWall(Cell c)
 
 bool Maze::isOuterWall(int x, int y)
 {
-    // if (isNorthWall(y) || isEastWall(x)
-    //  || isSouthWall(y) || isWestWall(x))
-    // {
-    //     return true;
-    // }
-
-    // return false;
-
     return (isNorthWall(y) || isEastWall(x) || isSouthWall(y) || isWestWall(x));
 }
 
