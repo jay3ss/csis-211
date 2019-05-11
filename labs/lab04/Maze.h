@@ -34,6 +34,8 @@ public:
     void setStart(const int x, const int y);
     void setEnd(const int x, const int y) { end [0] = x; end[1]; }
 
+    // Overloaded operators
+    friend std::ostream &operator<<(std::ostream &strm, const Maze &obj);
 private:
     Grid grid;
     int start[2];

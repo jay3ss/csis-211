@@ -102,3 +102,10 @@ void Maze::randomStart()
 {
 
 }
+
+// Overloaded operators
+std::ostream &operator<<(std::ostream &strm, const Maze &obj)
+{
+    strm << obj.grid;
+    return strm;
+}
