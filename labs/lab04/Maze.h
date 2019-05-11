@@ -17,6 +17,14 @@ public:
     // Accessors
     Grid getGrid() { return grid; }
 
+    bool isWall(Cell c);
+    bool isOuterWall(int x, int y);
+    bool isNorthWall(int y);
+    bool isSouthWall(int y);
+    bool isEastWall(int x);
+    bool isWestWall(int x);
+
+
     // Mutators
 
 private:
