@@ -6,7 +6,7 @@
 
 namespace cell
 {
-    enum class State { UNVISITED, OCCUPIED, UNOCCUPIED, NONE };
+    enum class State { UNVISITED, OCCUPIED, UNOCCUPIED, NONE, START, END };
 }
 
 class Cell
@@ -29,6 +29,7 @@ public:
     // void setNeighbors(const std::array<cell::State, 4> n);
 
     // Overloaded operators
+    // void operator=(const Cell &right) { state = right.getState(); }
     void operator=(const Cell &right);
     friend std::ostream &operator<<(std::ostream &strm, const Cell &obj);
 

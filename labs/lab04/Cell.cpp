@@ -29,6 +29,12 @@ std::ostream &operator<<(std::ostream &strm, const Cell &obj)
     case cell::State::UNVISITED:
         strm << "?";
         break;
+    case cell::State::START:
+        strm << "*";
+        break;
+    case cell::State::END:
+        strm << "x";
+        break;
     default:
         strm << "";
         break;
