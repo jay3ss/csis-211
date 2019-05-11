@@ -73,36 +73,28 @@ void Maze::initGrid()
     int numCols = grid.getNumCols();
     int numRows = grid.getNumRows();
 
-    // Make the north wall occupied
+    // Make the north and south walls occupied
     for (int i = 0; i < numCols; i++)
     {
-        Cell c = gVector[i][0];
-        c.setState(cell::State::OCCUPIED);
-        grid.setCell(c);
+        Cell cNorth = gVector[i][0];
+        cNorth.setState(cell::State::OCCUPIED);
+        grid.setCell(cNorth);
+
+        Cell cSouth = gVector[i][numRows - 1];
+        cSouth.setState(cell::State::OCCUPIED);
+        grid.setCell(cSouth);
     }
 
-    // Make the south wall occupied
-    for (int i = 0; i < grid.getNumCols(); i++)
-    {
-        Cell c = gVector[i][numRows - 1];
-        c.setState(cell::State::OCCUPIED);
-        grid.setCell(c);
-    }
-
-    // Make the east wall occupied
+    // Make the east and west walls occupied
     for (int i = 0; i < numRows; i++)
     {
-        Cell c = gVector[numCols - 1][i];
-        c.setState(cell::State::OCCUPIED);
-        grid.setCell(c);
-    }
+        Cell cEast = gVector[numCols - 1][i];
+        cEast.setState(cell::State::OCCUPIED);
+        grid.setCell(cEast);
 
-    // Make the west wall occupied
-    for (int i = 0; i < numRows; i++)
-    {
-        Cell c = gVector[0][i];
-        c.setState(cell::State::OCCUPIED);
-        grid.setCell(c);
+        Cell cWest = gVector[0][i];
+        cWest.setState(cell::State::OCCUPIED);
+        grid.setCell(cWest);
     }
 }
 
