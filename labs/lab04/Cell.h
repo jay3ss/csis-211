@@ -21,6 +21,14 @@ public:
     int getYPosition() const { return yPosition; }
     cell::State getState() const { return state; }
 
+    // Check state of cell
+    bool isEndd() const { return state == cell::State::END; }
+    bool isNone() const { return state == cell::State::NONE; }
+    bool isOccupied() const { return state == cell::State::OCCUPIED; }
+    bool isStart() const { return state == cell::State::START; }
+    bool isUnoccupied() const { return state == cell::State::UNOCCUPIED; }
+    bool isUnvisited() const { return state == cell::State::UNVISITED; }
+
     // Mutators
     void setPosition(int x, int y) { xPosition = x; yPosition = y; }
     void setState(const cell::State s) { state = s; }
