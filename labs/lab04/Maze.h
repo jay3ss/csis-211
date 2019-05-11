@@ -26,6 +26,8 @@ public:
     bool isSouthWall(int y);
     bool isEastWall(int x);
     bool isWestWall(int x);
+    bool isStart(int x, int y);
+    bool isEnd(int x, int y);
 
 
     // Mutators

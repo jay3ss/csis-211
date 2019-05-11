@@ -57,6 +57,16 @@ bool Maze::isWestWall(int x)
     return x == 0;
 }
 
+bool Maze::isStart(int x, int y)
+{
+    return (x == start[0] && y == start[1]);
+}
+
+bool Maze::isEnd(int x, int y)
+{
+    return (x == end[0] && y == end[1]);
+}
+
 void Maze::initGrid()
 {
     std::vector<std::vector<Cell>> gVector = grid.vector();
