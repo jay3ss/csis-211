@@ -18,9 +18,11 @@ public:
     // Accessors
     int getNumCols() const { return numCols; }
     int getNumRows() const { return numRows; }
-    Cell getCellAt(int x, int y) { return cells[x][y]; }
+    Cell getCellAt(int x, int y);
 
     std::vector<std::vector<Cell>> vector() const { return cells; }
+
+    bool isOutOfBounds(int x, int y);
 
     // Mutators
     void resize(int, int);

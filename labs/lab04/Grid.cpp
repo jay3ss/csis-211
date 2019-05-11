@@ -1,5 +1,27 @@
 #include "Grid.h"
 
+// Returns a cell at a given position in the grid. If the given position is out
+// the bounds of the grid (either: x < 0, x > numCols or y < 0, y > numRows)
+// then a cell with the state of NONE is returned
+Cell Grid::getCellAt(int x, int y)
+{
+    if (isOutOfBounds(x, y))
+    {
+        Cell c;
+        c.setState(cell::State::NONE);
+
+        return c;
+    }
+
+    return cells[x][y];
+}
+
+// Checks if a cell is out of bounds
+bool Grid::isOutOfBounds(int x, int y)
+{
+    return (x < 0 || x > numCols || y < 0 || y > numRows);
+}
+
 void Grid::init()
 {
     resize(numCols, numRows);
