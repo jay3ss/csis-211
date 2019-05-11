@@ -76,25 +76,25 @@ int main()
          << "---------------------\n";
 
     cout << "isOutOfBounds(0, 0): returns " << grid.isOutOfBounds(0, 0)
-         << "; should return 0 (false)\n\n";
+         << "; should return 0 (false)\n";
 
     cout << "isOutOfBounds(2, 3): returns " << grid.isOutOfBounds(0, 0)
-         << "; should return 0 (false)\n\n";
+         << "; should return 0 (false)\n";
 
     cout << "isOutOfBounds(0, -1): returns " << grid.isOutOfBounds(0, -1)
-         << "; should return 1 (true)\n\n";
+         << "; should return 1 (true)\n";
 
     cout << "isOutOfBounds(-1, 0): returns " << grid.isOutOfBounds(-1, 0)
-         << "; should return 1 (true)\n\n";
+         << "; should return 1 (true)\n";
 
     cout << "isOutOfBounds(-1, -1): returns " << grid.isOutOfBounds(-1, -1)
-         << "; should return 1 (true)\n\n";
+         << "; should return 1 (true)\n";
 
     cout << "isOutOfBounds(159, 0): returns " << grid.isOutOfBounds(150, 0)
-         << "; should return 1 (true)\n\n";
+         << "; should return 1 (true)\n";
 
     cout << "isOutOfBounds(0, 150): returns " << grid.isOutOfBounds(0, 150)
-         << "; should return 1 (true)\n\n";
+         << "; should return 1 (true)\n";
 
     cout << "isOutOfBounds(150, 150): returns " << grid.isOutOfBounds(150, 150)
          << "; should return 1 (true)\n\n";
