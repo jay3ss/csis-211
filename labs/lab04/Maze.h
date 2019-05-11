@@ -22,6 +22,8 @@ public:
 private:
     Grid grid;
 
+    // Initialize grid with outer cells as occupied (walls)
+    void initGrid();
     void randomStart();
 };
 

@@ -16,6 +16,11 @@ Maze::~Maze()
 
 }
 
+void Maze::initGrid()
+{
+
+}
+
 void Maze::randomStart()
 {
 
