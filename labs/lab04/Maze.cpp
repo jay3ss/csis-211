@@ -4,11 +4,13 @@
 Maze::Maze(int c, int r, bool randStart)
 {
     grid = Grid(c, r);
+    initGrid();
+    seedRandGen();
+
     if (randStart)
     {
         randomStart();
     }
-    initGrid();
 }
 
 // Destructor
@@ -119,6 +121,13 @@ void Maze::initGrid()
         cWest.setState(cell::State::OCCUPIED);
         grid.setCell(cWest);
     }
+}
+
+// Initialize random number engine
+void Maze::seedRandGen()
+{
+    std::mt19937 randNumGen(seed());
+    std::uniform_int_distribution<int> uniIntDist(0, 3);
 }
 
 void Maze::randomStart()
