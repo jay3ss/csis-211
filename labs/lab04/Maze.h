@@ -9,13 +9,19 @@ class Maze
 {
 public:
     // Constructor
-    Maze(int c = 1, int r = 1)
-        { grid = Grid(c, r); }
+    Maze(int c = 1, int r = 1, bool randStart = false);
 
     // Destructor
     ~Maze();
+
+    // Accessors
+
+    // Mutators
+
 private:
     Grid grid;
+
+    void randomStart();
 };
 
 #endif // _MAZE_H
