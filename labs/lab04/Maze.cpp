@@ -163,13 +163,13 @@ Cell Maze::getRandomNeighbor(Cell c)
     switch (randomDirection)
     {
     case maze::Direction::NORTH:
-        randomNeighbor = grid.getCellAt(x, y + 1);
+        randomNeighbor = grid.getCellAt(x, y - 1);
         break;
     case maze::Direction::EAST:
-        randomNeighbor = grid.getCellAt(x - 1, y);
+        randomNeighbor = grid.getCellAt(x + 1, y);
         break;
     case maze::Direction::SOUTH:
-        randomNeighbor = grid.getCellAt(x, y - 1);
+        randomNeighbor = grid.getCellAt(x, y + 1);
         break;
     // maze::Direction::WEST
     default:
