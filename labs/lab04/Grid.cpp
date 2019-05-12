@@ -7,8 +7,9 @@ Cell Grid::getCellAt(int x, int y)
 {
     if (isOutOfBounds(x, y))
     {
-        Cell c;
+	    Cell c;
         c.setState(cell::State::NONE);
+		c.setPosition(x, y);
 
         return c;
     }
@@ -49,7 +50,7 @@ void Grid::resize(int c, int r)
 
 void Grid::setCell(Cell c)
 {
-    cells[c.getXPosition()][c.getYPosition()] = c.getState();
+    cells[c.getXPosition()][c.getYPosition()] = c;
 }
 
 std::ostream &operator<<(std::ostream &strm, const Grid &obj)
