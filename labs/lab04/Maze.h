@@ -5,6 +5,7 @@
 #include <vector>
 #include "Cell.h"
 #include "Grid.h"
+#include "LinkedStack.h"
 
 class Maze
 {
@@ -41,6 +42,7 @@ public:
     // Overloaded operators
     friend std::ostream &operator<<(std::ostream &strm, const Maze &obj);
 private:
+    LinkedStack<Cell> stack;
     Grid grid;
     int start[2];
     int end[2];
