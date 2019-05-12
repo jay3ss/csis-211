@@ -32,4 +32,6 @@ std::ostream &operator<<(std::ostream &strm, const Cell &obj)
 void Cell::operator=(const Cell &right)
 {
     state = right.state;
+	xPosition = right.xPosition;
+	yPosition = right.yPosition;
 }
