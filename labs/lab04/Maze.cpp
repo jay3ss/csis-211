@@ -141,6 +141,45 @@ void Maze::randomStart()
     setEnd(xDist(randNumGen), yDist(randNumGen));
 }
 
+Cell Maze::getRandomNeighbor(Cell c)
+{
+    int x = c.getXPosition();
+    int y = c.getYPosition();
+
+    maze::Direction directions[] = {
+        maze::Direction::NORTH,
+        maze::Direction::EAST,
+        maze::Direction::SOUTH,
+        maze::Direction::WEST
+    };
+
+    std::mt19937 randNumGen(seed());
+    std::uniform_int_distribution<int> uniIntDist(0, 3);
+    int randomInt = uniIntDist(randNumGen);
+    std::cout << "Random int is " << randomInt << std::endl;
+    maze::Direction randomDirection = directions[randomInt];
+
+    Cell randomNeighbor;
+    switch (randomDirection)
+    {
+    case maze::Direction::NORTH:
+        randomNeighbor = grid.getCellAt(x, y + 1);
+        break;
+    case maze::Direction::EAST:
+        randomNeighbor = grid.getCellAt(x - 1, y);
+        break;
+    case maze::Direction::SOUTH:
+        randomNeighbor = grid.getCellAt(x, y - 1);
+        break;
+    // maze::Direction::WEST
+    default:
+        randomNeighbor = grid.getCellAt(x - 1, y);
+        break;
+    }
+
+    return randomNeighbor;
+}
+
 // Overloaded operators
 std::ostream &operator<<(std::ostream &strm, const Maze &obj)
 {
