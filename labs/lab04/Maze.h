@@ -1,6 +1,8 @@
 #ifndef _MAZE_H
 #define _MAZE_H
 
+#include <cstdlib>
+#include <ctime>
 #include <random>
 #include <vector>
 #include "Cell.h"
@@ -56,13 +58,17 @@ private:
 
     // Initialize grid with outer cells as occupied (walls)
     void initGrid();
+
+    // Random number generation
+    int generateRandomNumber(int min, int max);
     void seedRandGen();
     void randomStart();
 
 
-    std::random_device seed; // to initialize (seed) the engine
-    std::mt19937 randNumGen;
-    std::uniform_int_distribution<int> uniIntDist;
+    const unsigned SEED = std::time(0);
+    // std::random_device seed; // to initialize (seed) the engine
+    // std::mt19937 randNumGen;
+    // std::uniform_int_distribution<int> uniIntDist;
 };
 
 #endif // _MAZE_H

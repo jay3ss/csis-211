@@ -123,22 +123,34 @@ void Maze::initGrid()
     }
 }
 
+int Maze::generateRandomNumber(int min, int max)
+{
+    return (rand() % (max - min + 1)) + min;
+}
+
 // Initialize random number engine
 void Maze::seedRandGen()
 {
-    std::mt19937 randNumGen(seed());
-    std::uniform_int_distribution<int> uniIntDist(0, 3);
+    std::srand(SEED);
+    // std::mt19937 randNumGen(seed());
+    // std::uniform_int_distribution<int> uniIntDist(0, 3);
 }
 
 void Maze::randomStart()
 {
-    std::mt19937 randNumGen(seed());
+    // std::mt19937 randNumGen(seed());
     // numCols - 2 so that the start point isn't in the east or west walls
-    std::uniform_int_distribution<int> xDist(1, grid.getNumCols() - 2);
+    // std::uniform_int_distribution<int> xDist(1, grid.getNumCols() - 2);
     // numRows - 2 so that the start point isn't in the north or south walls
-    std::uniform_int_distribution<int> yDist(1, grid.getNumRows() - 2);
-    setStart(xDist(randNumGen), yDist(randNumGen));
-    setEnd(xDist(randNumGen), yDist(randNumGen));
+    // std::uniform_int_distribution<int> yDist(1, grid.getNumRows() - 2);
+    // setStart(xDist(randNumGen), yDist(randNumGen));
+    // setEnd(xDist(randNumGen), yDist(randNumGen));
+    int randX = generateRandomNumber(1, grid.getNumCols() - 2);
+    int randY = generateRandomNumber(1, grid.getNumRows() - 2);
+    setStart(randX, randY);
+    randX = generateRandomNumber(1, grid.getNumCols() - 2);
+    randY = generateRandomNumber(1, grid.getNumRows() - 2);
+    setEnd(randX, randY);
 }
 
 Cell Maze::getRandomNeighbor(Cell c)
@@ -153,10 +165,11 @@ Cell Maze::getRandomNeighbor(Cell c)
         maze::Direction::WEST
     };
 
-    std::mt19937 randNumGen(seed());
-    std::uniform_int_distribution<int> uniIntDist(0, 3);
-    int randomInt = uniIntDist(randNumGen);
-    std::cout << "Random int is " << randomInt << std::endl;
+    // std::mt19937 randNumGen(seed());
+    // std::uniform_int_distribution<int> uniIntDist(0, 3);
+    // int randomInt = uniIntDist(randNumGen);
+    // std::cout << "Random int is " << randomInt << std::endl;
+    int randomInt = generateRandomNumber(0, 3);
     maze::Direction randomDirection = directions[randomInt];
 
     Cell randomNeighbor;
