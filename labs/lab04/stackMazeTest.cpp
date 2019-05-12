@@ -28,4 +28,11 @@ int main()
     Cell c = grid.getCellAt(start[0], start[1]);
 
     cout << "Now the maze looks like\n\n" << maze << endl;
+
+    cout << "Test creating a maze with a random start and end point:\n"
+         << "-------------------------------------------------------\n\n";
+
+    Maze randMaze(10, 15, true);
+
+    cout << randMaze;
 }
