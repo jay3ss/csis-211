@@ -14,7 +14,7 @@ class Cell
 public:
     // Constructor
     Cell(cell::State s = cell::State::UNVISITED, int x = 0, int y = 0) :
-        state(s), xPosition(0), yPosition(0) {}
+        state(s), xPosition(x), yPosition(x) {}
 
     // Accessors
     int getXPosition() const { return xPosition; }
