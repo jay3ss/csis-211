@@ -132,7 +132,13 @@ void Maze::seedRandGen()
 
 void Maze::randomStart()
 {
-
+    std::mt19937 randNumGen(seed());
+    // numCols - 2 so that the start point isn't in the east or west walls
+    std::uniform_int_distribution<int> xDist(1, grid.getNumCols() - 2);
+    // numRows - 2 so that the start point isn't in the north or south walls
+    std::uniform_int_distribution<int> yDist(1, grid.getNumRows() - 2);
+    setStart(xDist(randNumGen), yDist(randNumGen));
+    setEnd(xDist(randNumGen), yDist(randNumGen));
 }
 
 // Overloaded operators
