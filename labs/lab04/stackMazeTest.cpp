@@ -10,12 +10,12 @@ int main()
     Maze maze(42, 37);
 
     Grid grid = maze.getGrid();
-    maze.setStart(3, 5);
-    maze.setEnd(39, 22);
-
     cout << "The maze is\n\n";
 
     cout << maze << "\n\n";
+
+    maze.setStart(3, 5);
+    maze.setEnd(39, 22);
 
     const int *start = maze.getStart();
     const int *end = maze.getEnd();
