@@ -30,6 +30,7 @@ public:
     Cell getEnd() { return grid.getCellAt(end[0], end[1]); }
     Cell getCellAt(int x, int y) { return grid.getCellAt(x, y); }
     void getCellNeighbors(Cell c, Cell cells[]);
+    int getSeed() const { return SEED; }
 
     bool isWall(Cell c);
     bool isOuterWall(int x, int y);
