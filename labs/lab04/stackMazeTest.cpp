@@ -17,15 +17,17 @@ int main()
     maze.setStart(3, 5);
     maze.setEnd(39, 22);
 
-    const int *start = maze.getStart();
-    const int *end = maze.getEnd();
+    // const int *start = maze.getStart();
+    // const int *end = maze.getEnd();
+    Cell startCell = maze.getStart();
+    Cell endCell = maze.getEnd();
 
-    cout << "Starting coordinate is (" << start[0] << ", " << start[1] << ")\n";
-    cout << "Ending coordinate is (" << end[0] << ", " << end[1] << ")\n\n";
+    cout << "Starting coordinate is (" << startCell.getXPosition() << ", " << startCell.getYPosition() << ")\n";
+    cout << "Ending coordinate is (" << endCell.getXPosition() << ", " << endCell.getYPosition() << ")\n\n";
 
     // Grid grid = maze.getGrid();
     grid = maze.getGrid();
-    Cell c = grid.getCellAt(start[0], start[1]);
+    // Cell c = grid.getCellAt(start[0], start[1]);
 
     cout << "Now the maze looks like\n\n" << maze << endl;
 
@@ -34,5 +36,22 @@ int main()
 
     Maze randMaze(10, 15, true);
 
-    cout << randMaze;
+    cout << randMaze << endl;
+
+    cout << "Get a random neighbor:\n"
+         << "----------------------\n\n";
+
+    // const int* randStart = randMaze.getStart();
+    Cell randStart = randMaze.getStart();
+    // Cell randStartCell = randMaze.getCellAt(randStart[0], randStart[1]);
+    Cell randNeighborCell = randMaze.getRandomNeighbor(randStart);
+    // Cell randNeighborCell = randMaze.getRandomNeighbor(randStartCell);
+
+    cout << "Get random neighbor of starting cell at ("
+         << randStart.getXPosition() << ", " << randStart.getYPosition() << ")\n";
+
+    cout << "randMaze.getRandomNeighbor(randStartCell):\n"
+         << "Neighbor's coordinates are ("
+         << randNeighborCell.getXPosition() << ", "
+         << randNeighborCell.getYPosition() << ")\n\n";
 }
