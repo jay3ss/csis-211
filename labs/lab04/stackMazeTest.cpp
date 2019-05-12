@@ -38,6 +38,8 @@ int main()
 
     cout << randMaze << endl;
 
+    cout << "Generated using the seed " << maze.getSeed() << "\n\n";
+
     cout << "Get a random neighbor:\n"
          << "----------------------\n\n";
 
