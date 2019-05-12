@@ -7,6 +7,11 @@
 #include "Grid.h"
 #include "LinkedStack.h"
 
+namespace maze
+{
+    enum class Direction { NORTH, EAST, SOUTH, WEST };
+}
+
 class Maze
 {
 public:
@@ -19,8 +24,8 @@ public:
     // Accessors
     Grid getGrid() { return grid; }
 
-    const int *getStart() const { return start; }
-    const int *getEnd() const { return end; }
+    Cell getStart() { return grid.getCellAt(start[0], start[1]); }
+    Cell getEnd() { return grid.getCellAt(end[0], end[1]); }
     Cell getCellAt(int x, int y) { return grid.getCellAt(x, y); }
     void getCellNeighbors(Cell c, Cell cells[]);
 
@@ -39,6 +44,8 @@ public:
     void setEnd(const int x, const int y);
     void setCell(Cell cell);
 
+    // Function to get a random neighbor, if possible
+    Cell getRandomNeighbor(Cell c);
     // Overloaded operators
     friend std::ostream &operator<<(std::ostream &strm, const Maze &obj);
 private:
@@ -51,6 +58,7 @@ private:
     void initGrid();
     void seedRandGen();
     void randomStart();
+
 
     std::random_device seed; // to initialize (seed) the engine
     std::mt19937 randNumGen;
