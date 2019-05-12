@@ -4,6 +4,8 @@
 
 using namespace std;
 
+char stateToChar(cell::State state);
+
 int main()
 {
     // Maze maze(3, 3);
@@ -56,4 +58,34 @@ int main()
          << "Neighbor's coordinates are ("
          << randNeighborCell.getXPosition() << ", "
          << randNeighborCell.getYPosition() << ")\n\n";
+
+    cell::State randState = randMaze.getRandomState();
+
+    cout << "Getting a random state: " << stateToChar(randState) << endl;
+
+    cout << "Generate a maze:\n"
+         << "----------------\n\n";
+
+    Maze newMaze(15, 15, true);
+
+    newMaze.generate();
+
+    cout << "Here's the newly generated maze" << "\n\n"
+         << newMaze;
+}
+
+
+char stateToChar(cell::State state)
+{
+    char c;
+    switch (state)
+    {
+    case cell::State::OCCUPIED:
+        c = '#';
+        break;
+    default:
+        c = ' ';
+        break;
+    }
+    return c;
 }

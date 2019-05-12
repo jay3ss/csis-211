@@ -1,6 +1,7 @@
 #ifndef _MAZE_H
 #define _MAZE_H
 
+#include <algorithm>
 #include <cstdlib>
 #include <ctime>
 #include <random>
@@ -32,6 +33,12 @@ public:
     void getCellNeighbors(Cell c, Cell cells[]);
     int getSeed() const { return SEED; }
 
+    // Maze generation-related functions
+    void generate();
+    bool hasUnvisitedNeighbors(Cell c);
+    cell::State getRandomState() const;
+
+    // Wall-/cell-related functions
     bool isWall(Cell c);
     bool isOuterWall(int x, int y);
     bool isNorthWall(int y);

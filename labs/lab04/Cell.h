@@ -22,9 +22,10 @@ public:
     cell::State getState() const { return state; }
 
     // Check state of cell
-    bool isEndd() const { return state == cell::State::END; }
+    bool isEnd() const { return state == cell::State::END; }
     bool isNone() const { return state == cell::State::NONE; }
-    bool isOccupied() const { return state == cell::State::OCCUPIED; }
+    bool isOccupied() const
+        { return state == cell::State::OCCUPIED || state == cell::State::NONE; }
     bool isStart() const { return state == cell::State::START; }
     bool isUnoccupied() const { return state == cell::State::UNOCCUPIED; }
     bool isUnvisited() const { return state == cell::State::UNVISITED; }
