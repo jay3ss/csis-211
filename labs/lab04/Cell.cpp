@@ -1,4 +1,4 @@
-/** @file Cell.h
+/** @file Cell.cpp
  * Implements an individual cell of a grid.
  */
 #include "Cell.h"
