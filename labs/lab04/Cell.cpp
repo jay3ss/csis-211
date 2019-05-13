@@ -1,3 +1,6 @@
+/** @file Cell.h
+ * Implements an individual cell of a grid.
+ */
 #include "Cell.h"
 
 // Copy constructor
