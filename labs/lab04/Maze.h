@@ -22,7 +22,7 @@ public:
     Maze(int c = 1, int r = 1, bool randStart = true);
 
     // Destructor
-    ~Maze();
+    ~Maze() {}
 
     // Accessors
     Grid getGrid() { return grid; }

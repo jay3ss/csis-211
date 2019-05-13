@@ -13,12 +13,6 @@ Maze::Maze(int c, int r, bool randStart)
     }
 }
 
-// Destructor
-Maze::~Maze()
-{
-
-}
-
 // Fill the contents of the passed in array with the neighbors of cell in the
 // following order: [north, east, south, west]
 void Maze::getCellNeighbors(Cell c, Cell cells[])
