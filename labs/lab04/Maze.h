@@ -1,6 +1,9 @@
 #ifndef _MAZE_H
 #define _MAZE_H
 
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
 #include <random>
 #include <vector>
 #include "Cell.h"
@@ -16,7 +19,7 @@ class Maze
 {
 public:
     // Constructor
-    Maze(int c = 1, int r = 1, bool randStart = false);
+    Maze(int c = 1, int r = 1, bool randStart = true);
 
     // Destructor
     ~Maze();
@@ -28,7 +31,14 @@ public:
     Cell getEnd() { return grid.getCellAt(end[0], end[1]); }
     Cell getCellAt(int x, int y) { return grid.getCellAt(x, y); }
     void getCellNeighbors(Cell c, Cell cells[]);
+    int getSeed() const { return SEED; }
 
+    // Maze generation-related functions
+    void generate();
+    bool hasUnvisitedNeighbors(Cell c);
+    cell::State getRandomState() const;
+
+    // Wall-/cell-related functions
     bool isWall(Cell c);
     bool isOuterWall(int x, int y);
     bool isNorthWall(int y);
@@ -56,13 +66,14 @@ private:
 
     // Initialize grid with outer cells as occupied (walls)
     void initGrid();
+
+    // Random number generation
+    int generateRandomNumber(int min, int max);
     void seedRandGen();
     void randomStart();
 
-
-    std::random_device seed; // to initialize (seed) the engine
-    std::mt19937 randNumGen;
-    std::uniform_int_distribution<int> uniIntDist;
+    // Seed for the random number generator
+    const unsigned SEED = std::time(0);
 };
 
 #endif // _MAZE_H

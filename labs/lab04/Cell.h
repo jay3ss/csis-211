@@ -16,17 +16,21 @@ public:
     Cell(cell::State s = cell::State::UNVISITED, int x = 0, int y = 0) :
         state(s), xPosition(x), yPosition(x) {}
 
+	// Copy constructor
+	Cell(const Cell &c);
+
     // Accessors
     int getXPosition() const { return xPosition; }
     int getYPosition() const { return yPosition; }
     cell::State getState() const { return state; }
 
     // Check state of cell
-    bool isEndd() const { return state == cell::State::END; }
+    bool isEnd() const { return state == cell::State::END; }
     bool isNone() const { return state == cell::State::NONE; }
-    bool isOccupied() const { return state == cell::State::OCCUPIED; }
+    bool isOccupied() const
+        { return state == cell::State::OCCUPIED || state == cell::State::NONE; }
     bool isStart() const { return state == cell::State::START; }
-    bool isUnoccupied() const { return state == cell::State::UNOCCUPIED; }
+    bool isUnoccupied() const { return state != cell::State::OCCUPIED; }
     bool isUnvisited() const { return state == cell::State::UNVISITED; }
 
     // Mutators
