@@ -1,3 +1,6 @@
+/** @file Grid.cpp
+ * Implements grid of cell objects.
+ */
 #include "Grid.h"
 
 // Returns a cell at a given position in the grid. If the given position is out

@@ -1,3 +1,6 @@
+/** @file Grid.h
+ * Defines and implements grid of cell objects.
+ */
 #ifndef _GRID_H
 #define _GRID_H
 
