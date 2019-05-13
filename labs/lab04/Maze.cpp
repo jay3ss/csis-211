@@ -1,3 +1,6 @@
+/** @file Maze.h
+ * Implements a maze.
+ */
 #include "Maze.h"
 
 // Constructor
@@ -13,23 +16,10 @@ Maze::Maze(int c, int r, bool randStart)
     }
 }
 
-// Fill the contents of the passed in array with the neighbors of cell in the
-// following order: [north, east, south, west]
-void Maze::getCellNeighbors(Cell c, Cell cells[])
-{
-    int x = c.getXPosition();
-    int y = c.getXPosition();
-    // Get neighbors to the north, east, south, and west of cell (c)
-    cells[0] = grid.getCellAt(x + 1, y);    // North neighbor
-    cells[1] = grid.getCellAt(x, y + 1);    // East neighbor
-    cells[2] = grid.getCellAt(x - 1, y);    // South neighbor
-    cells[3] = grid.getCellAt(x, y - 1);    // West neighbor
-}
-
 // A maze generation algorithm that utilizes stacks is the randomized depth-first search algorithm.
 // Pseudocode
 //
-// The following is taken from the Wikipedia page linked to above:
+// The following is taken from Wikipedia:
 //
 //     1. Start with a grid that has no edges (all walls)
 //     2. Make the initial cell the current cell
@@ -58,14 +48,17 @@ void Maze::generate()
     Cell topCell = stack.peek();
     while (!stack.isEmpty())
     {
+        // Randomly get a neighbor to topCell
         Cell nextCell = getRandomNeighbor(topCell);
 
         if (!nextCell.isUnvisited())
         {
+            // Backtrack
             stack.pop();
         }
         else
         {
+            // Move ahead
             nextCell.setState(getRandomState());
 			grid.setCell(nextCell);
 			stack.push(nextCell);
@@ -120,6 +113,7 @@ bool Maze::hasUnvisitedNeighbors(Cell c)
     return false;
 }
 
+// Returns  random state, either: OCCUPIED or UNOCCUPIED
 cell::State Maze::getRandomState() const
 {
 
@@ -133,6 +127,7 @@ cell::State Maze::getRandomState() const
 
 }
 
+// Defines the starting point
 void Maze::setStart(const int x, const int y)
 {
     start[0] = x;
@@ -143,56 +138,50 @@ void Maze::setStart(const int x, const int y)
     grid.setCell(c);
 }
 
-void Maze::setEnd(const int x, const int y)
-{
-    end[0] = x;
-    end[1] = y;
-
-    Cell c = grid.getCellAt(x, y);
-    c.setState(cell::State::END);
-    grid.setCell(c);
-}
-
+// Checks if a cell is a wall
 bool Maze::isWall(Cell c)
 {
     return c.getState() == cell::State::OCCUPIED;
 }
 
+// Checks if a cell is an outer wall
 bool Maze::isOuterWall(int x, int y)
 {
     return (isNorthWall(y) || isEastWall(x) || isSouthWall(y) || isWestWall(x));
 }
 
+// Checks if a cell is a north wall
 bool Maze::isNorthWall(int y)
 {
     return y == 0;
 }
 
+// Checks if a cell is a south wall
 bool Maze::isSouthWall(int y)
 {
     return y == (grid.getNumRows() - 1);
 }
 
+// Checks if a cell is an east wall
 bool Maze::isEastWall(int x)
 {
     return x == (grid.getNumCols() - 1);
 }
 
+// Checks if a cell is a west wall
 bool Maze::isWestWall(int x)
 {
     return x == 0;
 }
 
+// Checks if a cell is the starting point
 bool Maze::isStart(int x, int y)
 {
     return (x == start[0] && y == start[1]);
 }
 
-bool Maze::isEnd(int x, int y)
-{
-    return (x == end[0] && y == end[1]);
-}
-
+// The cells along north, south, east, and west of the grid will be set
+// to occupied (a wall)
 void Maze::initGrid()
 {
     std::vector<std::vector<Cell>> gVector = grid.vector();
@@ -235,6 +224,8 @@ void Maze::seedRandGen()
     std::srand(SEED);
 }
 
+// Sets the starting point to a random location within the maze that ins't
+// a wall
 void Maze::randomStart()
 {
     // Take care not to place the start point outside of the grid or on the
@@ -245,12 +236,9 @@ void Maze::randomStart()
     int randX = generateRandomNumber(1, grid.getNumCols() - 2);
     int randY = generateRandomNumber(1, grid.getNumRows() - 2);
     setStart(randX, randY);
-
-    // randX = generateRandomNumber(1, grid.getNumCols() - 2);
-    // randY = generateRandomNumber(1, grid.getNumRows() - 2);
-    // setEnd(randX, randY);
 }
 
+// Returns a random neighbor to the passed in cell, if possible
 Cell Maze::getRandomNeighbor(Cell c)
 {
     int x = c.getXPosition();
@@ -262,10 +250,6 @@ Cell Maze::getRandomNeighbor(Cell c)
         maze::Direction::SOUTH,
         maze::Direction::WEST
     };
-
-
-    // int randomInt = generateRandomNumber(0, 3);
-    // maze::Direction randomDirection = directions[randomInt];
 
     std::random_shuffle(directions.begin(), directions.end());
 
@@ -309,20 +293,3 @@ std::ostream &operator<<(std::ostream &strm, const Maze &obj)
     strm << obj.grid;
     return strm;
 }
-
-
-// For debugging
-// char stateToChar(cell::State state)
-// {
-//     char c;
-//     switch (state)
-//     {
-//     case cell::State::OCCUPIED:
-//         c = '#';
-//         break;
-//     default:
-//         c = ' ';
-//         break;
-//     }
-//     return c;
-// }
