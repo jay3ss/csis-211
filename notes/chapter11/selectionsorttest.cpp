@@ -1,5 +1,5 @@
 #include <iostream>
-#include "selectionsort.cpp"
+#include "sorters.hpp"
 
 using namespace std;
 
@@ -13,5 +13,5 @@ int main()
     {
         cout << theArray[i] << ", ";
     }
-    cout << theArray[size - 1];
+    cout << theArray[size - 1] << endl;
 }

@@ -12,9 +12,10 @@ include_directories(include)
 # target_link_libraries(mainsquare ${PROJECT_NAME}_square)
 # add_executable(mainsquare src/main.cpp)
 
-add_library(${PROJECT_NAME}_selectionsort selectionsort.cpp)
+add_library(${PROJECT_NAME}_sorters sorters.hpp)
+set_target_properties(${PROJECT_NAME}_sorters PROPERTIES LINKER_LANGUAGE CXX)
 add_executable(${PROJECT_NAME}_selection_sort_test selectionsorttest.cpp)
 target_link_libraries(
     ${PROJECT_NAME}_selection_sort_test
-    ${PROJECT_NAME}_selectionsort
+    ${PROJECT_NAME}_sorters
 )
