@@ -45,10 +45,23 @@ void selectionSort(ItemType theArray[], int n)
 @post theArray is sorted into ascending order; n is unchanged.
 @param theArray The given array.
 @param n The size of theArray. */
+// Note: this can be optimized to be O(n) at best if already sorted by having
+// a flag to quit a while loop instead of using nested for loops
 template<class ItemType>
 void bubbleSort(ItemType theArray[], int n)
 {
-
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i; j++)
+        {
+            if (theArray[j] > theArray[j + 1])
+            {
+                ItemType tempItem = theArray[j];
+                theArray[j] = theArray[j + 1];
+                theArray[j + 1] = tempItem;
+            }
+        }
+    }
 }
 
 #endif // _JOSHS_SELECTION_SORT_
