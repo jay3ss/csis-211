@@ -4,7 +4,6 @@
 #ifndef _CELL_H
 #define _CELL_H
 
-#include <array>
 #include <iostream>
 
 // Possible states the cell can have
