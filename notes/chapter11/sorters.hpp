@@ -40,4 +40,15 @@ void selectionSort(ItemType theArray[], int n)
     }
 }
 
+/** Sorts the items in an array into ascending order.
+@pre None.
+@post theArray is sorted into ascending order; n is unchanged.
+@param theArray The given array.
+@param n The size of theArray. */
+template<class ItemType>
+void bubbleSort(ItemType theArray[], int n)
+{
+
+}
+
 #endif // _JOSHS_SELECTION_SORT_
