@@ -1,5 +1,5 @@
-#ifndef _JOSHS_SELECTION_SORT_
-#define _JOSHS_SELECTION_SORT_
+#ifndef _JOSHS_SORTERS_H_
+#define _JOSHS_SORTERS_H_
 /** Finds the largest item in an array.
 @pre The size of the array is >= 1.
 @post The arguments are unchanged.
@@ -64,4 +64,4 @@ void bubbleSort(ItemType theArray[], int n)
     }
 }
 
-#endif // _JOSHS_SELECTION_SORT_
+#endif // _JOSHS_SORTERS_H_
