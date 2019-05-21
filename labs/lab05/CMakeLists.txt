@@ -25,10 +25,14 @@ target_link_libraries(todolist linkedlist)
 # Build the tests
 if(BUILD_TESTING)
     include_directories(external)
+    add_library(catch2 external/catch/catch.hpp)
+    set_target_properties(catch2 PROPERTIES LINKER_LANGUAGE CXX)
+
     # Tests
     # Setup for the main file
     add_library(testsmain tests-main.cpp)
-    target_link_libraries(testsmain Catch2::Catch2)
+    target_link_libraries(testsmain catch2)
+
 
     # Test the Cell class
     add_executable(testlinkedlist test-linked-list.cpp)
