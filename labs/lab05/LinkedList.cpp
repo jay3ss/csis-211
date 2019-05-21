@@ -18,7 +18,7 @@ bool LinkedList<T>::isEmpty() const
 template<class T>
 int LinkedList<T>::length() const
 {
-    return -1;
+    return numEntries_;
 }
 
 /** Insert an entry at a given position in the list. */
