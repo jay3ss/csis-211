@@ -3,12 +3,13 @@ set(CMAKE_CXX_STANDARD 11)
 project(csis211lab05)
 
 # Create the libraries
-add_library(node Node.cpp)
+add_library(node Node.h)
 add_library(listinterface ListInterface.h)
 add_library(linkedlist LinkedList.cpp)
 
 # Tell the linker that the libraries are C++
 set_target_properties(
+    node
     listinterface
     PROPERTIES LINKER_LANGUAGE CXX
 )
