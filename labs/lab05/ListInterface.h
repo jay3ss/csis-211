@@ -4,6 +4,7 @@
 template<class T>
 class ListInterface
 {
+public:
 	/** Destructor */
 	virtual ~ListInterface();
 
