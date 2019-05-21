@@ -9,7 +9,7 @@ class ListInterface
 
 	/** Sees if the list is empty
 	@return True if the list is empty, otherwise false. */
-	virtual bool empty() const = 0;
+	virtual bool isEmpty() const = 0;
 
 	/** Get the number of entries in the list.
 	 @return The integer number of entries in the list. */

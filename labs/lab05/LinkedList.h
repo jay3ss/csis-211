@@ -11,9 +11,9 @@ class LinkedList : public ListInterface<T>
 
     /** Sees if the list is empty
 	@return True if the list is empty, otherwise false. */
-    bool empty() const;
+	bool isEmpty() const;
 
-    /** Get the number of entries in the list.
+	/** Get the number of entries in the list.
 	 @return The integer number of entries in the list. */
     int length() const;
 
