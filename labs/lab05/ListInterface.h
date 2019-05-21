@@ -6,7 +6,7 @@ class ListInterface
 {
 public:
 	/** Destructor */
-	virtual ~ListInterface();
+	virtual ~ListInterface(){};
 
 	/** Sees if the list is empty
 	@return True if the list is empty, otherwise false. */
