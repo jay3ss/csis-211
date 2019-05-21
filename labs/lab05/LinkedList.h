@@ -55,8 +55,8 @@ public:
 	@param newEntry The replacement entry */
     void replace(int position, T &newEntery);
 private:
-	Node<T>* topPtr;	// Pointer to the top node
-	int numEntries;		// Number of current entries in the list
+	Node<T>* topPtr_;	// Pointer to the top node
+	int numEntries_;	// Number of current entries in the list
 };
 
 #include "LinkedList.cpp"
