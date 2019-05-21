@@ -64,4 +64,28 @@ void bubbleSort(ItemType theArray[], int n)
     }
 }
 
+/** Sorts the items in an array into ascending order.
+@pre None.
+@post theArray is sorted into ascending order; n is unchanged.
+@param theArray The given array.
+@param n The size of theArray. */
+template<class ItemType>
+void insertionSort(ItemType theArray[], int n)
+{
+    // consider the initial sorted region to be theArray[0] and the initial
+    // unsorted region to be theArray[1..n - 1]
+    for (int sorted = 1; sorted < n; sorted++)
+    {
+        for (int unsorted = 0; unsorted < sorted; unsorted++)
+        {
+            if (theArray[unsorted] > theArray[sorted])
+            {
+                ItemType tempItem = theArray[sorted];
+                theArray[sorted] = theArray[unsorted];
+                theArray[unsorted] = tempItem;
+            }
+        }
+    }
+}
+
 #endif // _JOSHS_SORTERS_H_

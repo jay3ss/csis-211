@@ -26,3 +26,9 @@ target_link_libraries(
     ${PROJECT_NAME}_bubble_sort_test
     ${PROJECT_NAME}_sorters
 )
+
+add_executable(${PROJECT_NAME}_insertion_sort_test insertionsorttest.cpp)
+target_link_libraries(
+    ${PROJECT_NAME}_bubble_sort_test
+    ${PROJECT_NAME}_sorters
+)
