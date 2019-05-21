@@ -29,7 +29,9 @@ bool LinkedList<T>::insert(int position, T &newEntry)
 /** Remove the entry at a given position. */
 template<class T>
 bool LinkedList<T>::remove(int position)
-{}
+{
+    return false;
+}
 
 /** Remove all entries from the list. */
 template<class T>
