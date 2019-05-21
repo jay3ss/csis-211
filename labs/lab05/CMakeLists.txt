@@ -3,6 +3,7 @@ set(CMAKE_CXX_STANDARD 11)
 project(csis211lab05)
 
 # Create the libraries
+add_library(node Node.cpp)
 add_library(listinterface ListInterface.h)
 add_library(linkedlist LinkedList.cpp)
 
@@ -13,7 +14,7 @@ set_target_properties(
 )
 
 # LinkedList depends on ListInterface
-target_link_libraries(linkedlist listinterface)
+target_link_libraries(linkedlist listinterface node)
 
 # Create the executable for the Cell class driver and link the library
 add_executable(todolist todoList.cpp)
