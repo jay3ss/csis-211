@@ -44,8 +44,9 @@ TEST_CASE("A newly created list cannot replace entries", "[LinkedList]")
 TEST_CASE("Adding an entry increases the list's length by one", "[LinkedList]")
 {
     LinkedList<int> list;
-    int length = list.length();
-    REQUIRE(length == (list.length() + 1));
+    int oldLength = list.length();
+    list.insert(1, 5);
+    REQUIRE((oldLength + 1) == list.length());
 }
 
 // 4. aList.length() = (aList.remove(i)).length() + 1
