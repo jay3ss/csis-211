@@ -1,11 +1,13 @@
 #ifndef _LINKED_LIST_H_
 #define _LINKED_LIST_H_
 
+#include "Node.h"
 #include "ListInterface.h"
 
 template<class T>
 class LinkedList : public ListInterface<T>
 {
+public:
     /** Destructor */
     ~LinkedList();
 
@@ -52,6 +54,9 @@ class LinkedList : public ListInterface<T>
 	@param position The position in the list of the entry to be replaced.
 	@param newEntry The replacement entry */
     void replace(int position, T &newEntery);
+private:
+	Node<T>* topPtr;	// Pointer to the top node
+	int numEntries;		// Number of current entries in the list
 };
 
 #include "LinkedList.cpp"
