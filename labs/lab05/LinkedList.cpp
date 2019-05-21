@@ -18,7 +18,7 @@ LinkedList<T>::~LinkedList()
 template<class T>
 bool LinkedList<T>::isEmpty() const
 {
-    return false;
+    return numEntries_ == 0;
 }
 
 /** Get the number of entries in the list. */
