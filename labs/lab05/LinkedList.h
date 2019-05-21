@@ -29,7 +29,7 @@ public:
 	@param position
 	@param newEntry
 	@return */
-    bool insert(int position, T &newEntry);
+    bool insert(int position, const T &newEntry);
 
     /** Remove the entry at a given position.
 	@post The entry at the given position will no longer exist at that position
@@ -56,7 +56,7 @@ public:
 	@post The previous entry will be replaced with the new entry.
 	@param position The position in the list of the entry to be replaced.
 	@param newEntry The replacement entry */
-    void replace(int position, T &newEntery);
+    void replace(int position, const T &newEntery);
 private:
 	Node<T>* topPtr_;	// Pointer to the top node
 	int numEntries_;	// Number of current entries in the list

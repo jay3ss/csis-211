@@ -23,7 +23,7 @@ public:
 	@param position
 	@param newEntry
 	@return */
-	virtual bool insert(int position, T &newEntry) = 0;
+	virtual bool insert(int position, const T &newEntry) = 0;
 
 	/** Remove the entry at a given position.
 	@post The entry at the given position will no longer exist at that position
@@ -50,7 +50,7 @@ public:
 	@post The previous entry will be replaced with the new entry.
 	@param position The position in the list of the entry to be replaced.
 	@param newEntry The replacement entry */
-	virtual void replace(int position, T &newEntery) = 0;
+	virtual void replace(int position, const T &newEntery) = 0;
 };
 
 #endif // _LIST_INTERFACE_H_

@@ -30,7 +30,7 @@ int LinkedList<T>::length() const
 
 /** Insert an entry at a given position in the list. */
 template<class T>
-bool LinkedList<T>::insert(int position, T &newEntry)
+bool LinkedList<T>::insert(int position, const T &newEntry)
 {
     return false;
 }
@@ -54,5 +54,5 @@ T LinkedList<T>::entry(int position) const
 
 /** Replace the entry at the given position. */
 template<class T>
-void LinkedList<T>::replace(int position, T &newEntery)
+void LinkedList<T>::replace(int position, const T &newEntery)
 {}
