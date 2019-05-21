@@ -5,12 +5,13 @@ project(csis211lab05)
 # Create the libraries
 add_library(node Node.h)
 add_library(listinterface ListInterface.h)
-add_library(linkedlist LinkedList.cpp)
+add_library(linkedlist LinkedList.h)
 
 # Tell the linker that the libraries are C++
 set_target_properties(
     node
     listinterface
+    linkedlist
     PROPERTIES LINKER_LANGUAGE CXX
 )
 
