@@ -3,7 +3,9 @@
 /** Destructor */
 template <class T>
 LinkedList<T>::~LinkedList()
-{}
+{
+    clear();
+}
 
 /** Sees if the list is empty */
 template<class T>
