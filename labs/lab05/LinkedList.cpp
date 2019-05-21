@@ -2,7 +2,7 @@
 
 /** Constructor */
 template <class T>
-LinkedList<T>::LinkedList()
+LinkedList<T>::LinkedList() : topPtr_(nullptr), numEntries_(0)
 {
 
 }
