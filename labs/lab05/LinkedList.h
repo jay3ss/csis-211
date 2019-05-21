@@ -8,6 +8,9 @@ template<class T>
 class LinkedList : public ListInterface<T>
 {
 public:
+	/** Constructor */
+	LinkedList();
+
     /** Destructor */
     ~LinkedList();
 

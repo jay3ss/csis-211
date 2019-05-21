@@ -1,5 +1,12 @@
 #include "LinkedList.h"
 
+/** Constructor */
+template <class T>
+LinkedList<T>::LinkedList()
+{
+
+}
+
 /** Destructor */
 template <class T>
 LinkedList<T>::~LinkedList()
