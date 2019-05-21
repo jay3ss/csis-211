@@ -4,26 +4,40 @@
 // Test the axioms for the ADT list
 
 // 1. (new List()).isEmpty() = true
-// 2. (new List()).length() = 0
-// 6. (new List()).remove(i) = false
-// 8. (new List()).entry(i) = error
-// 12. (new List()).replace(i, x) = error
 TEST_CASE("A newly created list is empty", "[LinkedList]")
 {
     LinkedList<int> list;
-    int anEntry = 3;
-
-    REQUIRE(list.length() == 0);
     REQUIRE(list.isEmpty());
-    REQUIRE(list.remove(1));
+}
 
-    // To only test that an exception has been thrown
-    REQUIRE_THROWS(list.entry(2)); // #8
+// 2. (new List()).length() = 0
+TEST_CASE("A newly created list has length of 0", "[LinkedList]")
+{
+    LinkedList<int> list;
+    REQUIRE(list.length() == 0);
+}
+
+// 6. (new List()).remove(i) = false
+TEST_CASE("A newly created list cannot have entries removed", "[LinkedList]")
+{
+    LinkedList<int> list;
+    REQUIRE_FALSE(list.remove(1));
+}
+
+// 8. (new List()).entry(i) = error
+TEST_CASE("A newly created list cannot return entries", "[LinkedList]")
+{
+    LinkedList<int> list;
+    int anEntry = 3;
+    REQUIRE_THROWS(list.entry(anEntry));
+}
+
+// 12. (new List()).replace(i, x) = error
+TEST_CASE("A newly created list cannot replace entries", "[LinkedList]")
+{
+    LinkedList<int> list;
+    int anEntry = 3;
     REQUIRE_THROWS(list.replace(3, anEntry)); // #12
-
-    // Or, to test what type of exception has been thrown
-    // REQUIRE_THROWS_AS(); // #8
-    // REQUIRE_THROWS_AS(); // #12
 }
 
 // 3. aList.length() = (aList.insert(i, x)).length() - 1
