@@ -1,4 +1,15 @@
+/** @file Cell.cpp
+ * Implements an individual cell of a grid.
+ */
 #include "Cell.h"
+
+// Copy constructor
+Cell::Cell(const Cell &c)
+{
+	state = c.state;
+	xPosition = c.xPosition;
+	yPosition = c.yPosition;
+}
 
 // Overloaded ostream operator
 std::ostream &operator<<(std::ostream &strm, const Cell &obj)
