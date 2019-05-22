@@ -17,6 +17,7 @@ TEST_CASE("A newly created list has length of 0", "[LinkedList]")
     REQUIRE(list.length() == 0);
 }
 
+
 // 6. (new List()).remove(i) = false
 TEST_CASE("A newly created list cannot have entries removed", "[LinkedList]")
 {
@@ -55,6 +56,7 @@ TEST_CASE("Removing an entry decreases the list's length by one", "[LinkedList]"
     LinkedList<int> list;
     list.insert(1, 3);
     int length = list.length();
+    list.remove(1);
 
     REQUIRE(list.length() == (length - 1));
 }
