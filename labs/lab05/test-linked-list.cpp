@@ -100,7 +100,7 @@ TEST_CASE("When a new entry is inserted into the list and then removed, the orig
 }
 
 // 9. (aList.insert(i, x)).entry(i) = x
-TEST_CASE("Entry x inserted into the ith position of a list, retrieving the i th item will result in x", "[LinkedList]")
+TEST_CASE("Entry x inserted into the ith position of a list, retrieving the ith item will result in x", "[LinkedList]")
 {
     LinkedList<int> list;
 
@@ -133,12 +133,14 @@ TEST_CASE("Adding an entry increases each following entry's position by one", "[
     // Check that the position of each entry after the insertion point has been
     // increased by one
     bool isSame = true;
-    int entry;
+    int entryToCheck;
+    int listEntry;
     for (int position = insertionPoint + 1; position < 6; position++)
     {
         // The entry is off by one, so adjust for it
-        entry = (position - 1) * (position - 1);
-        if (list.entry(position) != entry)
+        entryToCheck = (position - 1) * (position - 1);
+        listEntry = list.entry(position);
+        if (listEntry != entryToCheck)
         {
             isSame = false;
             break;
@@ -159,17 +161,25 @@ TEST_CASE("Removing an entry decreases each following entry's position by one", 
         list.insert(i, i * i);
     }
 
-    int removalPoint = 2;
-    list.remove(removalPoint);
+    list.remove(2);
 
     // Check that the position of each entry after the removal point has been
     // decreased by one
     bool isSame = true;
-    int entry;
-    for (int position = removalPoint; position < 6; position++)
+    int entry, listEntry;
+    for (int position = 1; position < 5; position++)
     {
-        // The entry is off by one, so adjust for it
-        entry = (position + 1) * (position + 1);
+        if (position >= 2)
+        {
+            // The entry is off by one, so adjust for it
+            entry = (position + 1) * (position + 1);
+        }
+        else
+        {
+            entry = position * position;
+        }
+
+        listEntry = list.entry(position);
         if (list.entry(position) != entry)
         {
             isSame = false;
@@ -195,9 +205,5 @@ TEST_CASE("Replacing an entry with a new entry x, returns the new entry x", "[Li
     int position = 3;
 
     list.replace(position, newEntry);
-
-    int replacement = list.entry(position);
-    bool isSame = newEntry == replacement;
-
-    REQUIRE(isSame);
+    REQUIRE(newEntry == list.entry(position));
 }
