@@ -56,7 +56,10 @@ public:
 	@post The previous entry will be replaced with the new entry.
 	@param position The position in the list of the entry to be replaced.
 	@param newEntry The replacement entry */
-    void replace(int position, const T &newEntery);
+    void replace(int position, const T &newEntry);
+
+	// Exception class
+	class EmptyList{};
 private:
 	Node<T>* topPtr_;	// Pointer to the top node
 	int numEntries_;	// Number of current entries in the list
