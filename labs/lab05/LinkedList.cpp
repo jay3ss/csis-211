@@ -99,12 +99,18 @@ void LinkedList<T>::clear()
 /** Get the entry at a given position. */
 template<class T>
 T LinkedList<T>::entry(int position) const
-{}
+{
+    Node<T>* nodePtr = getNodeAt(position);
+    return nodePtr->item();
+}
 
 /** Replace the entry at the given position. */
 template<class T>
-void LinkedList<T>::replace(int position, const T &newEntery)
-{}
+void LinkedList<T>::replace(int position, const T &newEntry)
+{
+    Node<T>* node = getNodeAt(position);
+    node->item(newEntry);
+}
 
 /** Gets the pointer to a node at a desired position */
 template<class T>
