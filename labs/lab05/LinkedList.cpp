@@ -112,6 +112,10 @@ T LinkedList<T>::entry(int position) const
 template<class T>
 void LinkedList<T>::replace(int position, const T &newEntry)
 {
+    if (isEmpty())
+    {
+        throw EmptyList();
+    }
     Node<T>* node = getNodeAt(position);
     node->item(newEntry);
 }
