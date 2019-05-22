@@ -60,6 +60,11 @@ public:
 private:
 	Node<T>* topPtr_;	// Pointer to the top node
 	int numEntries_;	// Number of current entries in the list
+
+	/** Gets the pointer to a node at a desired position
+	@param position The position of the desired node
+	@return The pointer to the desired node	*/
+	Node<T>* getNodeAt(int position) const;
 };
 
 #include "LinkedList.cpp"
