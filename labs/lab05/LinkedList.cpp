@@ -11,6 +11,7 @@ LinkedList<T>::LinkedList() : topPtr_(nullptr), numEntries_(0)
 template <class T>
 LinkedList<T>::~LinkedList()
 {
+    // Free up all allocated memory by clearing the list
     clear();
 }
 
@@ -95,6 +96,7 @@ bool LinkedList<T>::remove(int position)
 template<class T>
 void LinkedList<T>::clear()
 {
+    // Keep removing the first entry until the list is empty
     while(!isEmpty())
     {
         remove(1);
