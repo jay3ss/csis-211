@@ -100,6 +100,10 @@ void LinkedList<T>::clear()
 template<class T>
 T LinkedList<T>::entry(int position) const
 {
+    if (isEmpty())
+    {
+        throw EmptyList();
+    }
     Node<T>* nodePtr = getNodeAt(position);
     return nodePtr->item();
 }
