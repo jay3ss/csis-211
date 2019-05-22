@@ -24,8 +24,8 @@ public:
 
     /** Insert an entry at a given position in the list.
 	@post A new entry will be in the list in the given position if
-		1 <= position <= length(). All entries after the insertion point will
-		be moved back by one.
+		1 <= position <= length() + 1. All entries after the insertion point
+		will be increased by one.
 	@param position
 	@param newEntry
 	@return */
@@ -34,7 +34,7 @@ public:
     /** Remove the entry at a given position.
 	@post The entry at the given position will no longer exist at that position
 		if 1 <= position <= length and all entries after the removal point will
-		be moved forward by one.
+		be decreased by one.
 	@param position	The position of the item to be removed.
 	@return If there is entry at the given position exists it will be removed
 		and the function will return true. If there is no entry at the given

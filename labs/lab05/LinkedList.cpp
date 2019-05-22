@@ -32,23 +32,25 @@ int LinkedList<T>::length() const
 template<class T>
 bool LinkedList<T>::insert(int position, const T &newEntry)
 {
-    // Enforce the precondition that 1 <= position <= length()
+    // Enforce the precondition that 1 <= position <= length() + 1
     bool canInsert = ((1 <= position) && (position <= length() + 1));
     if (canInsert)
     {
         // Create a new Node and copy the head pointer
         Node<T>* newNodePtr = new Node<T>(newEntry, nullptr);
 
-        // If the desired position is the first, then change what the head
-        // pointer points to
         if (position == 1)
         {
+            // If the desired position is the first, then change what the head
+            // pointer points to
             topPtr_ = newNodePtr;
         }
         else
         {
-            // Get the node before the node at the desired position
+            // Get the previous node and set our new node's next pointer to the
+            // node that the previous node points to
             Node<T>* prevNodePtr = getNodeAt(position - 1);
+            newNodePtr->next(prevNodePtr->next());
             prevNodePtr->next(newNodePtr);
         }
         numEntries_++;
@@ -60,7 +62,33 @@ bool LinkedList<T>::insert(int position, const T &newEntry)
 template<class T>
 bool LinkedList<T>::remove(int position)
 {
-    return false;
+    bool canRemove = ((1 <= position) && (position <= length()));
+    if (canRemove)
+    {
+        Node<T> *nodeToDeletePtr = nullptr;
+        if (position == 1)
+        {
+            nodeToDeletePtr = topPtr_;
+            topPtr_ = topPtr_->next();
+
+        }
+        else
+        {
+            // Get the node before the one that we want to delete
+            Node<T> *prevNodePtr = getNodeAt(position - 1);
+
+            // Now get the node that want to delete so that we know what it
+            // points to and use it
+            nodeToDeletePtr = prevNodePtr->next();
+            prevNodePtr->next(nodeToDeletePtr->next());
+        }
+        // Return the old node used to pointer back to the system
+        nodeToDeletePtr->next(nullptr);
+        delete nodeToDeletePtr;
+        nodeToDeletePtr = nullptr;
+        numEntries_--;
+    }
+    return canRemove;
 }
 
 /** Remove all entries from the list. */
