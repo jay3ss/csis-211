@@ -94,7 +94,12 @@ bool LinkedList<T>::remove(int position)
 /** Remove all entries from the list. */
 template<class T>
 void LinkedList<T>::clear()
-{}
+{
+    while(!isEmpty())
+    {
+        remove(1);
+    }
+}
 
 /** Get the entry at a given position. */
 template<class T>
