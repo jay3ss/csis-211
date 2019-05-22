@@ -11,6 +11,9 @@ public:
 	/** Constructor */
 	LinkedList();
 
+	/** Copy constructor */
+	LinkedList(const LinkedList<T> &list);
+
     /** Destructor */
     ~LinkedList();
 

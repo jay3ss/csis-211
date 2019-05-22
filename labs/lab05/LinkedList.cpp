@@ -7,6 +7,23 @@ LinkedList<T>::LinkedList() : topPtr_(nullptr), numEntries_(0)
 
 }
 
+/** Copy constructor */
+template<class T>
+LinkedList<T>::LinkedList(const LinkedList<T> &list)
+{
+    // We only need to do something if the list isn't empty
+    if (!list.isEmpty())
+    {
+        T entry;
+        // Take the elements from the list and add them to this one
+        for (int position = 1; position <= list.length(); position++)
+        {
+            entry = list.entry(1);
+            insert(position, entry);
+        }
+    }
+}
+
 /** Destructor */
 template <class T>
 LinkedList<T>::~LinkedList()
