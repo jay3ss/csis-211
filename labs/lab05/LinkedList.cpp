@@ -36,13 +36,13 @@ bool LinkedList<T>::insert(int position, const T &newEntry)
     bool canInsert = ((1 <= position) && (position <= length() + 1));
     if (canInsert)
     {
-        // Create a new Node and copy the head pointer
+        // Create a new Node with the entry
         Node<T>* newNodePtr = new Node<T>(newEntry, nullptr);
 
         if (position == 1)
         {
-            // If the desired position is the first, then change what the head
-            // pointer points to
+            // Insert at the beginning of the list
+            newNodePtr->next(topPtr_);
             topPtr_ = newNodePtr;
         }
         else
