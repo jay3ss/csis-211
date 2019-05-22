@@ -24,6 +24,7 @@ target_link_libraries(todolist linkedlist)
 
 # Build the tests
 if(BUILD_TESTING)
+    message("The first time compiling of tests make take some time...")
     include_directories(external)
     add_library(catch2 external/catch/catch.hpp)
     set_target_properties(catch2 PROPERTIES LINKER_LANGUAGE CXX)
