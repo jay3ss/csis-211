@@ -50,7 +50,7 @@ public:
 
     /** Get the entry at a given position.
 	@pre An entry should be at the given position (i.e.,
-		1 <= position <= length())
+		1 <= position <= length()
 	@return The entry at the given position. */
     T entry(int position) const;
 
