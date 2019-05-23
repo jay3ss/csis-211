@@ -29,9 +29,9 @@ public:
 	@post A new entry will be in the list in the given position if
 		1 <= position <= length() + 1. All entries after the insertion point
 		will be increased by one.
-	@param position
-	@param newEntry
-	@return */
+	@param position The position that the new entry will have.
+	@param newEntry	The entry to be inserted.
+	@return True if the entery can be inserted, false otherwise. */
     bool insert(int position, const T &newEntry);
 
     /** Remove the entry at a given position.
