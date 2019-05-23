@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "-std=c++11")
 project(csis211lab05)
 
 # Create the libraries
@@ -40,7 +41,7 @@ if(BUILD_TESTING)
     target_link_libraries(testlinkedlist testsmain)
 
     # Make tests discoverable
-    # include(CTest)
+    include(CTest)
     # include(Catch)
     # catch_discover_tests(testlinkedlist)
 
