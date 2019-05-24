@@ -36,6 +36,13 @@ public:
     /** Sets the status of the todo item
     @param s The new status of the item */
     void status(item::status s);
+
+    // Overloaded operators
+    /** Overloaded == */
+    bool operator==(const TodoItem &right);
+
+    /** Overloaded != */
+    bool operator!=(const TodoItem &right);
 };
 
 #endif // _TODO_ITEM_H_

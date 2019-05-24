@@ -31,3 +31,17 @@ void TodoItem::status(item::status s)
 {
     status_ = s;
 }
+
+// Overloaded operators
+/** Overloaded == */
+bool TodoItem::operator==(const TodoItem &right)
+{
+    return (status_ == right.status_) &&
+           (item_ == right.item_);
+}
+
+/** Overloaded != */
+bool TodoItem::operator!=(const TodoItem &right)
+{
+    return !(*this == right);
+}
