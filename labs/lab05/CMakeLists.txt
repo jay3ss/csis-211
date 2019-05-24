@@ -7,6 +7,8 @@ project(csis211lab05)
 add_library(node Node.h)
 add_library(listinterface ListInterface.h)
 add_library(linkedlist LinkedList.h)
+add_library(todoitem TodoItem.cpp)
+add_library(todolist TodoList.cpp)
 
 # Tell the linker that the libraries are C++
 set_target_properties(
@@ -19,9 +21,12 @@ set_target_properties(
 # LinkedList depends on ListInterface
 target_link_libraries(linkedlist listinterface node)
 
+# TodoList depends on both LinkedList and TodoItem
+target_link_libraries(todolist todoitem linkedlist)
+
 # Create the executable for the Cell class driver and link the library
-add_executable(todolist todoList.cpp)
-target_link_libraries(todolist linkedlist)
+add_executable(testtodolist testTodoList.cpp)
+target_link_libraries(testtodolist todolist todoitem)
 
 # Build the tests
 if(BUILD_TESTING)
