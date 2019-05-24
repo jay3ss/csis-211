@@ -4,7 +4,7 @@ template <class T>
 Node<T>::Node(const T &anItem) : item_(anItem), next_(nullptr) {}
 
 template <class T>
-Node<T>::Node(const T &anItem, Node<T> *nextNodePtr) :
+Node<T>::Node(const T &anItem, Node<T> * const nextNodePtr) :
     item_(anItem), next_(nextNodePtr) {}
 
 template <class T>
@@ -14,7 +14,7 @@ void Node<T>::item(const T &anItem)
 }
 
 template <class T>
-void Node<T>::next(Node<T> *nextNodePtr)
+void Node<T>::next(Node<T>* const nextNodePtr)
 {
     next_ = nextNodePtr;
 }

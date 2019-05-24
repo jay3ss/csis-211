@@ -11,9 +11,9 @@ private:
 public:
     Node() {}
     Node(const T &anItem);
-    Node(const T &anItem, Node<T> *nextNodePtr);
+    Node(const T &anItem, Node<T>* const nextNodePtr);
     void item(const T &anItem);
-    void next(Node<T> *nextNodePtr);
+    void next(Node<T>* const nextNodePtr);
     T item() const;
     Node<T> *next() const;
 };
