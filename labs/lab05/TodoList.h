@@ -7,7 +7,7 @@
 class TodoList
 {
 private:
-    LinkedList<TodoItem> items;
+    LinkedList<TodoItem> items_;
 public:
     /** Constructor */
     TodoList();
@@ -27,7 +27,7 @@ public:
     TodoItem item(int position);
 
     /** Inserts an item to the desired position in the todo list.
-    @post If 1 <= position <= items.length() + 1, the item will be inserted
+    @post If 1 <= position <= items_.length() + 1, the item will be inserted
         into the list and the position of the items after it will be increased
         by one.
     @param position The desired position of the todo item.
@@ -40,14 +40,15 @@ public:
     int length();
 
     /** Removes an item from the todo list.
-    @post If 1 <= position <= items.length(), the item will be removed from the
-        list and the position of the items after it will be decreased by one.
+    @post If 1 <= position <= items_.length(), the item will be removed from
+        the list and the position of the items after it will be decreased by
+        one.
     @param position The position of the todo item to be removed.
     @return True if item was removed, false otherwise. */
     bool remove(int position);
 
     /** Moves an existing item to a new position in the list.
-    @post If 1 <= from <= items.length() and 1 <= to <= items.length(), the
+    @post If 1 <= from <= items_.length() and 1 <= to <= items_.length(), the
         item will be moved from the its original position to the new position.
         Items after the move positions may have their positions adjusted as
         well.
