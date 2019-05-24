@@ -1,13 +1,13 @@
 #ifndef _TODO_LIST_H_
 #define _TODO_LIST_H_
 
-#include <string>
+#include "TodoItem.h"
 #include "LinkedList.h"
 
 class TodoList
 {
 private:
-    LinkedList<std::string> list;
+    LinkedList<TodoItem> items;
 public:
     /** Constructor */
     TodoList();
