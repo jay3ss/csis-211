@@ -1,8 +1,8 @@
 #ifndef _TODO_LIST_H_
 #define _TODO_LIST_H_
 
-#include "TodoItem.h"
 #include "LinkedList.h"
+#include "TodoItem.h"
 
 class TodoList
 {
