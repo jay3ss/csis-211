@@ -35,6 +35,10 @@ public:
     @return True if item was inserted, false otherwise. */
     bool insert(int position, const TodoItem &anItem);
 
+    /** Returns the integer number of items in the todo list.
+    @return The integer number of items in the list. */
+    int length();
+
     /** Removes an item from the todo list.
     @post If 1 <= position <= items.length(), the item will be removed from the
         list and the position of the items after it will be decreased by one.
