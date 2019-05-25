@@ -25,7 +25,7 @@ public:
     /** Returns a todo list item.
     @param position The position of the item to retrieve.
     @return The todo list item. */
-    TodoItem item(int position);
+    TodoItem item(int position) const;
 
     /** Inserts an item to the desired position in the todo list.
     @post If 1 <= position <= length() + 1, the item will be inserted into the
@@ -61,6 +61,12 @@ public:
         complete.
     @param s The new status of the item. */
     void markAs(int position, item::status s);
+
+    /** Overloaded << operator
+    @param strm ostream object
+    @obj TodoItem object to be inserted
+    @return ostream object */
+    friend std::ostream &operator<<(std::ostream &strm, const TodoList &obj);
 };
 
 #endif // _TODO_LIST_H_

@@ -17,7 +17,7 @@ bool TodoList::add(const TodoItem &anItem)
 }
 
 /** Returns a todo list item. */
-TodoItem TodoList::item(int position)
+TodoItem TodoList::item(int position) const
 {
     return items_.entry(position);
 }
@@ -69,4 +69,14 @@ void TodoList::markAs(int position, item::status s)
     TodoItem theItem = item(position);
     theItem.status(s);
     items_.replace(position, theItem);
+}
+
+/** Overloaded << operator */
+std::ostream &operator<<(std::ostream &strm, const TodoList &obj)
+{
+    for (int position = 1; position <= obj.items_.length(); position++)
+    {
+        strm << obj.item(position) << "\n";
+    }
+    return strm;
 }
