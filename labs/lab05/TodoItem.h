@@ -41,8 +41,8 @@ public:
     // Overloaded operators
     /** Overloaded << operator
     @param strm ostream object
-    @obj
-    */
+    @obj TodoItem object to be inserted
+    @return ostream object */
     friend std::ostream &operator<<(std::ostream &strm, const TodoItem &obj);
 
     /** Overloaded == operator*/

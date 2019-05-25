@@ -36,7 +36,18 @@ void TodoItem::status(item::status s)
 /** Overloaded << operator */
 std::ostream &operator<<(std::ostream &strm, const TodoItem &obj)
 {
-    strm << obj.item_ << " (" << item::statusToString(obj.status_) << ")";
+    std::string statusString;
+    switch (obj.status_)
+    {
+    case item::status::INPROGRESS:
+        statusString = "inprogress";
+        break;
+
+    default:
+        statusString = "complete";
+        break;
+    }
+    strm << obj.item_ << " (" << statusString << ")";
     return strm;
 }
 
@@ -47,28 +58,25 @@ bool TodoItem::operator==(const TodoItem &right)
            (item_ == right.item_);
 }
 
-namespace item
-{
-    std::string statusToString(item::status status)
-    {
-        std::string statusString;
-        switch (status)
-        {
-        case item::status::INPROGRESS:
-            statusString = "inprogress";
-            break;
-
-        default:
-            statusString = "complete";
-            break;
-        }
-
-        return statusString;
-    }
-}
-
 /** Overloaded != */
 bool TodoItem::operator!=(const TodoItem &right)
 {
     return !(*this == right);
+}
+
+std::string statusToString(item::status status)
+{
+    std::string statusString;
+    switch (status)
+    {
+    case item::status::INPROGRESS:
+        statusString = "inprogress";
+        break;
+
+    default:
+        statusString = "complete";
+        break;
+    }
+
+    return statusString;
 }
