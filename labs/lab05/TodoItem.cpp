@@ -63,20 +63,3 @@ bool TodoItem::operator!=(const TodoItem &right)
 {
     return !(*this == right);
 }
-
-std::string statusToString(item::status status)
-{
-    std::string statusString;
-    switch (status)
-    {
-    case item::status::INPROGRESS:
-        statusString = "inprogress";
-        break;
-
-    default:
-        statusString = "complete";
-        break;
-    }
-
-    return statusString;
-}
