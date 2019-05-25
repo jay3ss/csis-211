@@ -41,9 +41,13 @@ if(BUILD_TESTING)
     target_link_libraries(testsmain catch2)
 
 
-    # Test the Cell class
+    # Test the LinkedList class
     add_executable(testlinkedlist test-linked-list.cpp)
-    target_link_libraries(testlinkedlist testsmain)
+    target_link_libraries(testlinkedlist testsmain linkedlist)
+
+    # Test the TodoList class
+    add_executable(testtodolist test-todo-list.cpp)
+    target_link_libraries(testtodolist testsmain todolist)
 
     # Make tests discoverable
     include(CTest)
@@ -53,4 +57,5 @@ if(BUILD_TESTING)
     # use `make test` to run the tests
     enable_testing()
     add_test(NAME LinkedListTest COMMAND testlinkedlist)
+    add_test(NAME TodoListTest COMMAND testtodolist)
 endif()
