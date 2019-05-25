@@ -25,8 +25,8 @@ target_link_libraries(linkedlist listinterface node)
 target_link_libraries(todolist todoitem linkedlist)
 
 # Create the executable for the Cell class driver and link the library
-add_executable(testtodolist testTodoList.cpp)
-target_link_libraries(testtodolist todolist todoitem)
+add_executable(todolistmain todoListMain.cpp)
+target_link_libraries(todolistmain todolist todoitem)
 
 # Build the tests
 if(BUILD_TESTING)

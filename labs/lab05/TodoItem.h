@@ -1,6 +1,7 @@
 #ifndef _TODO_ITEM_H_
 #define _TODO_ITEM_H_
 
+#include <iostream>
 #include <string>
 
 namespace item
@@ -38,10 +39,16 @@ public:
     void status(item::status s);
 
     // Overloaded operators
-    /** Overloaded == */
+    /** Overloaded << operator
+    @param strm ostream object
+    @obj
+    */
+    friend std::ostream &operator<<(std::ostream &strm, const TodoItem &obj);
+
+    /** Overloaded == operator*/
     bool operator==(const TodoItem &right);
 
-    /** Overloaded != */
+    /** Overloaded != operator*/
     bool operator!=(const TodoItem &right);
 };
 
