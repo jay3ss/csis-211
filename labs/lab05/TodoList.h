@@ -13,7 +13,7 @@ public:
     /** Constructor */
     TodoList();
 
-    /** Constructor */
+    /** Destructor */
     ~TodoList();
 
     /** Adds an item to the end of the todo list.
