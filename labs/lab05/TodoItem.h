@@ -46,10 +46,10 @@ public:
     friend std::ostream &operator<<(std::ostream &strm, const TodoItem &obj);
 
     /** Overloaded == operator*/
-    bool operator==(const TodoItem &right);
+    bool operator==(const TodoItem &right) const;
 
     /** Overloaded != operator*/
-    bool operator!=(const TodoItem &right);
+    bool operator!=(const TodoItem &right) const;
 };
 
 #endif // _TODO_ITEM_H_

@@ -52,14 +52,14 @@ std::ostream &operator<<(std::ostream &strm, const TodoItem &obj)
 }
 
 /** Overloaded == */
-bool TodoItem::operator==(const TodoItem &right)
+bool TodoItem::operator==(const TodoItem &right) const
 {
     return (status_ == right.status_) &&
            (item_ == right.item_);
 }
 
 /** Overloaded != */
-bool TodoItem::operator!=(const TodoItem &right)
+bool TodoItem::operator!=(const TodoItem &right) const
 {
     return !(*this == right);
 }
