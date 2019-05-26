@@ -45,6 +45,10 @@ if(BUILD_TESTING)
     add_executable(testlinkedlist test-linked-list.cpp)
     target_link_libraries(testlinkedlist testsmain linkedlist)
 
+    # Test the TodoItem class
+    add_executable(testtodoitem test-todo-item.cpp)
+    target_link_libraries(testtodoitem testsmain todoitem)
+
     # Test the TodoList class
     add_executable(testtodolist test-todo-list.cpp)
     target_link_libraries(testtodolist testsmain todolist)
