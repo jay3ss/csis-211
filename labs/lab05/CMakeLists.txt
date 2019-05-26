@@ -40,6 +40,9 @@ if(BUILD_TESTING)
     add_library(testsmain tests-main.cpp)
     target_link_libraries(testsmain catch2)
 
+    # Test the Node class
+    add_executable(testnode test-node.cpp)
+    target_link_libraries(testnode testsmain node)
 
     # Test the LinkedList class
     add_executable(testlinkedlist test-linked-list.cpp)
@@ -60,6 +63,8 @@ if(BUILD_TESTING)
 
     # use `make test` to run the tests
     enable_testing()
+    add_test(NAME NodeTest COMMAND testnode)
     add_test(NAME LinkedListTest COMMAND testlinkedlist)
+    add_test(NAME TodoItemTest COMMAND testtodoitem)
     add_test(NAME TodoListTest COMMAND testtodolist)
 endif()
